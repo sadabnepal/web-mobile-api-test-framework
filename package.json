@@ -1,0 +1,37 @@
+{
+  "name": "webdriveriotypescripthybrid",
+  "version": "1.0.0",
+  "description": "Boilerplate project using webdriverio with mocha and BDD hybrid framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx wdio wdio.conf.ts",
+    "test-e2e": "npx wdio wdio.conf.e2e.ts",
+    "report": "allure generate ./reports/allure-results --clean && allure open",
+    "generateMochawesome": "marge ./reports/jsonReporter/wdio-ma-merged.json --reportTitle 'Unit Test Results'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid.git"
+  },
+  "author": "MD SADAB SAQIB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/issues"
+  },
+  "homepage": "https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid#readme",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^7.6.0",
+    "@wdio/cli": "^7.6.0",
+    "@wdio/cucumber-framework": "^7.6.0",
+    "@wdio/junit-reporter": "^7.6.0",
+    "@wdio/local-runner": "^7.6.0",
+    "@wdio/mocha-framework": "^7.6.0",
+    "@wdio/selenium-standalone-service": "^7.6.0",
+    "allure-commandline": "^2.13.8",
+    "mochawesome-report-generator": "^5.2.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "wdio-json-reporter": "^2.0.0",
+    "wdio-mochawesome-reporter": "^4.0.0"
+  }
+}
