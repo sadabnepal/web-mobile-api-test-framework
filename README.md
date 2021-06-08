@@ -1,5 +1,11 @@
-# WebdriverIOTypeScriptHybrid
-Boilerplate project using webdriverio with mocha and BDD hybrid framework
+<p align="center">
+    <a href="https://webdriver.io/">
+        <img alt="WebdriverIO" src="https://webdriver.io/assets/images/robot-3677788dd63849c56aa5cb3f332b12d5.svg" width="100">
+    </a>
+</p>
+
+<h2 align="center"> UIAutomation Hybrid Framework </h2>
+This framework is using WebdriverI/O as testing tool, TypeScript as programming language, Cucumber and Mocha as Framework
 
 ### Requirements
 -   node >= 12.18.x - [how to install Node](https://nodejs.org/en/download/)
