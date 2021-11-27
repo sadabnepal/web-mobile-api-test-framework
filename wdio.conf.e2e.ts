@@ -1,3 +1,5 @@
+import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/BDDCustomConfig";
+
 export const config: WebdriverIO.Config = {
     // ====================
     // Runner Configuration
@@ -14,14 +16,8 @@ export const config: WebdriverIO.Config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: 4,
-    capabilities: [
-        {
-            maxInstances: 2,
-            browserName: 'chrome',
-            acceptInsecureCerts: true
-        }
-    ],
+    maxInstances: browserInstance(),
+    capabilities: BrowserCapabilities,
 
     // ===================
     // Test Configurations
@@ -33,9 +29,9 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone'],
+    services: [getServiceName()],
     framework: 'cucumber',
-    specFileRetries: 1,
+    specFileRetries: retryOnFailure(),
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: [
