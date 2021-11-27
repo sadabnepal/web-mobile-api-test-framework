@@ -1,4 +1,4 @@
-Feature: The Internet Guinea Pig Website
+Feature: Login feature for examples table demo
 
   Scenario Outline: As a user, I can log into the secure area
 

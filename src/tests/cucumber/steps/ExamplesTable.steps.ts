@@ -4,7 +4,7 @@ import LoginPage from '../../../pages/login.page';
 import SecurePage from '../../../pages/secure.page';
 
 Given(/^I am on the login page$/, async () => {
-    await LoginPage.open()
+    await LoginPage.openApp()
 });
 
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {
