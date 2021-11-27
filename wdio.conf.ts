@@ -9,27 +9,27 @@ export const config: WebdriverIO.Config = {
     // Specify Test Files
     // ==================
     specs: [
-        './test/**/*.ts'
+        './src/tests/mocha/**/*spec.ts'
     ],
-    exclude: [ ],
+    exclude: [],
 
     // ============
     // Capabilities
     // ============
     maxInstances: 4,
-    capabilities: [{
-        maxInstances: 2,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    }],
- 
+    capabilities: [
+        {
+            maxInstances: 2,
+            browserName: 'chrome',
+            acceptInsecureCerts: true
+        }
+    ],
+
     // ===================
     // Test Configurations
     // ===================
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     bail: 0,
     baseUrl: 'http://localhost',
     waitforTimeout: 10000,
@@ -41,28 +41,20 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: [
-        [
-            "mochawesome",
-            {
-              outputDir: "./reports/mochawesome",
-              outputFileFormat: function (options) {
-                return `results-${new Date().getTime()}.json`;
-              }
+        ['mochawesome', {
+            outputDir: 'reports/json/',
+            outputFileFormat: (opts: any) => {
+                return `results-${opts.cid}.${opts.capabilities.browserName}.json`
             }
-        ],
-        [
-            "json",
-            {
-              outputDir: "./reports/jsonReporter",
-              outputFileFormat: function (opts) {
-                return `results-${new Date().getTime()}.json`;
-              }
-            }
-        ],
+        }]
     ],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
+        mochawesomeOpts: {
+            includeScreenshots: true,
+            screenshotUseRelativePath: true
+        },
     },
     //
     // =====
@@ -141,9 +133,9 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    afterTest: async function (test, context, { error, result, duration, passed, retries }) {
         if (!passed) {
-            browser.takeScreenshot();
+            await browser.takeScreenshot();
         }
     },
 
@@ -187,15 +179,9 @@ export const config: WebdriverIO.Config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
-        const mergeResults = require("wdio-mochawesome-reporter/mergeResults");
-        mergeResults("./reports/mochawesome", "results-*");
-        const mergeResult = require("wdio-json-reporter/mergeResults");
-        mergeResult(
-        "./reports/jsonReporter",
-        "results-*",
-        "jsonReportAllTests.json"
-        );
+    onComplete: function (exitCode, config, capabilities, results) {
+        const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
+        mergeResults('./reports/json', "results-*");
     },
     /**
     * Gets executed when a refresh happens.

@@ -1,14 +1,10 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 
-import LoginPage from '../../src/pages/login.page';
-import SecurePage from '../../src/pages/secure.page';
+import LoginPage from '../../../pages/login.page';
+import SecurePage from '../../../pages/secure.page';
 
-const pages = {
-    login: LoginPage
-}
-
-Given(/^I am on the (\w+) page$/, async (page) => {
-    await pages[page].open()
+Given(/^I am on the login page$/, async () => {
+    await LoginPage.open()
 });
 
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {

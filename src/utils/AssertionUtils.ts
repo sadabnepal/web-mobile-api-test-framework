@@ -1,69 +1,71 @@
-import Reporter from "./Reporter";
+import { ChainablePromiseElement, ChainablePromiseArray, ElementArray } from 'webdriverio';
+import { addLog } from "./reporterUtil";
+
 class AssertionUtils {
 
-    assertToHaveText(element:WebdriverIO.Element, value:string):void {
-        expect(element).toHaveText(value);
-        Reporter.logStep(`Validated text: '${value}'`)
-    }
-    
-    assertTextContaining(element:WebdriverIO.Element, value:string):void {
-        expect(element).toHaveTextContaining(value);
-        Reporter.logStep(`Validated text contains '${value}'`)
+    async assertToHaveText(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string) {
+        await expect(element).toHaveText(value);
+        addLog(`Validated text: '${value}'`)
     }
 
-    assertToBeDisplayed(element:WebdriverIO.Element, fieldname?:string):void {
-        expect(element).toBeDisplayed();
-        if(fieldname != undefined) { Reporter.logStep(`'${fieldname}' is displayed`) }
+    async assertTextContaining(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string) {
+        await expect(element).toHaveTextContaining(value);
+        addLog(`Validated text contains '${value}'`)
     }
 
-    assertNoToBeDisplayed(element:WebdriverIO.Element, fieldname?:string):void {
-        expect(element).not.toBeDisplayed();
-        if(fieldname != undefined) { Reporter.logStep(`'${fieldname}' is not displayed`) }
+    async assertToBeDisplayed(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, fieldname?: string) {
+        await expect(element).toBeDisplayed();
+        if (fieldname != undefined) { addLog(`'${fieldname}' is displayed`) }
     }
 
-    assertToExists(element:WebdriverIO.Element, fieldname?:string):void {
-        expect(element).toExist();
-        if(fieldname != undefined) { Reporter.logStep(`'${fieldname}' exists`) }
+    async assertNoToBeDisplayed(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, fieldname?: string) {
+        await expect(element).not.toBeDisplayed();
+        if (fieldname != undefined) { addLog(`'${fieldname}' is not displayed`) }
     }
 
-    assertUrlContaining(partialUrl:string) {
+    async assertToExists(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, fieldname?: string) {
+        await expect(element).toExist();
+        if (fieldname != undefined) { addLog(`'${fieldname}' exists`) }
+    }
+
+    async assertUrlContaining(partialUrl: string) {
         expect(browser).toHaveUrlContaining(partialUrl);
-        Reporter.logStep(`URL contains: '${partialUrl}'`)
+        addLog(`URL contains: '${partialUrl}'`)
     }
 
-    assertToBeTrue(condition:boolean, logMsg?:string) {
-        expect(condition).toBeTruthy()
-        if(logMsg !== undefined) { Reporter.logStep(logMsg) }
+    async assertToBeTrue(condition: Promise<boolean>, logMsg?: string) {
+        await expect(condition).toBeTruthy()
+        if (logMsg) { addLog(logMsg) }
     }
 
-    assertNotToBeTrue(condition:boolean, logMsg?:string) {
+    assertNotToBeTrue(condition: boolean, logMsg?: string) {
         expect(condition).toBeFalsy()
-        if(logMsg !== undefined) { Reporter.logStep(logMsg) }
+        if (logMsg) { addLog(logMsg) }
     }
 
-    assertToHaveLength(element: WebdriverIO.ElementArray, count:number) {
-        expect(element).toHaveLength(count)
-        Reporter.logStep(`Validated count is: ${count}`)
+    async assertToHaveLength(element: ChainablePromiseArray<ElementArray>, count: number) {
+        await expect(element).toHaveLength(count)
+        addLog(`Validated count is: ${count}`)
     }
 
-    assertToHaveValue(element:WebdriverIO.Element, value:string, fieldname?:string):void {
-        expect(element).toHaveValue(value);
-        Reporter.logStep(`Validated value of ${fieldname} : '${value}'`)
+    async assertToHaveValue(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string, fieldname?: string) {
+        await expect(element).toHaveValue(value);
+        addLog(`Validated value of ${fieldname} : '${value}'`)
     }
 
-    assertToHaveValueContaining(element:WebdriverIO.Element, value:string, fieldname?:string):void {
-        expect(element).toHaveValueContaining(value);
-        Reporter.logStep(`Validated value of ${fieldname} contains: '${value}'`)
+    async assertToHaveValueContaining(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string, fieldname?: string) {
+        await expect(element).toHaveValueContaining(value);
+        addLog(`Validated value of ${fieldname} contains: '${value}'`)
     }
 
-    assertToEqual(element:string, value:string) {
+    assertToEqual(element: string, value: string) {
         expect(element).toEqual(value)
-        Reporter.logStep(`Validated equal to: '${value}'`)
+        addLog(`Validated equal to: '${value}'`)
     }
 
-    assertToEqualInt(actual:number, expected:number) {
+    assertToEqualInt(actual: number, expected: number) {
         expect(actual).toEqual(expected)
-        Reporter.logStep(`Validated equal to: '${actual}'`)
+        addLog(`Validated equal to: '${actual}'`)
     }
 }
 export default new AssertionUtils()

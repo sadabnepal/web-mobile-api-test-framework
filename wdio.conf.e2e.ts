@@ -2,13 +2,12 @@ export const config: WebdriverIO.Config = {
     // ====================
     // Runner Configuration
     // ====================
-    runner: 'local',
 
     // ==================
     // Specify Test Files
     // ==================
     specs: [
-        './specs/features/**/*.feature'
+        './src/tests/cucumber/features/**/*.feature'
     ],
     exclude: [],
 
@@ -16,19 +15,19 @@ export const config: WebdriverIO.Config = {
     // Capabilities
     // ============
     maxInstances: 4,
-    capabilities: [{
-        maxInstances: 2,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    }],
+    capabilities: [
+        {
+            maxInstances: 2,
+            browserName: 'chrome',
+            acceptInsecureCerts: true
+        }
+    ],
 
     // ===================
     // Test Configurations
     // ===================
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     bail: 0,
     baseUrl: 'http://localhost',
     waitforTimeout: 10000,
@@ -41,7 +40,7 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDeferred: false,
     reporters: [
         [
-            'allure', 
+            'allure',
             {
                 outputDir: './reports/allure-results',
                 disableWebdriverStepsReporting: true,
@@ -52,7 +51,8 @@ export const config: WebdriverIO.Config = {
     ],
 
     cucumberOpts: {
-        require: ['./specs/steps/*.ts'],
+        retry: 0,
+        require: ['./src/tests/cucumber/steps/*.ts'],
         backtrace: false,
         requireModule: [],
         dryRun: false,
@@ -66,7 +66,7 @@ export const config: WebdriverIO.Config = {
         timeout: 60000,
         ignoreUndefinedDefinitions: false
     },
-    
+
     //
     // =====
     // Hooks
@@ -136,7 +136,10 @@ export const config: WebdriverIO.Config = {
     /**
      * Runs after a Cucumber step
      */
-    afterStep: function (step, context) {
+    afterStep: async function (step, scenrio, result, context) {
+        if (!result.passed) {
+            await browser.takeScreenshot();
+        }
     },
     /**
      * Runs after a Cucumber scenario
@@ -148,7 +151,7 @@ export const config: WebdriverIO.Config = {
      */
     // afterFeature: function (uri, feature) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
