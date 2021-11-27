@@ -96,7 +96,7 @@ BDD allure: mochawesome-report/mochawesome-report.html
 ### Manager browser driver:
 Usually in corporate network exe files download from external sites are blocked.
 When we try to download the drivers it might fail, in that case we can maintain drivers
-locally and install as custome path.
+locally and install as custom path.
 ```bash
 Download the latest driver from 'https://chromedriver.chromium.org/downloads'
 Place the the 'chromedriver_win32.zip' file inside src/executables/drivers 
