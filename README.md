@@ -81,7 +81,9 @@ BDD allure: mochawesome-report/mochawesome-report.html
 |   │       |      └───steps
 |   │       │             └───HerokuAppLogin.steps.ts
 |   │       └───mocha
-|   │              └───HerokuAppLogin.spec.ts   
+|   │              └───HerokuAppLogin.spec.ts
+|   ├───types
+|   │       └───customElement.d.ts
 |   └───Utils
 |           ├───assertionUtils.ts
 |           ├───reporterUtil.ts
