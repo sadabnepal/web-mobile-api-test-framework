@@ -62,6 +62,8 @@ BDD allure: mochawesome-report/mochawesome-report.html
 ```
 ├───src
 |   ├───config
+|   │  	    ├───BDDCustomConfig.ts
+|   │       └───MochaCustomConfig.ts
 |   ├───executables
 |   │  	    ├───drivers
 |   │       └───installchromedriver.bat
