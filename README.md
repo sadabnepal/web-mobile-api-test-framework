@@ -7,11 +7,11 @@
 <h2 align="center"> Test Automation Framework </h2>
 This framework is using WebdriverI/O as testing tool, TypeScript as programming language, Cucumber and Mocha as Framework
 
-### Requirements
+### Requirements:
 -   node >= 12.xx.xx - [Install NodeJs](https://nodejs.org/en/download/)
 -   Visual Studio Code - [Click here to download](https://code.visualstudio.com/download)
 
-### Getting Started
+### Getting Started:
 Clone Repository
 ```bash
 1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid.git
@@ -46,7 +46,7 @@ mocha: allure-report (open in defult browser)
 BDD allure: mochawesome-report/mochawesome-report.html
 ```
 
-### Key Features
+### Key Features:
 	- WebdriverIO (v7 async)
 	- TypeScript
 	- Mocha and Cucumber BDD framework
@@ -58,7 +58,7 @@ BDD allure: mochawesome-report/mochawesome-report.html
 	- Screenshot in report for failed tests
     - Download chromedriver from local path (if needed)
 
-### Folder Structure
+### Folder Structure:
 ```
 ├───src
 |   ├───config
@@ -93,7 +93,10 @@ BDD allure: mochawesome-report/mochawesome-report.html
 └───wdio.conf.js
 ```
 
-### Manager driver in local project (if fails to download from external site):
+### Manager browser driver:
+Usually in corporate network exe files download from external sites are blocked.
+When we try to download the drivers it might fail, in that case we can maintain drivers
+locally and install as custome path.
 ```bash
 Download the latest driver from 'https://chromedriver.chromium.org/downloads'
 Place the the 'chromedriver_win32.zip' file inside src/executables/drivers 
