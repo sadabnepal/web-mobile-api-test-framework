@@ -57,6 +57,7 @@ BDD allure: mochawesome-report/mochawesome-report.html
 	- Retry failed test
 	- Screenshot in report for failed tests
     - Download chromedriver from local path (if needed)
+	- Set Browser config, Instance, Services from command line 
 
 ### Folder Structure:
 ```

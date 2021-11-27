@@ -1,6 +1,6 @@
-import { ChainablePromiseElement } from 'webdriverio';
+import { WebdriverIOElement } from '../types/customElement';
 
-export const waitForElementToBeDisplayed = async (element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, waitTime?: number) => {
+export const waitForElementToBeDisplayed = async (element: WebdriverIOElement, waitTime?: number) => {
     if (waitTime) {
         await element.waitForDisplayed({ timeout: waitTime });
     } else {
@@ -8,6 +8,6 @@ export const waitForElementToBeDisplayed = async (element: ChainablePromiseEleme
     }
 }
 
-export const waitUntilTextLoaded = async (element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, expectedText: string) => {
+export const waitUntilTextLoaded = async (element: WebdriverIOElement, expectedText: string) => {
     await element.waitUntil(async () => await element.getText() === expectedText, { timeout: 10000, interval: 100 });
 }

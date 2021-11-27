@@ -1,29 +1,29 @@
-import { ChainablePromiseElement, ChainablePromiseArray, ElementArray } from 'webdriverio';
+import { WebdriverIOElement, WebdriverIOElements } from '../types/customElement';
 import { addLog } from "./reporterUtil";
 
 class AssertionUtils {
 
-    async assertToHaveText(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string) {
+    async assertToHaveText(element: WebdriverIOElement, value: string) {
         await expect(element).toHaveText(value);
         addLog(`Validated text: '${value}'`)
     }
 
-    async assertTextContaining(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string) {
+    async assertTextContaining(element: WebdriverIOElement, value: string) {
         await expect(element).toHaveTextContaining(value);
         addLog(`Validated text contains '${value}'`)
     }
 
-    async assertToBeDisplayed(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, fieldname?: string) {
+    async assertToBeDisplayed(element: WebdriverIOElement, fieldname?: string) {
         await expect(element).toBeDisplayed();
         if (fieldname != undefined) { addLog(`'${fieldname}' is displayed`) }
     }
 
-    async assertNoToBeDisplayed(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, fieldname?: string) {
+    async assertNoToBeDisplayed(element: WebdriverIOElement, fieldname?: string) {
         await expect(element).not.toBeDisplayed();
         if (fieldname != undefined) { addLog(`'${fieldname}' is not displayed`) }
     }
 
-    async assertToExists(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, fieldname?: string) {
+    async assertToExists(element: WebdriverIOElement, fieldname?: string) {
         await expect(element).toExist();
         if (fieldname != undefined) { addLog(`'${fieldname}' exists`) }
     }
@@ -43,17 +43,17 @@ class AssertionUtils {
         if (logMsg) { addLog(logMsg) }
     }
 
-    async assertToHaveLength(element: ChainablePromiseArray<ElementArray>, count: number) {
+    async assertToHaveLength(element: WebdriverIOElements, count: number) {
         await expect(element).toHaveLength(count)
         addLog(`Validated count is: ${count}`)
     }
 
-    async assertToHaveValue(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string, fieldname?: string) {
+    async assertToHaveValue(element: WebdriverIOElement, value: string, fieldname?: string) {
         await expect(element).toHaveValue(value);
         addLog(`Validated value of ${fieldname} : '${value}'`)
     }
 
-    async assertToHaveValueContaining(element: ChainablePromiseElement<Promise<WebdriverIO.Element>>, value: string, fieldname?: string) {
+    async assertToHaveValueContaining(element: WebdriverIOElement, value: string, fieldname?: string) {
         await expect(element).toHaveValueContaining(value);
         addLog(`Validated value of ${fieldname} contains: '${value}'`)
     }
