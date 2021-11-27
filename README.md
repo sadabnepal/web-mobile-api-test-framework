@@ -23,52 +23,79 @@ Install the dependencies:
 npm install
 ```
 
-Run tests:
+Run mocha tests:
 ```bash
-mocha test: npm test
-BDD test: npm run test-e2e
+npm test
+```
+Run cucumber tests:
+```bash
+npm run test-e2e
+```
+Generate allure report (for cucumber bdd):
+```bash
+npm run report:allure
+```
+Generate mocha report (for mocha):
+```bash
+npm run report:mocha
 ```
 
-Generate report:
-```bash
-allure report: npm run report
-mochawesome: npm run mochawesome
+Report Paths:
 ```
+mocha: allure-report (open in defult browser)
+BDD allure: mochawesome-report/mochawesome-report.html
+```
+
+### Key Features
+	- WebdriverIO (v7 async)
+	- TypeScript
+	- Mocha and Cucumber BDD framework
+	- Page Object Design pattern
+	- Mochawesome and Allure Report
+	- Parallel execution
+	- Cross browser testing
+	- Retry failed test
+	- Screenshot in report for failed tests
+    - Download chromedriver from local path (if needed)
 
 ### Folder Structure
 ```
 ├───src
-|   ├───constants
-|   │       └───accounts.ts
-│   ├───enums
-|   │       └───WaitEnums.ts
-|   ├───features
-|   │       └───TC01_CreateAccount.feature
-|   │      
+|   ├───config
+|   ├───executables
+|   │  	    ├───drivers
+|   │       └───installchromedriver.bat
 |   ├───pages
-|   │  	    ├───AuthenticationPahe.ts
-|   │	    ├───BasePage.ts
-|   │	    ├───createAccountPage.ts
-|   │	    └───homepage.ts
-|   ├───stepdef
-|   │       └───TC01_CreateAccount.spec.feature
-|   │      
-|   └───testdata
-|           └───SignUp.json
-├───Utils
-|       ├───Utilities.ts
-|       └───WaitUtils.ts
+|   │  	    ├───login.page.ts
+|   │	    ├───page.ts
+|   │	    └───secure.page.ts
+|   ├───static
+|   │       └───loginConstants.ts
+|   ├───tests
+|   │  	    ├───cucumber
+|   |       |      ├───features
+|   │       │      │      └───HerokuAppLogin.feature
+|   │       |      └───steps
+|   │       │             └───HerokuAppLogin.steps.ts
+|   │       └───mocha
+|   │              └───HerokuAppLogin.spec.ts   
+|   └───Utils
+|           ├───assertionUtils.ts
+|           ├───reporterUtil.ts
+|           └───waitUtils.ts
+├───.gitignore
+├───LICENSE
+├───package-lock.json
 ├───package.json
 ├───README.md
 ├───tsconfig.json
+├───wdio.conf.e2e.ts
 └───wdio.conf.js
 ```
 
-### Inside Corporate network If fails to download driver files then:
+### Manager driver in local project (if fails to download from external site):
 ```bash
-Download the latest driver from `https://chromedriver.chromium.org/downloads`
-Delete the existing `chromedriver_win32.zip` file and add newly downloaded zip file 
-Run `installchromedriver.bat` command from cmd or double click on bat file
-It will download the driver from `drivers-->chromedriver_win32.zip`
-
+Download the latest driver from 'https://chromedriver.chromium.org/downloads'
+Place the the 'chromedriver_win32.zip' file inside src/executables/drivers 
+execute 'installchromedriver.bat' file to dowload the driver from placed folder
 ```
