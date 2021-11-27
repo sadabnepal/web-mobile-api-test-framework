@@ -1,3 +1,4 @@
 node_modules/
 allure-report/
 reports/
+mochawesome-report/
