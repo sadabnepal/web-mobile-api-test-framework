@@ -1,5 +1,6 @@
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
 import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/BDDCustomConfig";
+import { CUCUMBER_OUTPUT_DIR } from './src/static/pathConstants';
 
 export const config: WebdriverIO.Config = {
     // ====================
@@ -37,7 +38,7 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDeferred: false,
     reporters: ['spec',
         ['cucumberjs-json', {
-            jsonFolder: 'reports/cucumber/',
+            jsonFolder: CUCUMBER_OUTPUT_DIR,
             language: 'en',
         }]
     ],

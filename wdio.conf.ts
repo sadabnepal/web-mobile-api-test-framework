@@ -1,4 +1,5 @@
 import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/MochaCustomConfig";
+import { MOCHA_OUTPUT_DIR } from "./src/static/pathConstants";
 
 export const config: WebdriverIO.Config = {
     //
@@ -38,7 +39,7 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDeferred: false,
     reporters: ['spec',
         ['mochawesome', {
-            outputDir: 'reports/mocha/',
+            outputDir: MOCHA_OUTPUT_DIR,
             outputFileFormat: (opts: any) => {
                 return `results-${opts.cid}.${opts.capabilities.browserName}.json`
             }
@@ -177,7 +178,7 @@ export const config: WebdriverIO.Config = {
      */
     onComplete: function (exitCode, config, capabilities, results) {
         const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
-        mergeResults('./reports/mocha', "results-*");
+        mergeResults(MOCHA_OUTPUT_DIR, "results-*");
     },
     /**
     * Gets executed when a refresh happens.
