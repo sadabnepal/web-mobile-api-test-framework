@@ -33,7 +33,7 @@ jobs:
         node-version: 14.17.6
         cache: 'npm'
     - run: npm install
-    - run: test:e2e
+    - run: npm run test:e2e
 
 #     - name: Generate Cucumber HTML Report
 #       if: always()
