@@ -1,4 +1,6 @@
 node_modules/
-allure-report/
-reports/
+reports/json/
+reports/cucumber/
+reports/screenshots/
+reports/mocha/
 mochawesome-report/

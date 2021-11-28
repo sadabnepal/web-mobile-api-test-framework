@@ -1,3 +1,4 @@
+import cucumberJson from 'wdio-cucumberjs-json-reporter';
 import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/BDDCustomConfig";
 
 export const config: WebdriverIO.Config = {
@@ -35,15 +36,10 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',
-        [
-            'allure',
-            {
-                outputDir: './reports/allure-results',
-                disableWebdriverStepsReporting: true,
-                disableWebdriverScreenshotsReporting: false,
-                useCucumberStepReporter: true,
-            },
-        ]
+        ['cucumberjs-json', {
+            jsonFolder: 'reports/cucumber/',
+            language: 'en',
+        }]
     ],
 
     cucumberOpts: {
@@ -134,7 +130,7 @@ export const config: WebdriverIO.Config = {
      */
     afterStep: async function (step, scenrio, result, context) {
         if (!result.passed) {
-            await browser.takeScreenshot();
+            cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
         }
     },
     /**
