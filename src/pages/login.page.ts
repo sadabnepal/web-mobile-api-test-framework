@@ -1,3 +1,4 @@
+import { waitAndclick, waitAndEnterData } from '../utils/commands';
 import Page from './page';
 
 class LoginPage extends Page {
@@ -7,9 +8,9 @@ class LoginPage extends Page {
     get btnSubmit() { return $('button[type="submit"]') }
 
     async login(username: string, password: string) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+        await waitAndEnterData(this.inputUsername, username);
+        await waitAndEnterData(this.inputPassword, password);
+        await waitAndclick(this.btnSubmit);
     }
 
     async openApp() {
