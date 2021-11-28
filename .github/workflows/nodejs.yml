@@ -1,8 +1,6 @@
 name: WebDriverIOTypeScript Test Automation Framework CI 
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -20,6 +18,14 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run test
+    - run: npm run report:mocha:ci
+
+    - name: Generate Mochawesome Report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: MochawesomeReport
+        path: mochawesome-report
 
   CucumberBDDTests:
     runs-on: ubuntu-latest
@@ -34,10 +40,11 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run test:e2e
+    - run: npm run report:cucumber
 
-#     - name: Generate Cucumber HTML Report
-#       if: always()
-#       uses: actions/upload-artifact@v2
-#       with:
-#         name: CucumberHTMLReport
-#         path: reports/html
+    - name: Generate Cucumber HTML Report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: CucumberHTMLReport
+        path: reports/cucumber/cucumber-report.html
