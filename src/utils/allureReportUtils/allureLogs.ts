@@ -1,5 +1,8 @@
 import allure from '@wdio/allure-reporter'
 
+/*
+add log steps to console and allure report
+*/
 export const addLog = (step: string) => {
   allure.addStep(step)
   console.log('STEP', step)

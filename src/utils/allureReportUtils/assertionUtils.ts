@@ -1,6 +1,9 @@
-import { WebdriverIOElement, WebdriverIOElements } from '../types/customElement';
-import { addLog } from "./reporterUtil";
+import { WebdriverIOElement, WebdriverIOElements } from '../../types/customElement';
+import { addLog } from "./allureLogs";
 
+/*
+Use this wrapper methods only when you want to add assertion logs in allure report
+*/
 class AssertionUtils {
 
     async assertToHaveText(element: WebdriverIOElement, value: string) {
