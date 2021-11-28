@@ -18,7 +18,7 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run test
-    - run: npm run report:mocha
+    - run: npm run report:mocha:ci
 
     - name: Generate Mochawesome Report
       if: always()
