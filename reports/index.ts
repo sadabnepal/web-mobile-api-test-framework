@@ -15,8 +15,8 @@ let options: Options = {
     metadata: {
         "App Version": "0.3.2",
         "Test Environment": "STAGING",
-        "Browser": "Chrome  96",
-        "Platform": "Windows 10",
+        "Browser": "Chrome 96",
+        "Platform": process.platform,
         "Parallel": "Scenarios",
         "Executed": "Local"
     }
