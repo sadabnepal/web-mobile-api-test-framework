@@ -8,7 +8,7 @@
     "report:mocha": "marge ./reports/mocha/wdio-ma-merged.json && move mochawesome-report.html ./mochawesome-report",
     "report:mocha:ci": "marge ./reports/mocha/wdio-ma-merged.json",
     "test:e2e": "wdio run wdio.conf.e2e.ts",
-    "report:cucumber": "node reports/index.js"
+    "report:cucumber": "ts-node reports/index.ts"
   },
   "repository": {
     "type": "git",

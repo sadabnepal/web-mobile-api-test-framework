@@ -1,6 +1,7 @@
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
 import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/BDDCustomConfig";
-import { CUCUMBER_OUTPUT_DIR } from './src/static/pathConstants';
+import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from './src/static/pathConstants';
+import { deleteDirectory } from './src/utils/fileutils';
 
 export const config: WebdriverIO.Config = {
     // ====================
@@ -38,7 +39,7 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDeferred: false,
     reporters: ['spec',
         ['cucumberjs-json', {
-            jsonFolder: CUCUMBER_OUTPUT_DIR,
+            jsonFolder: CUCUMBER_JSON_REPORT_DIR,
             language: 'en',
         }]
     ],
@@ -73,8 +74,9 @@ export const config: WebdriverIO.Config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+        deleteDirectory(CUCUMBER_REPORT_DIR);
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
