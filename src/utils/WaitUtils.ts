@@ -1,4 +1,4 @@
-import { WebdriverIOElement } from '../types/customElement';
+import { WebdriverIOElement } from '../types/webelements';
 
 export const waitForElementToBeDisplayed = async (element: WebdriverIOElement, waitTime?: number) => {
     await element.waitForDisplayed({ timeout: waitTime ? waitTime : 10000 });

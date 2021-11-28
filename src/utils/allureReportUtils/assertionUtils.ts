@@ -1,4 +1,4 @@
-import { WebdriverIOElement, WebdriverIOElements } from '../../types/customElement';
+import { WebdriverIOElement, WebdriverIOElements } from '../../types/webelements';
 import { addLog } from "./allureLogs";
 
 /*

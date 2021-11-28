@@ -1,4 +1,4 @@
-import { WebdriverIOElement } from "../types/customElement"
+import { WebdriverIOElement } from "../types/webelements"
 
 export const waitAndclick = async (element: WebdriverIOElement, waitTime?: number) => {
     await element.waitForClickable({ timeout: waitTime ? waitTime : 10000 })
