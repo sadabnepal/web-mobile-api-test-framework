@@ -29,7 +29,7 @@ npm test
 ```
 Run cucumber tests:
 ```bash
-npm run test-e2e
+npm run test:e2e
 ```
 Generate allure report (for cucumber bdd):
 ```bash
