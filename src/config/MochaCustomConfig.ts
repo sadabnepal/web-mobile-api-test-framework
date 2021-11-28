@@ -28,6 +28,6 @@ export const retryOnFailure = (): number => {
     if (process.env.RETRY) {
         return Number(process.env.RETRY)
     } else {
-        return 1;
+        return 0;
     }
 }
