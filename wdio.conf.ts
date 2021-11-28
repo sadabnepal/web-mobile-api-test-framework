@@ -1,5 +1,6 @@
 import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/MochaCustomConfig";
 import { MOCHA_OUTPUT_DIR } from "./src/static/pathConstants";
+import { deleteDirectory } from "./src/utils/fileutils";
 
 export const config: WebdriverIO.Config = {
     //
@@ -66,8 +67,10 @@ export const config: WebdriverIO.Config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+        deleteDirectory(MOCHA_OUTPUT_DIR);
+        deleteDirectory('mochawesome-report');
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
