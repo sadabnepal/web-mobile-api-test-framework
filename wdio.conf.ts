@@ -36,7 +36,7 @@ export const config: WebdriverIO.Config = {
     specFileRetries: retryOnFailure(),
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
-    reporters: [
+    reporters: ['spec',
         ['mochawesome', {
             outputDir: 'reports/json/',
             outputFileFormat: (opts: any) => {

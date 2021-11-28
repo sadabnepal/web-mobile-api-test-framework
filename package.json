@@ -27,6 +27,7 @@
     "@wdio/local-runner": "^7.16.10",
     "@wdio/mocha-framework": "^7.16.6",
     "@wdio/selenium-standalone-service": "^7.16.6",
+    "@wdio/spec-reporter": "^7.16.9",
     "allure-commandline": "^2.13.8",
     "mochawesome-report-generator": "^3.1.5",
     "ts-node": "^10.4.0",
