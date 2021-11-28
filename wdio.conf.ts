@@ -38,7 +38,7 @@ export const config: WebdriverIO.Config = {
     specFileRetriesDeferred: false,
     reporters: ['spec',
         ['mochawesome', {
-            outputDir: 'reports/json/',
+            outputDir: 'reports/mocha/',
             outputFileFormat: (opts: any) => {
                 return `results-${opts.cid}.${opts.capabilities.browserName}.json`
             }
@@ -177,7 +177,7 @@ export const config: WebdriverIO.Config = {
      */
     onComplete: function (exitCode, config, capabilities, results) {
         const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
-        mergeResults('./reports/json', "results-*");
+        mergeResults('./reports/mocha', "results-*");
     },
     /**
     * Gets executed when a refresh happens.

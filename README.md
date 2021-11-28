@@ -27,40 +27,49 @@ Run mocha tests:
 ```bash
 npm test
 ```
-Run cucumber tests:
-```bash
-npm run test:e2e
-```
-Generate allure report (for cucumber bdd):
-```bash
-npm run report:allure
-```
 Generate mocha report (for mocha):
 ```bash
 npm run report:mocha
 ```
 
+Run cucumber tests:
+```bash
+npm run test:e2e
+```
+Generate cucumber html (for cucumber bdd):
+```bash
+npm run report:cucumber
+```
+
 Report Paths:
 ```
-mocha: allure-report (open in defult browser)
-BDD allure: mochawesome-report/mochawesome-report.html
+mocha: mochawesome-report/mochawesome-report.html
+cucumber: reports/cucumber/cucumber-report.html
 ```
 
 ### Key Features:
 	- WebdriverIO (v7 async)
 	- TypeScript
-	- Mocha and Cucumber BDD framework
-	- Page Object Design pattern
-	- Mochawesome and Allure Report
+	- Retry failed test
 	- Parallel execution
 	- Cross browser testing
-	- Retry failed test
+	- Page Object Design pattern
+	- Mocha and Cucumber BDD framework
+	- Mochawesome and Cucumber HTML Report
 	- Screenshot in report for failed tests
     - Download chromedriver from local path (if needed)
 	- Set Browser config, Instance, Services from command line 
 
 ### Folder Structure:
 ```
+├───.github
+|      └───workflows
+|     	      └───nodejs.yml
+├───.vscode
+|       ├───extensions.json
+|       └───settings.json
+├───reports
+|       └───index.js
 ├───src
 |   ├───config
 |   │  	    ├───BDDCustomConfig.ts
@@ -85,8 +94,7 @@ BDD allure: mochawesome-report/mochawesome-report.html
 |   ├───types
 |   │       └───customElement.d.ts
 |   └───Utils
-|           ├───assertionUtils.ts
-|           ├───reporterUtil.ts
+|           ├───commands.ts
 |           └───waitUtils.ts
 ├───.gitignore
 ├───LICENSE
@@ -99,7 +107,7 @@ BDD allure: mochawesome-report/mochawesome-report.html
 ```
 
 ### Manager browser driver:
-Usually in corporate network exe files download from external sites are blocked.
+Usually inside corporate network exe files download from external sites are blocked.
 When we try to download the drivers it might fail, in that case we can maintain drivers
 locally and install as custom path.
 ```bash
