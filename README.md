@@ -69,7 +69,7 @@ cucumber: reports/cucumber/cucumber-report.html
 |       ├───extensions.json
 |       └───settings.json
 ├───reports
-|       └───index.js
+|       └───index.ts
 ├───src
 |   ├───config
 |   │  	    ├───BDDCustomConfig.ts
@@ -81,8 +81,11 @@ cucumber: reports/cucumber/cucumber-report.html
 |   │  	    ├───login.page.ts
 |   │	    ├───page.ts
 |   │	    └───secure.page.ts
+|   ├───resources
+|   │       └───logindata.ts
 |   ├───static
-|   │       └───loginConstants.ts
+|   │       ├───loginConstants.ts
+|   │       └───pathConstants.ts
 |   ├───tests
 |   │  	    ├───cucumber
 |   |       |      ├───features
@@ -92,9 +95,11 @@ cucumber: reports/cucumber/cucumber-report.html
 |   │       └───mocha
 |   │              └───HerokuAppLogin.spec.ts
 |   ├───types
-|   │       └───customElement.d.ts
+|   │       └───webelements.d.ts
 |   └───Utils
+|           ├───base64Utils.ts
 |           ├───commands.ts
+|           ├───fileutils.ts
 |           └───waitUtils.ts
 ├───.gitignore
 ├───LICENSE
