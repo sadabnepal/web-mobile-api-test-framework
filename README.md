@@ -47,18 +47,20 @@ mocha: mochawesome-report/mochawesome-report.html
 cucumber: reports/cucumber/cucumber-report.html
 ```
 
-### Key Features:
-	- WebdriverIO (v7 async)
-	- TypeScript
-	- Retry failed test
-	- Parallel execution
-	- Cross browser testing
-	- Page Object Design pattern
-	- Mocha and Cucumber BDD framework
-	- Mochawesome and Cucumber HTML Report
-	- Screenshot in report for failed tests
-    - Download chromedriver from local path (if needed)
-	- Set Browser config, Instance, Services from command line 
+### Features Covered:
+| Feature                               | Status    |
+| ------------------------------------- | :-------: |
+| Retry failed test                     | Completed |
+| Parallel execution                    | Completed |
+| Cross browser testing                 | Completed |
+| Page Object Design pattern            | Completed |
+| Screenshot in report for failed tests | Completed |
+| Mocha and Cucumber BDD framework      | Completed |
+| Set browser configs from command line | Completed |
+| Download chromedriver from local path | Completed |
+| API Testing using SuperTest           | In  Progress |
+| Add more test examples                | TODO         |
+| Database connection manager           | TODO         |
 
 ### Folder Structure:
 ```
@@ -108,7 +110,7 @@ cucumber: reports/cucumber/cucumber-report.html
 ├───README.md
 ├───tsconfig.json
 ├───wdio.conf.e2e.ts
-└───wdio.conf.js
+└───wdio.conf.ts
 ```
 
 ### Manager browser driver:
