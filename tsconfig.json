@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "./built",
-        // "baseUrl": ".",
+        "baseUrl": ".",
         "allowJs": false,
         "resolveJsonModule": true,
         /* Basic Options */

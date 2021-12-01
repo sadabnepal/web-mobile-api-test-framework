@@ -40,11 +40,16 @@ Generate cucumber html (for cucumber bdd):
 ```bash
 npm run report:cucumber
 ```
+Run api tests:
+```bash
+npm run test:api
+```
 
 Report Paths:
 ```
 mocha: mochawesome-report/mochawesome-report.html
 cucumber: reports/cucumber/cucumber-report.html
+api: reports/api/mochawesome.html
 ```
 
 ### Features Covered:
@@ -58,9 +63,9 @@ cucumber: reports/cucumber/cucumber-report.html
 | Mocha and Cucumber BDD framework      | Completed |
 | Set browser configs from command line | Completed |
 | Download chromedriver from local path | Completed |
-| API Testing using SuperTest           | In  Progress |
-| Add more test examples                | TODO         |
-| Database connection manager           | TODO         |
+| API Testing using SuperTest           | Completed |
+| Add more test examples                | TODO      |
+| Database connection manager           | TODO      |
 
 ### Folder Structure:
 ```
@@ -73,6 +78,12 @@ cucumber: reports/cucumber/cucumber-report.html
 ├───reports
 |       └───index.ts
 ├───src
+|   ├──────api
+|   │       ├───config
+|   │       ├───resources
+|   │       ├───services
+|   │       ├───test
+|   │       └───utils
 |   ├───config
 |   │  	    ├───BDDCustomConfig.ts
 |   │       └───MochaCustomConfig.ts

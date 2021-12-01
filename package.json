@@ -8,7 +8,8 @@
     "report:mocha": "marge ./reports/mocha/wdio-ma-merged.json && move mochawesome-report.html ./mochawesome-report",
     "report:mocha:ci": "marge ./reports/mocha/wdio-ma-merged.json",
     "test:e2e": "wdio run wdio.conf.e2e.ts",
-    "report:cucumber": "ts-node reports/index.ts"
+    "report:cucumber": "ts-node reports/index.ts",
+    "test:api": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=reports/api -r tsconfig-paths/register -r ts-node/register src/api/test/*.ts"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
   },
   "homepage": "https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid#readme",
   "devDependencies": {
+    "@types/chai": "^4.2.22",
     "@types/faker": "^5.5.9",
+    "@types/supertest": "^2.0.11",
     "@wdio/cli": "^7.16.10",
     "@wdio/cucumber-framework": "^7.16.6",
     "@wdio/junit-reporter": "^7.16.6",
@@ -29,10 +32,14 @@
     "@wdio/mocha-framework": "^7.16.6",
     "@wdio/selenium-standalone-service": "^7.16.6",
     "@wdio/spec-reporter": "^7.16.9",
+    "chai": "^4.3.4",
     "cucumber-html-reporter": "^5.5.0",
     "faker": "^5.5.3",
+    "mochawesome": "^7.0.1",
     "mochawesome-report-generator": "^3.1.5",
+    "supertest": "^6.1.6",
     "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
     "typescript": "^4.5.2",
     "wdio-cucumberjs-json-reporter": "^4.1.4",
     "wdio-mochawesome-reporter": "^4.0.0"

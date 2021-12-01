@@ -3,4 +3,5 @@ reports/json/
 reports/cucumber/
 reports/screenshots/
 reports/mocha/
+reports/api/
 mochawesome-report/
