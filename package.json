@@ -4,6 +4,7 @@
   "description": "Boilerplate project using webdriverio with mocha and BDD hybrid framework",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node runner.ts",
     "test": "wdio run wdio.conf.ts",
     "report:mocha": "marge ./reports/mocha/wdio-ma-merged.json && move mochawesome-report.html ./mochawesome-report",
     "report:mocha:ci": "marge ./reports/mocha/wdio-ma-merged.json",
@@ -43,5 +44,8 @@
     "typescript": "^4.5.2",
     "wdio-cucumberjs-json-reporter": "^4.1.4",
     "wdio-mochawesome-reporter": "^4.0.0"
+  },
+  "dependencies": {
+    "enquirer": "^2.3.6"
   }
 }
