@@ -48,7 +48,7 @@ export const config: WebdriverIO.Config = {
         retry: 0,
         require: ['./src/tests/cucumber/steps/*.ts'],
         backtrace: false,
-        requireModule: [],
+        requireModule: ['tsconfig-paths/register'],
         dryRun: false,
         failFast: false,
         format: ['pretty'],
