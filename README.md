@@ -1,11 +1,4 @@
-<p align="center">
-    <a href="https://webdriver.io/">
-        <img alt="WebdriverIO" src="https://webdriver.io/assets/images/robot-3677788dd63849c56aa5cb3f332b12d5.svg" width="100">
-    </a>
-</p>
-
-<h2 align="center"> Test Automation Framework </h2>
-This framework is using WebdriverI/O as testing tool, TypeScript as programming language, Cucumber and Mocha as Framework
+<h2 align="center"> Web and API Test Automation Framework </h2>
 
 ### Requirements:
 -   node >= 12.xx.xx - [Install NodeJs](https://nodejs.org/en/download/)
@@ -23,24 +16,31 @@ Install the dependencies:
 npm install
 ```
 
-Run mocha tests:
+Select framework options from interactive CLI
+```
+npm start
+```
+Above command will start wizard with option to select frammework. Based on use selection, either of the below test execution will start. User also can target specific framework without using the interactive CLI (see next section of commands for each module). Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
+Framework options : | api | mocha | cucumber |
+<br><br>
+
+Run mocha tests without using interactive CLI options:
 ```bash
 npm test
 ```
-Generate mocha report (for mocha):
+Generate mocha report:
 ```bash
 npm run report:mocha
 ```
-
-Run cucumber tests:
+Run cucumber tests without using interactive CLI options:
 ```bash
 npm run test:e2e
 ```
-Generate cucumber html (for cucumber bdd):
+Generate cucumber html:
 ```bash
 npm run report:cucumber
 ```
-Run api tests:
+Run api tests without using interactive CLI options:
 ```bash
 npm run test:api
 ```
@@ -53,10 +53,10 @@ api: reports/api/mochawesome.html
 ```
 
 ### Features Covered:
-| Feature                               | Status    |
+| Features(inbuilt & custom implemented)| Status    |
 | ------------------------------------- | :-------: |
-| Retry failed test                     | Completed |
-| Parallel execution                    | Completed |
+| Retry failed test                     | Enabled   |
+| Parallel execution                    | Enabled   |
 | Cross browser testing                 | Completed |
 | Page Object Design pattern            | Completed |
 | Screenshot in report for failed tests | Completed |
@@ -134,6 +134,14 @@ Download the latest driver from 'https://chromedriver.chromium.org/downloads'
 Place the the 'chromedriver_win32.zip' file inside src/executables/drivers 
 execute 'installchromedriver.bat' file to dowload the driver from placed folder
 ```
+### Tech Stacks:
+ - [WebdriverI/O](https://webdriver.io/) : Next-gen browser and mobile automation test framework for Node.js
+ - [TypeScript](https://www.typescriptlang.org/) : Strongly typed programming language that builds on JavaScript.
+ - [Cucumber.io](https://cucumber.io/) : Testing framework that supports Behavior Driven Development (BDD).
+ - [expect-webdriverio](https://webdriver.io/docs/api/expect-webdriverio/) : WebdriverIO Assertion library inspired by expect
+ - [SuperTest](https://www.npmjs.com/package/supertest) : Node package for API testing.
+ - [Chai Assertion](https://www.chaijs.com/) : BDD / TDD assertion library for node and the browser.
+ - [enquirer](https://www.npmjs.com/package/enquirer) : Stylish CLI prompts that are user-friendly, intuitive and easy to create.
 
 ### Sample Report
 ![SampleReports](https://user-images.githubusercontent.com/65847528/144699948-507b314e-9639-450c-b127-fb9b0721a2d8.gif)
