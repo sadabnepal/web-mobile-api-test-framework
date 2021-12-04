@@ -125,7 +125,7 @@ api: reports/api/mochawesome.html
 └───wdio.conf.ts
 ```
 
-### Manager browser driver:
+### Manage browser driver:
 Usually inside corporate network exe files download from external sites are blocked.
 When we try to download the drivers it might fail, in that case we can maintain drivers
 locally and install as custom path.
@@ -134,3 +134,6 @@ Download the latest driver from 'https://chromedriver.chromium.org/downloads'
 Place the the 'chromedriver_win32.zip' file inside src/executables/drivers 
 execute 'installchromedriver.bat' file to dowload the driver from placed folder
 ```
+
+### Sample Report
+![SampleReports](https://user-images.githubusercontent.com/65847528/144699948-507b314e-9639-450c-b127-fb9b0721a2d8.gif)
