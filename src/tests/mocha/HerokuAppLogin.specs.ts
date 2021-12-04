@@ -1,7 +1,7 @@
-import LoginPage from '../../pages/login.page';
-import SecurePage from '../../pages/secure.page';
-import { herokuappLoginData } from '../../resources/logindata';
-import LoginConstants from '../../static/loginConstants';
+import LoginPage from 'src/pages/login.page';
+import SecurePage from 'src/pages/secure.page';
+import { herokuappLoginData } from 'src/resources/logindata';
+import LoginConstants from 'src/static/loginConstants';
 
 describe('Test herokuapp application login', () => {
 

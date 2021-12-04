@@ -61,10 +61,10 @@ api: reports/api/mochawesome.html
 | Page Object Design pattern            | Completed |
 | Screenshot in report for failed tests | Completed |
 | Mocha and Cucumber BDD framework      | Completed |
-| Set browser configs from command line | Completed |
 | Download chromedriver from local path | Completed |
 | API Testing using SuperTest           | Completed |
-| Add more test examples                | TODO      |
+| Set browser configs from command line | WIP       |
+| Add more test examples                | WIP       |
 | Database connection manager           | TODO      |
 
 ### Folder Structure:
@@ -106,6 +106,7 @@ api: reports/api/mochawesome.html
 |   │       |      └───steps
 |   │       │             └───HerokuAppLogin.steps.ts
 |   │       └───mocha
+|   │              ├───FrameShadowDom.specs.ts
 |   │              └───HerokuAppLogin.spec.ts
 |   ├───types
 |   │       └───webelements.d.ts

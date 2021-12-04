@@ -13,7 +13,7 @@ export const config: WebdriverIO.Config = {
     // Specify Test Files
     // ==================
     specs: [
-        './src/tests/mocha/**/*spec.ts'
+        './src/tests/mocha/**/*.specs.ts'
     ],
     exclude: [],
 
@@ -47,6 +47,7 @@ export const config: WebdriverIO.Config = {
         }]
     ],
     mochaOpts: {
+        compilers: ['tsconfig-paths/register'],
         ui: 'bdd',
         timeout: 60000,
         mochawesomeOpts: {
