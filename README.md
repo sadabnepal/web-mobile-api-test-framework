@@ -24,16 +24,25 @@ Install the dependencies:
 ```bash
 npm install
 ```
-
+### Running Tests
 Select framework options from interactive CLI
 ```
 npm start
 ```
-Above command will start wizard with option to select frammework. Based on use selection, either of the below test execution will start. User also can target specific framework without using the interactive CLI (see next section of commands for each module). Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
+Above command will start wizard with option to select frammework. Based on user selection default configuration will be overriden (feature implementation in progress) and either of the below test module will start. Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
 Framework options : | api | mocha | cucumber |
-<br><br>
+<br>
 
-Run mocha tests without using interactive CLI options:
+Default configurations for `mocha` and `cucumber bdd`:
+```
+Runmode: headless
+Service: selenium-standalone
+Browser: chrome
+Max browser instance: 1
+Retry on failure: 0
+```
+
+Run mocha tests with default configurations:
 ```bash
 npm test
 ```
@@ -41,7 +50,7 @@ Generate mocha report:
 ```bash
 npm run report:mocha
 ```
-Run cucumber tests without using interactive CLI options:
+Run cucumber tests with default configurations:
 ```bash
 npm run test:e2e
 ```
@@ -100,9 +109,6 @@ api: reports/api/mochawesome.html
 |   │  	    ├───drivers
 |   │       └───installchromedriver.bat
 |   ├───pages
-|   │  	    ├───login.page.ts
-|   │	    ├───page.ts
-|   │	    └───secure.page.ts
 |   ├───resources
 |   │       └───logindata.ts
 |   ├───static
@@ -111,12 +117,8 @@ api: reports/api/mochawesome.html
 |   ├───tests
 |   │  	    ├───cucumber
 |   |       |      ├───features
-|   │       │      │      └───HerokuAppLogin.feature
 |   │       |      └───steps
-|   │       │             └───HerokuAppLogin.steps.ts
 |   │       └───mocha
-|   │              ├───FrameShadowDom.specs.ts
-|   │              └───HerokuAppLogin.spec.ts
 |   ├───types
 |   │       └───webelements.d.ts
 |   └───Utils
@@ -129,6 +131,7 @@ api: reports/api/mochawesome.html
 ├───package-lock.json
 ├───package.json
 ├───README.md
+├───runner.ts
 ├───tsconfig.json
 ├───wdio.conf.e2e.ts
 └───wdio.conf.ts
