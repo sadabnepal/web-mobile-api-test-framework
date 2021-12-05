@@ -30,8 +30,8 @@ Select framework options from interactive CLI
 npm start
 ```
 Above command will start wizard with option to select frammework. Based on user selection default configuration will be overriden (feature implementation in progress) and either of the below test module will start. Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
-Framework options : | api | mocha | cucumber |
-<br>
+Framework options : | api | mocha | cucumber | <br>
+![CLI_DEMO](https://user-images.githubusercontent.com/65847528/144734571-7e1d6433-ef4c-456d-87a0-5e7bad812829.gif)
 
 Default configurations for `mocha` and `cucumber bdd`:
 ```
