@@ -88,36 +88,18 @@ api: reports/api/mochawesome.html
 ### Folder Structure:
 ```
 ├───.github
-|      └───workflows
-|     	      └───nodejs.yml
 ├───.vscode
-|       ├───extensions.json
-|       └───settings.json
 ├───reports
 |       └───index.ts
 ├───src
-|   ├──────api
-|   │       ├───config
-|   │       ├───resources
-|   │       ├───services
-|   │       ├───test
-|   │       └───utils
-|   ├───config
-|   │  	    ├───BDDCustomConfig.ts
-|   │       └───MochaCustomConfig.ts
+|   ├───api (api test and configs)
+|   ├───config (ui test cconfigs)
 |   ├───executables
-|   │  	    ├───drivers
-|   │       └───installchromedriver.bat
 |   ├───pages
 |   ├───resources
-|   │       └───logindata.ts
 |   ├───static
-|   │       ├───loginConstants.ts
-|   │       └───pathConstants.ts
 |   ├───tests
 |   │  	    ├───cucumber
-|   |       |      ├───features
-|   │       |      └───steps
 |   │       └───mocha
 |   ├───types
 |   │       └───webelements.d.ts
