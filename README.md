@@ -90,7 +90,6 @@ api: reports/api/mochawesome.html
 ├───.github
 ├───.vscode
 ├───reports
-|       └───index.ts
 ├───src
 |   ├───api (api test and configs)
 |   ├───config (ui test cconfigs)
