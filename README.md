@@ -10,8 +10,8 @@
 ![Expect-WebDriverIO](https://img.shields.io/badge/Expect-WebDriverIO-EA5906.svg?&style=for-the-badge&logo=WebdriverIO&logoColor=white)
 
 ### Requirements:
--   node >= 12.xx.xx - [Install NodeJs](https://nodejs.org/en/download/)
--   Visual Studio Code - [Click here to download](https://code.visualstudio.com/download)
+![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20>-%23339933?logo=npm) - [Install NodeJs](https://nodejs.org/en/download/) <br>
+![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code) - [Install VSCode](https://code.visualstudio.com/download)
 
 ### Getting Started:
 Clone Repository
