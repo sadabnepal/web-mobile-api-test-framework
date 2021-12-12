@@ -2,14 +2,14 @@ import { execSync } from 'child_process'
 
 const { prompt, Select, NumberPrompt, MultiSelect, List, Confirm } = require('enquirer');
 
-const frameworkRes = new Select({
+const TEST_MODULE = new Select({
     name: 'framework',
-    message: 'Which framework you want to run?',
+    message: 'Which test module you want to  run?',
     choices: ['api', 'mocha', 'cucumber']
 })
 
-export const configRunner = async () => {
-    let answers = await frameworkRes.run();
+const configRunner = async () => {
+    let answers = await TEST_MODULE.run();
     switch (answers) {
         case "api": execSync('npm run test:api', { stdio: 'inherit' })
             break;
