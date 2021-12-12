@@ -16,27 +16,16 @@ export const BrowserCapabilities = [
 ]
 
 export const getServiceName = (): string => {
-    if (process.env.SERVICE) {
-        return process.env.SERVICE;
-    }
-    else {
-        return 'selenium-standalone';
-    }
+    const services = process.env.SERVICE;
+    return services ? services : 'selenium-standalone';
 }
 
 export const browserInstance = (): number => {
-    if (process.env.INSTANCE && Number(process.env.INSTANCE) > 1) {
-        return Number(process.env.INSTANCE);
-    }
-    else {
-        return 1;
-    }
+    const instanceCount = process.env.INSTANCE;
+    return instanceCount && Number(instanceCount) > 1 ? Number(instanceCount) : 1;
 }
 
 export const retryOnFailure = (): number => {
-    if (process.env.RETRY) {
-        return Number(process.env.RETRY)
-    } else {
-        return 0;
-    }
+    const retryCount = process.env.RETRY;
+    return retryCount ? Number(retryCount) : 0;
 }
