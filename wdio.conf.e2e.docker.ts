@@ -1,27 +1,28 @@
-import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/CustomConfig";
-import { MOCHA_OUTPUT_DIR } from "./src/static/pathConstants";
-import { deleteDirectory } from "./src/utils/fileutils";
+import { DockerBrowserCapabilities } from './src/config/CustomConfig';
+import cucumberJson from 'wdio-cucumberjs-json-reporter';
+import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from './src/static/pathConstants';
+import { deleteDirectory } from './src/utils/fileutils';
 
 export const config: WebdriverIO.Config = {
-    //
     // ====================
     // Runner Configuration
     // ====================
-    runner: 'local',
-
+    hostname: 'localhost',
+    port: 4444,
+    path: '/', 
     // ==================
     // Specify Test Files
     // ==================
     specs: [
-        './src/tests/mocha/**/*.ts'
+        './src/tests/cucumber/features/**/*.feature'
     ],
     exclude: [],
 
     // ============
     // Capabilities
     // ============
-    maxInstances: browserInstance(),
-    capabilities: BrowserCapabilities,
+    maxInstances: 5,
+    capabilities: DockerBrowserCapabilities,
 
     // ===================
     // Test Configurations
@@ -33,28 +34,35 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: [getServiceName()],
-    framework: 'mocha',
-    specFileRetries: retryOnFailure(),
+    services: ['docker'],
+    framework: 'cucumber',
+    specFileRetries: 1,
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',
-        ['mochawesome', {
-            outputDir: MOCHA_OUTPUT_DIR,
-            outputFileFormat: (opts: any) => {
-                return `results-${opts.cid}.${opts.capabilities.browserName}.json`
-            }
+        ['cucumberjs-json', {
+            jsonFolder: CUCUMBER_JSON_REPORT_DIR,
+            language: 'en',
         }]
     ],
-    mochaOpts: {
-        compilers: ['tsconfig-paths/register'],
-        ui: 'bdd',
+
+    cucumberOpts: {
+        retry: 0,
+        require: ['./src/tests/cucumber/steps/*.ts'],
+        backtrace: false,
+        requireModule: ['tsconfig-paths/register'],
+        dryRun: false,
+        failFast: false,
+        format: ['pretty'],
+        snippets: true,
+        source: true,
+        profile: [],
+        strict: false,
+        tagExpression: '',
         timeout: 60000,
-        mochawesomeOpts: {
-            includeScreenshots: true,
-            screenshotUseRelativePath: true
-        },
+        ignoreUndefinedDefinitions: false
     },
+
     //
     // =====
     // Hooks
@@ -69,8 +77,7 @@ export const config: WebdriverIO.Config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
-        deleteDirectory(MOCHA_OUTPUT_DIR);
-        deleteDirectory('mochawesome-report');
+        deleteDirectory(CUCUMBER_REPORT_DIR);
     },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
@@ -109,43 +116,39 @@ export const config: WebdriverIO.Config = {
     // beforeCommand: function (commandName, args) {
     // },
     /**
-     * Hook that gets executed before the suite starts
-     * @param {Object} suite suite details
+     * Runs before a Cucumber feature
      */
-    // beforeSuite: function (suite) {
+    // beforeFeature: function (uri, feature) {
     // },
     /**
-     * Function to be executed before a test (in Mocha/Jasmine) starts.
+     * Runs before a Cucumber scenario
      */
-    // beforeTest: function (test, context) {
+    // beforeScenario: function (world) {
     // },
     /**
-     * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
-     * beforeEach in Mocha)
+     * Runs before a Cucumber step
      */
-    // beforeHook: function (test, context) {
+    // beforeStep: function (step, context) {
     // },
     /**
-     * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
-     * afterEach in Mocha)
+     * Runs after a Cucumber step
      */
-    // afterHook: function (test, context, { error, result, duration, passed, retries }) {
-    // },
-    /**
-     * Function to be executed after a test (in Mocha/Jasmine).
-     */
-    afterTest: async function (test, context, { error, result, duration, passed, retries }) {
-        if (!passed) {
-            await browser.takeScreenshot();
+    afterStep: async function (step, scenrio, result, context) {
+        if (!result.passed) {
+            cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
         }
     },
-
     /**
-     * Hook that gets executed after the suite has ended
-     * @param {Object} suite suite details
+     * Runs after a Cucumber scenario
      */
-    // afterSuite: function (suite) {
+    // afterScenario: function (world) {
     // },
+    /**
+     * Runs after a Cucumber feature
+     */
+    // afterFeature: function (uri, feature) {
+    // },
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
@@ -180,10 +183,8 @@ export const config: WebdriverIO.Config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function (exitCode, config, capabilities, results) {
-        const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
-        mergeResults(MOCHA_OUTPUT_DIR, "results-*");
-    },
+    // onComplete: function(exitCode, config, capabilities, results) {
+    // },
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session

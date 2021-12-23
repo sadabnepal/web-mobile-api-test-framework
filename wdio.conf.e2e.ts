@@ -1,5 +1,5 @@
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/BDDCustomConfig";
+import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/CustomConfig";
 import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from './src/static/pathConstants';
 import { deleteDirectory } from './src/utils/fileutils';
 

@@ -1,4 +1,4 @@
-import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/CustomConfig";
+import { DockerBrowserCapabilities } from "./src/config/CustomConfig";
 import { MOCHA_OUTPUT_DIR } from "./src/static/pathConstants";
 import { deleteDirectory } from "./src/utils/fileutils";
 
@@ -7,21 +7,22 @@ export const config: WebdriverIO.Config = {
     // ====================
     // Runner Configuration
     // ====================
-    runner: 'local',
-
+    hostname: 'localhost',
+    port: 4444,
+    path: '/', 
     // ==================
     // Specify Test Files
     // ==================
     specs: [
-        './src/tests/mocha/**/*.ts'
+        './src/tests/mocha/**/*.spec.ts'
     ],
     exclude: [],
 
     // ============
     // Capabilities
     // ============
-    maxInstances: browserInstance(),
-    capabilities: BrowserCapabilities,
+    maxInstances: 5,
+    capabilities: DockerBrowserCapabilities,
 
     // ===================
     // Test Configurations
@@ -33,9 +34,9 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: [getServiceName()],
+    services: ['docker'],
     framework: 'mocha',
-    specFileRetries: retryOnFailure(),
+    specFileRetries: 1,
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',

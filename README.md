@@ -7,10 +7,12 @@
 ![Chai](https://img.shields.io/badge/-Chai-900C3F?&style=for-the-badge&logo=Java&logoColor=white)
 ![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?&style=for-the-badge)
 ![Enquirer](https://img.shields.io/badge/-Enquirer-f0db4f?&style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-0db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white)
 
 ### Requirements:
 ![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20>-%23339933?logo=npm) - [Install NodeJs](https://nodejs.org/en/download/) <br>
-![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code) - [Install VSCode](https://code.visualstudio.com/download)
+![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code) - [Install VSCode](https://code.visualstudio.com/download) <br>
+![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white) - [Install Docker](https://docs.docker.com/engine/install/)
 
 ### Getting Started:
 Clone Repository
@@ -41,22 +43,29 @@ Max browser instance: 1
 Retry on failure: 0
 ```
 
-Run mocha tests with default configurations:
-```bash
-npm test
+Default configurations of docker container for `mocha` and `cucumber bdd`:
 ```
-Generate mocha report:
-```bash
-npm run report:mocha
+Runmode: headless
+Service: selenium-standalone
+Browser: Chrome & Edge
+Max browser instance: 5
+Retry on failure: 1
 ```
-Run cucumber tests with default configurations:
+
+Mocha commands:
 ```bash
-npm run test:e2e
+npm test (run tests in local)
+npm run test:docker (run tests in docker)
+npm run report:mocha  (generate report)
 ```
-Generate cucumber html:
+
+Cucumber commands:
 ```bash
-npm run report:cucumber
+npm run test:e2e  (run tests in local)
+npm run test:e2e (run tests in docker)
+npm run report:cucumber  (generate report)
 ```
+
 Run api tests without using interactive CLI options:
 ```bash
 npm run test:api
@@ -80,6 +89,7 @@ api: reports/api/mochawesome.html
 | Mocha and Cucumber BDD framework      | Completed |
 | Download chromedriver from local path | Completed |
 | API Testing using SuperTest           | Completed |
+| Docker integration                    | Completed |
 | Set browser configs from command line | WIP       |
 | Add more test examples                | WIP       |
 | Database connection manager           | TODO      |
@@ -107,12 +117,15 @@ api: reports/api/mochawesome.html
 |           ├───fileutils.ts
 |           └───waitUtils.ts
 ├───.gitignore
+├───docker-compose.yml
 ├───LICENSE
 ├───package-lock.json
 ├───package.json
 ├───README.md
 ├───runner.ts
 ├───tsconfig.json
+├───wdio.conf.docker.ts
+├───wdio.conf.e2e.docker.ts
 ├───wdio.conf.e2e.ts
 └───wdio.conf.ts
 ```
