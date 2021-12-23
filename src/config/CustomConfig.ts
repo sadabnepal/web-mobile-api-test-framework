@@ -15,6 +15,24 @@ export const BrowserCapabilities = [
     }
 ]
 
+export const DockerBrowserCapabilities = [
+    ...BrowserCapabilities,
+    {
+        maxInstances: 2,
+        browserName: 'MicrosoftEdge',
+        acceptInsecureCerts: true,
+        'ms:edgeOptions': {
+            args: [
+                '--no-sandbox',
+                '--disable-infobars',
+                '--headless',
+                '--disable-gpu',
+                '--window-size=1440,735'
+            ],
+        }
+    }
+]
+
 export const getServiceName = (): string => {
     const services = process.env.SERVICE;
     return services ? services : 'selenium-standalone';
