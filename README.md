@@ -2,7 +2,7 @@
 
 <h4 align="center">
     
-[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/main.yml)
+[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml)
 
 </h4>
 
