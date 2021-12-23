@@ -1,5 +1,5 @@
 import { Options, generate } from 'cucumber-html-reporter';
-import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR, CUCUMBER_SCREENSHOT_REPORT_DIR } from '../src/static/pathConstants';
+import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR, CUCUMBER_SCREENSHOT_REPORT_DIR } from '../static/pathConstants';
 
 let options: Options = {
     theme: 'bootstrap',

@@ -11,7 +11,7 @@
     "report:mocha:ci": "marge ./reports/mocha/wdio-ma-merged.json",
     "test:e2e": "wdio run wdio.conf.e2e.ts",
     "test:e2e:docker": "wdio run wdio.conf.e2e.docker.ts",
-    "report:cucumber": "ts-node reports/index.ts",
+    "report:cucumber": "ts-node src/generator/index.ts",
     "test:api": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=reports/api -r tsconfig-paths/register -r ts-node/register src/api/test/*.ts"
   },
   "repository": {

@@ -1,7 +1,3 @@
 node_modules/
-reports/json/
-reports/cucumber/
-reports/screenshots/
-reports/mocha/
-reports/api/
+reports/
 mochawesome-report/
