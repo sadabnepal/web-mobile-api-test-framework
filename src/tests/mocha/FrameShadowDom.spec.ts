@@ -1,7 +1,7 @@
 import frameShadowPage from "src/pages/frameShadowDom.page"
 import testdata from "src/resources/testdata.json"
 
-describe.only('Shadow dom and frame demo', () => {
+describe('Shadow dom and frame demo', () => {
 
     beforeEach(async () => {
         await frameShadowPage.openApp()
