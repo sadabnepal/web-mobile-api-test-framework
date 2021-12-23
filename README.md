@@ -4,10 +4,9 @@
 ![TypeScript](https://img.shields.io/badge/-TypeScript-%233178C6?&style=for-the-badge&logo=Typescript&logoColor=black)
 ![Mocha](https://img.shields.io/badge/-Mocha-%238D6748?&style=for-the-badge&logo=Mocha&logoColor=white)
 ![Cucumber](https://img.shields.io/badge/-Cucumber-brightgreen?logo=cucumber&logoColor=white&style=for-the-badge)
-![Chai-Assertion](https://img.shields.io/badge/-Chai%20Assertion-900C3F?&style=for-the-badge&logo=Java&logoColor=white)
+![Chai](https://img.shields.io/badge/-Chai-900C3F?&style=for-the-badge&logo=Java&logoColor=white)
 ![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?&style=for-the-badge)
 ![Enquirer](https://img.shields.io/badge/-Enquirer-f0db4f?&style=for-the-badge)
-![Expect-WebDriverIO](https://img.shields.io/badge/Expect-WebDriverIO-EA5906.svg?&style=for-the-badge&logo=WebdriverIO&logoColor=white)
 
 ### Requirements:
 ![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20>-%23339933?logo=npm) - [Install NodeJs](https://nodejs.org/en/download/) <br>

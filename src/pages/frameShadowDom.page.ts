@@ -8,7 +8,8 @@ class FrameShadowDom extends Page {
     }
 
     get snacksFrame() { return $("#pact")}
-    get snacksTextbox() { return $("#snacktime") }
+    get snacksShadowDom() { return $("#snacktime") }
+    get coffeShadowDom() { return $("#jest") }
     get username() { return $("#userName") }
     get country() { return $("#jex") }
 
