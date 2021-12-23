@@ -1,5 +1,11 @@
 <h2 align="center"> Web and API Test Automation Framework </h2>
 
+<h4 align="center">
+    
+[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/main.yml)
+
+</h4>
+
 ![WebDriverIO](https://img.shields.io/badge/WebDriverIO-EA5906.svg?&style=for-the-badge&logo=WebdriverIO&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-%233178C6?&style=for-the-badge&logo=Typescript&logoColor=black)
 ![Mocha](https://img.shields.io/badge/-Mocha-%238D6748?&style=for-the-badge&logo=Mocha&logoColor=white)
