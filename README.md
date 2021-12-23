@@ -26,7 +26,8 @@ Install the dependencies:
 npm install
 ```
 ### Running Tests
-Select framework options from interactive CLI
+
+#### User interactive CLI
 ```
 npm start
 ```
@@ -52,23 +53,25 @@ Max browser instance: 5
 Retry on failure: 1
 ```
 
-Mocha commands:
+#### Run in local
 ```bash
-npm test (run tests in local)
-npm run test:docker (run tests in docker)
-npm run report:mocha  (generate report)
+npm test          [ Mocha tests ]
+npm run test:e2e  [ Cucumber BDD tests ]
+npm run test:api  [ Api tests ]
 ```
 
-Cucumber commands:
-```bash
-npm run test:e2e  (run tests in local)
-npm run test:e2e (run tests in docker)
-npm run report:cucumber  (generate report)
+#### Run in Docker:
+```
+docker-compose up -d      [ Create and start containers in detached mode ]
+npm run test:docker       [ Mocha tests]
+npm run test:e2e:docker   [ Cucumber BDD tests ]
+docker-compose down       [ Stop and remove containers ]
 ```
 
-Run api tests without using interactive CLI options:
-```bash
-npm run test:api
+#### Generate Report:
+```
+npm run report:mocha     [ generate mocha report ]
+npm run report:cucumber  [ generate report ]
 ```
 
 Report Paths:
@@ -78,21 +81,17 @@ cucumber: reports/cucumber/cucumber-report.html
 api: reports/api/mochawesome.html
 ```
 
-### Features Covered:
-| Features(inbuilt & custom implemented)| Status    |
-| ------------------------------------- | :-------: |
-| Retry failed test                     | Enabled   |
-| Parallel execution                    | Enabled   |
-| Cross browser testing                 | Completed |
-| Page Object Design pattern            | Completed |
-| Screenshot in report for failed tests | Completed |
-| Mocha and Cucumber BDD framework      | Completed |
-| Download chromedriver from local path | Completed |
-| API Testing using SuperTest           | Completed |
-| Docker integration                    | Completed |
-| Set browser configs from command line | WIP       |
-| Add more test examples                | WIP       |
-| Database connection manager           | TODO      |
+### Features:
+    - Mocha and Cucumber BDD framework
+    - Page Object Design pattern
+    - API Testing using SuperTest
+    - Docker integration
+    - Parallel execution
+    - Cross browser testing
+    - Retry failed test
+    - Screenshot in report for failed tests
+    - Download chromedriver from local path
+    - Github actions (run tests on Pull Request)
 
 ### Folder Structure:
 ```
@@ -139,14 +138,6 @@ Download the latest driver from 'https://chromedriver.chromium.org/downloads'
 Place the the 'chromedriver_win32.zip' file inside src/executables/drivers 
 execute 'installchromedriver.bat' file to dowload the driver from placed folder
 ```
-### Tech Stacks:
- - [WebdriverI/O](https://webdriver.io/) : Next-gen browser and mobile automation test framework for Node.js
- - [TypeScript](https://www.typescriptlang.org/) : Strongly typed programming language that builds on JavaScript.
- - [Cucumber.io](https://cucumber.io/) : Testing framework that supports Behavior Driven Development (BDD).
- - [expect-webdriverio](https://webdriver.io/docs/api/expect-webdriverio/) : WebdriverIO Assertion library inspired by expect
- - [SuperTest](https://www.npmjs.com/package/supertest) : Node package for API testing.
- - [Chai Assertion](https://www.chaijs.com/) : BDD / TDD assertion library for node and the browser.
- - [enquirer](https://www.npmjs.com/package/enquirer) : Stylish CLI prompts that are user-friendly, intuitive and easy to create.
 
 ### Sample Report
 ![SampleReports](https://user-images.githubusercontent.com/65847528/144699948-507b314e-9639-450c-b127-fb9b0721a2d8.gif)
