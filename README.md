@@ -66,7 +66,7 @@ npm run test:e2e  [ Cucumber BDD tests ]
 npm run test:api  [ Api tests ]
 ```
 
-#### Run in Docker:
+#### Run in Docker
 ```
 docker-compose up -d      [ Create and start containers in detached mode ]
 npm run test:docker       [ Mocha tests]
@@ -74,10 +74,10 @@ npm run test:e2e:docker   [ Cucumber BDD tests ]
 docker-compose down       [ Stop and remove containers ]
 ```
 
-#### Generate Report:
+#### Generate Report
 ```
-npm run report:mocha     [ generate mocha report ]
-npm run report:cucumber  [ generate report ]
+npm run report:mocha
+npm run report:cucumber
 ```
 
 Report Paths:
