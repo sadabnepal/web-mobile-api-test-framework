@@ -1,24 +1,15 @@
 <h2 align="center"> Web and API Test Automation Framework </h2>
 
 <h4 align="center">
-    
-[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml)
 
+[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml)
 </h4>
 
-![WebDriverIO](https://img.shields.io/badge/WebDriverIO-EA5906.svg?&style=for-the-badge&logo=WebdriverIO&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-%233178C6?&style=for-the-badge&logo=Typescript&logoColor=black)
-![Mocha](https://img.shields.io/badge/-Mocha-%238D6748?&style=for-the-badge&logo=Mocha&logoColor=white)
-![Cucumber](https://img.shields.io/badge/-Cucumber-brightgreen?logo=cucumber&logoColor=white&style=for-the-badge)
-![Chai](https://img.shields.io/badge/-Chai-900C3F?&style=for-the-badge&logo=Java&logoColor=white)
-![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?&style=for-the-badge)
-![Enquirer](https://img.shields.io/badge/-Enquirer-f0db4f?&style=for-the-badge)
-![Docker](https://img.shields.io/badge/Docker-0db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white)
-
 ### Requirements:
-![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20>-%23339933?logo=npm) - [Install NodeJs](https://nodejs.org/en/download/) <br>
-![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code) - [Install VSCode](https://code.visualstudio.com/download) <br>
-![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white) - [Install Docker](https://docs.docker.com/engine/install/)
+[![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20later-%23339933?logo=npm)](https://nodejs.org/en/download/)
+[![Java](https://img.shields.io/badge/-Java%20JDK-%23007396?logo=java&logoColor=black&)](https://www.oracle.com/java/technologies/downloads/)
+[![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white)](https://docs.docker.com/engine/install/)
+[![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code)](https://code.visualstudio.com/download)
 
 ### Getting Started:
 Clone Repository
@@ -98,6 +89,16 @@ api: reports/api/mochawesome.html
     - Screenshot in report for failed tests
     - Download chromedriver from local path
     - Github actions (run tests on Pull Request)
+
+### Tech stacks:
+[![WebdriverIO](https://img.shields.io/badge/-WebdriverI/O-EA5906?logo=WebdriverIO&logoColor=white)](https://webdriver.io/)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-%233178C6?logo=Typescript&logoColor=black)](https://www.typescriptlang.org/)
+[![Mocha](https://img.shields.io/badge/-Mocha-%238D6748?logo=Mocha&logoColor=white)](https://mochajs.org/)
+[![CucumberIO](https://img.shields.io/badge/-Cucumber.io-brightgreen?logo=cucumber&logoColor=white)](https://cucumber.io/)
+[![ChaiJS](https://img.shields.io/badge/-ChaiJS-900C3F?logo=Java&logoColor=white)](https://www.chaijs.com/)
+[![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)
+[![Enquirer](https://img.shields.io/badge/-Enquirer-f0db4f?logoColor=white)](https://github.com/enquirer/enquirer)
+[![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white)](https://www.docker.com/)
 
 ### Folder Structure:
 ```
