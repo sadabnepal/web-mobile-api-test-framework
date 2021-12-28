@@ -104,10 +104,9 @@ api: reports/api/mochawesome.html
 ```
 ├───.github
 ├───.vscode
-├───reports
 ├───src
 |   ├───api (api test and configs)
-|   ├───config (ui test cconfigs)
+|   ├───config (wdio config files)
 |   ├───executables
 |   ├───pages
 |   ├───resources
@@ -116,12 +115,7 @@ api: reports/api/mochawesome.html
 |   │  	    ├───cucumber
 |   │       └───mocha
 |   ├───types
-|   │       └───webelements.d.ts
 |   └───Utils
-|           ├───base64Utils.ts
-|           ├───commands.ts
-|           ├───fileutils.ts
-|           └───waitUtils.ts
 ├───.gitignore
 ├───docker-compose.yml
 ├───LICENSE
@@ -129,11 +123,7 @@ api: reports/api/mochawesome.html
 ├───package.json
 ├───README.md
 ├───runner.ts
-├───tsconfig.json
-├───wdio.conf.docker.ts
-├───wdio.conf.e2e.docker.ts
-├───wdio.conf.e2e.ts
-└───wdio.conf.ts
+└───tsconfig.json
 ```
 
 ### Manage browser driver:
