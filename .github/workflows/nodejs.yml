@@ -1,4 +1,4 @@
-name: WebDriverIOTypeScript Test Automation Framework CI 
+name: Test Automation CI 
 
 on:
   pull_request:

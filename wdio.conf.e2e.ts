@@ -1,5 +1,5 @@
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { browserInstance, BrowserCapabilities, getServiceName, retryOnFailure } from "./src/config/CustomConfig";
+import { BrowserCapabilities } from "./src/config/CustomConfig";
 import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from './src/static/pathConstants';
 import { deleteDirectory } from './src/utils/fileutils';
 
@@ -19,7 +19,7 @@ export const config: WebdriverIO.Config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: browserInstance(),
+    maxInstances: 1,
     capabilities: BrowserCapabilities,
 
     // ===================
@@ -32,9 +32,9 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: [getServiceName()],
+    services: ['selenium-standalone'],
     framework: 'cucumber',
-    specFileRetries: retryOnFailure(),
+    specFileRetries: 1,
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',
