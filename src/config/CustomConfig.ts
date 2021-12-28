@@ -32,18 +32,3 @@ export const DockerBrowserCapabilities = [
         }
     }
 ]
-
-export const getServiceName = (): string => {
-    const services = process.env.SERVICE;
-    return services ? services : 'selenium-standalone';
-}
-
-export const browserInstance = (): number => {
-    const instanceCount = process.env.INSTANCE;
-    return instanceCount && Number(instanceCount) > 1 ? Number(instanceCount) : 1;
-}
-
-export const retryOnFailure = (): number => {
-    const retryCount = process.env.RETRY;
-    return retryCount ? Number(retryCount) : 0;
-}
