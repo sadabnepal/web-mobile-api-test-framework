@@ -1,6 +1,6 @@
-import { BrowserCapabilities } from "./src/config/CustomConfig";
-import { MOCHA_OUTPUT_DIR } from "./src/static/pathConstants";
-import { deleteDirectory } from "./src/utils/fileutils";
+import { BrowserCapabilities } from "./CustomConfig";
+import { MOCHA_OUTPUT_DIR } from "../static/pathConstants";
+import { deleteDirectory } from "../utils/fileutils";
 
 export const config: WebdriverIO.Config = {
     //

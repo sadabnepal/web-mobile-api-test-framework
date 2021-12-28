@@ -1,13 +1,15 @@
+import { DockerBrowserCapabilities } from './CustomConfig';
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { BrowserCapabilities } from "./src/config/CustomConfig";
-import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from './src/static/pathConstants';
-import { deleteDirectory } from './src/utils/fileutils';
+import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from '../static/pathConstants';
+import { deleteDirectory } from '../utils/fileutils';
 
 export const config: WebdriverIO.Config = {
     // ====================
     // Runner Configuration
     // ====================
-
+    hostname: 'localhost',
+    port: 4444,
+    path: '/', 
     // ==================
     // Specify Test Files
     // ==================
@@ -19,8 +21,8 @@ export const config: WebdriverIO.Config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: 1,
-    capabilities: BrowserCapabilities,
+    maxInstances: 5,
+    capabilities: DockerBrowserCapabilities,
 
     // ===================
     // Test Configurations
@@ -32,7 +34,7 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone'],
+    services: ['docker'],
     framework: 'cucumber',
     specFileRetries: 1,
     specFileRetriesDelay: 0,
