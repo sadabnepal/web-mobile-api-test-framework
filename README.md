@@ -45,7 +45,7 @@ Default configurations of docker container for `mocha` and `cucumber bdd`:
 ```
 Runmode: headless
 Service: selenium-standalone
-Browser: Chrome & Edge
+Browser: Chrome, Edge & Firefox
 Max browser instance: 5
 Retry on failure: 1
 ```
