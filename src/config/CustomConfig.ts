@@ -31,18 +31,18 @@ export const DockerBrowserCapabilities = [
             ],
         }
     },
-    {
-        maxInstances: 2,
-        browserName: 'firefox',
-        acceptInsecureCerts: true,
-        'moz:firefoxOptions': {
-            args: [
-                '--no-sandbox',
-                '--disable-infobars',
-                '--headless',
-                '--disable-gpu',
-                '--window-size=1440,735'
-            ],
-        }
-    }
+    // {
+    //     maxInstances: 2,
+    //     browserName: 'firefox',
+    //     acceptInsecureCerts: true,
+    //     'moz:firefoxOptions': {
+    //         args: [
+    //             '--no-sandbox',
+    //             '--disable-infobars',
+    //             '--headless',
+    //             '--disable-gpu',
+    //             '--window-size=1440,735'
+    //         ],
+    //     }
+    // }
 ]
