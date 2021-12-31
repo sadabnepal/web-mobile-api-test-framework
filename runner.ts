@@ -18,15 +18,11 @@ let runnerCommand = {
     apiRunner: () => { execSync('npm run test:api', { stdio: 'inherit' }) },
     localMochaRunner: () => execSync('npm run test', { stdio: 'inherit' }),
     dockerMochaRunner: () => {
-        execSync('docker-compose up -d', { stdio: 'inherit' })
         execSync('npm run test:docker', { stdio: 'inherit' })
-        execSync('docker-compose down', { stdio: 'inherit' })
     },
     localBDDRunner: () => execSync('npm run test:e2e', { stdio: 'inherit' }),
     dockerBDDRunner: () => {
-        execSync('docker-compose up -d', { stdio: 'inherit' })
         execSync('npm run test:e2e:docker', { stdio: 'inherit' })
-        execSync('docker-compose down', { stdio: 'inherit' })
     }
 }
 
