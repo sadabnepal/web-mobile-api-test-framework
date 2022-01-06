@@ -1,4 +1,4 @@
-export const BrowserCapabilities = [
+export const chromeCapabilities = [
     {
         maxInstances: 2,
         browserName: 'chrome',
@@ -15,8 +15,8 @@ export const BrowserCapabilities = [
     }
 ]
 
-export const DockerBrowserCapabilities = [
-    ...BrowserCapabilities,
+export const multipleBrowserCapabilities = [
+    ...chromeCapabilities,
     {
         maxInstances: 2,
         browserName: 'MicrosoftEdge',

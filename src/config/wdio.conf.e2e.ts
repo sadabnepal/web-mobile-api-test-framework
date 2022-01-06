@@ -1,5 +1,5 @@
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { BrowserCapabilities } from "./CustomConfig";
+import { chromeCapabilities } from "./capabilities";
 import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR } from '../static/pathConstants';
 import { deleteDirectory } from '../utils/fileutils';
 
@@ -20,7 +20,7 @@ export const config: WebdriverIO.Config = {
     // Capabilities
     // ============
     maxInstances: 1,
-    capabilities: BrowserCapabilities,
+    capabilities: chromeCapabilities,
 
     // ===================
     // Test Configurations
