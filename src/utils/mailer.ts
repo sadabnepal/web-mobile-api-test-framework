@@ -30,13 +30,13 @@ export const mailSender = async () => {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.GMAIL_USER,
+            user: process.env.SENDER_GMAIL,
             pass: process.env.GMAIL_PASSWORD,
         },
     });
 
     let mailOptions = {
-        from: `"${process.env.SENDER_DISPLAY_NAME}" <${process.env.GMAIL_USER}>`,
+        from: `"${process.env.SENDER_DISPLAY_NAME}" <${process.env.SENDER_GMAIL}>`,
         to: process.env.Reciever_Mail_List,
         subject: "Automtion Execution Report",
         html: EMAIL_BODY,
