@@ -1,7 +1,7 @@
 {
-  "name": "webdriveriotypescripthybrid",
+  "name": "webdriverio_typescript_e2e",
   "version": "1.0.0",
-  "description": "Boilerplate project using webdriverio with mocha and BDD hybrid framework",
+  "description": "Boilerplate project using webdriverio with mocha and BDD framework",
   "main": "index.js",
   "scripts": {
     "start": "ts-node runner.ts",

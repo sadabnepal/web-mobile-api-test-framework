@@ -2,7 +2,7 @@
 
 <h4 align="center">
 
-[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/actions/workflows/nodejs.yml)
+[![CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/nodejs.yml)
 </h4>
 
 ### Requirements:
@@ -14,8 +14,8 @@
 ### Getting Started:
 Clone Repository
 ```bash
-1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid.git
-2. Navigate to `WebdriverIOTypeScriptHybrid`
+1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptE2E.git
+2. Navigate to `WebdriverIOTypeScriptE2E`
 ```
 
 Install the dependencies:
