@@ -16,6 +16,7 @@
     "test:e2e:docker": "wdio run ./src/config/wdio.conf.e2e.docker.ts",
     "posttest:e2e:docker": "docker-compose down",
     "report:cucumber": "ts-node src/generator/index.ts",
+    "mailCucumberReport": "npm run report:cucumber && ts-node ./src/utils/mailer.ts",
     "test:api": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=reports/api -r tsconfig-paths/register -r ts-node/register src/api/test/*.ts"
   },
   "repository": {
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.22",
     "@types/faker": "^5.5.9",
+    "@types/nodemailer": "^6.4.4",
     "@types/supertest": "^2.0.11",
     "@wdio/cli": "^7.16.10",
     "@wdio/cucumber-framework": "^7.16.6",
@@ -41,9 +43,11 @@
     "@wdio/spec-reporter": "^7.16.9",
     "chai": "^4.3.4",
     "cucumber-html-reporter": "^5.5.0",
+    "dotenv": "^10.0.0",
     "faker": "^5.5.3",
     "mochawesome": "^7.0.1",
     "mochawesome-report-generator": "^3.1.5",
+    "nodemailer": "^6.7.2",
     "supertest": "^6.1.6",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",
@@ -51,9 +55,11 @@
     "wdio-chromedriver-service": "^7.2.2",
     "wdio-cucumberjs-json-reporter": "^4.1.4",
     "wdio-docker-service": "^3.2.0",
-    "wdio-mochawesome-reporter": "^4.0.0"
+    "wdio-mochawesome-reporter": "^4.0.0",
+    "zip-local": "^0.3.5"
   },
   "dependencies": {
-    "enquirer": "^2.3.6"
+    "enquirer": "^2.3.6",
+    "node-html-to-image": "^3.2.0"
   }
 }

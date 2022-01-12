@@ -32,7 +32,7 @@ Above command will start wizard with option to select frammework. Based on user 
 <b>Framework options : </b> | api | mocha | cucumber | <br>
 ![CLI_DEMO](https://user-images.githubusercontent.com/65847528/144734571-7e1d6433-ef4c-456d-87a0-5e7bad812829.gif)
 
-Default configurations for `mocha` and `cucumber bdd`:
+Configurations for local run:
 ```
 Runmode: headless
 Service: selenium-standalone
@@ -41,10 +41,10 @@ Max browser instance: 1
 Retry on failure: 0
 ```
 
-Default configurations of docker container for `mocha` and `cucumber bdd`:
+Configurations for docker run:
 ```
 Runmode: headless
-Service: [ docker, selenium-standalone ]
+Service: [ docker ]
 Browser: Chrome, Edge & Firefox
 Max browser instance: 5
 Retry on failure: 1
@@ -78,6 +78,12 @@ cucumber: reports/cucumber/cucumber-report.html
 api: reports/api/mochawesome.html
 ```
 
+#### Send Report
+```
+update .env file with Sender email, password and recipients email list
+npm run mailCucumberReport
+```
+
 ### Features:
     - Mocha and Cucumber BDD framework
     - Page Object Design pattern
@@ -88,7 +94,8 @@ api: reports/api/mochawesome.html
     - Retry failed test
     - Screenshot in report for failed tests
     - Download chromedriver from local path
-    - Github actions (run tests on Pull Request)
+    - Github actions
+    - Send test report to list of Gmail
 
 ### Tech stacks:
 [![WebdriverIO](https://img.shields.io/badge/-WebdriverI/O-EA5906?logo=WebdriverIO&logoColor=white)](https://webdriver.io/)
@@ -108,6 +115,7 @@ api: reports/api/mochawesome.html
 |   ├───api (api test and configs)
 |   ├───config (wdio config files)
 |   ├───executables
+|   ├───generator
 |   ├───pages
 |   ├───resources
 |   ├───static
@@ -116,6 +124,7 @@ api: reports/api/mochawesome.html
 |   │       └───mocha
 |   ├───types
 |   └───Utils
+├───.env
 ├───.gitignore
 ├───docker-compose.yml
 ├───LICENSE
