@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid.git"
+    "url": "git+https://github.com/sadabnepal/WebdriverIOTypeScriptE2E.git"
   },
   "author": "MD SADAB SAQIB",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid/issues"
+    "url": "https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/issues"
   },
-  "homepage": "https://github.com/sadabnepal/WebdriverIOTypeScriptHybrid#readme",
+  "homepage": "https://github.com/sadabnepal/WebdriverIOTypeScriptE2E#readme",
   "devDependencies": {
     "@types/chai": "^4.2.22",
     "@types/faker": "^5.5.9",
