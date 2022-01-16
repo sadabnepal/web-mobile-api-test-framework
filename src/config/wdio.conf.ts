@@ -15,7 +15,7 @@ export const config: WebdriverIO.Config = {
     specs: [
         './src/tests/mocha/**/*.ts'
     ],
-    exclude: [],
+    exclude: ['.src/tests/mocha/webtables.spec.ts'],
 
     // ============
     // Capabilities
