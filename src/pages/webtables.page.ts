@@ -1,3 +1,4 @@
+import { waitAndclick } from "src/utils/commands";
 import Page from "./page";
 
 class WebTablePage extends Page {
@@ -24,9 +25,8 @@ class WebTablePage extends Page {
     }
 
     async logoutFromApp() {
-        await this.menuProfileBtn.click();
-        await this.logoutBtn.waitForClickable();
-        await this.logoutBtn.click()
+        await this.menuProfileBtn.click()
+        await waitAndclick(this.logoutBtn)
     }
 
     async getAllTitles() {
