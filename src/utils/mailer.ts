@@ -1,15 +1,10 @@
 import nodemailer from "nodemailer";
 import nodeHtmlToImage from 'node-html-to-image'
-import { zipFolder } from "./fileutils";
+import { zipFolder, readFile } from "./fileutils";
+import { MAILER_PATH } from "../static/pathConstants";
 import { config } from 'dotenv'
-import path from 'path';
-import fs from 'fs'
 config()
 
-
-const SOURCE_CUCUMBER_HTML_PATH = path.join(process.cwd(), 'reports', 'cucumber', 'cucumber-report.html');
-const DESTINATION_CUCUMBER_COMPRESS_PATH = path.join(process.cwd(), 'reports', 'cucumber-report.zip')
-const PNG_REPORT_PATH = path.join(process.cwd(), 'reports', 'cucumber', 'cucumber-report.png')
 const SAMPLE_REPORT_CID = "cucumber-report"
 const EMAIL_BODY = `<p>Dear Tester, <br><br>
 Test Automation run has been completed.<br> <br>
@@ -23,8 +18,8 @@ Regards, <br>
 export const mailSender = async () => {
 
     await nodeHtmlToImage({
-        output: PNG_REPORT_PATH,
-        html: fs.readFileSync(SOURCE_CUCUMBER_HTML_PATH).toString()
+        output: MAILER_PATH.PNG_REPORT,
+        html: readFile(MAILER_PATH.SOURCE_CUCUMBER_HTML).toString()
     }).then(() => console.log('Convereted HTML report to PNG !!'))
 
     let transporter = nodemailer.createTransport({
@@ -43,11 +38,11 @@ export const mailSender = async () => {
         attachments: [
             {
                 filename: 'cucumber-report.zip',
-                path: DESTINATION_CUCUMBER_COMPRESS_PATH
+                path: MAILER_PATH.DESTINATION_CUCUMBER_COMPRESS
             },
             {
                 filename: 'cucumber-report.png',
-                path: PNG_REPORT_PATH,
+                path: MAILER_PATH.PNG_REPORT,
                 cid: SAMPLE_REPORT_CID
             }
         ]
@@ -62,5 +57,5 @@ export const mailSender = async () => {
     })
 }
 
-zipFolder(SOURCE_CUCUMBER_HTML_PATH, DESTINATION_CUCUMBER_COMPRESS_PATH)
+zipFolder(MAILER_PATH.SOURCE_CUCUMBER_HTML, MAILER_PATH.DESTINATION_CUCUMBER_COMPRESS)
 mailSender()

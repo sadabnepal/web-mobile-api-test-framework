@@ -18,3 +18,7 @@ export const zipFolder = (sourceFolder: string, targetFolder: string) => {
         }
     });
 }
+
+export const readFile = (filepath: string) => {
+    return fs.readFileSync(filepath)
+}
