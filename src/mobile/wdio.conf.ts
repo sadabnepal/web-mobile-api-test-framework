@@ -10,7 +10,7 @@ export const config = {
     // Specify Test Files
     // ==================
     specs: [
-        './src/test/specs/**/*.ts'
+        './src/mobile/src/test/specs/**/*.ts'
     ],
     exclude: [
         // 'path/to/excluded/files'

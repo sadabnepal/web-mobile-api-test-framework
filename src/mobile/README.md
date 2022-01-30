@@ -11,18 +11,6 @@
 
 ### Getting Started:
 
-#### Clone repository:
-```bash
-git clone https://github.com/sadabnepal/WebdriverIOAppiumMochaJS.git
-Navigate to `WebdriverIOAppiumMochaJS`
-```
-Note: all npm command should be executed from root project folder.
-
-#### Install dependencies:
-```bash
-npm install
-```
-
 #### Setup/Create virtual device on Android studio:
 ```
 Device 1:
@@ -60,13 +48,13 @@ all options should be green checked as shown in below image to start.
 
 ### Run Test:
 ```
-npm test
-npm run test-parallel
+npm test-mobile
+npm run test-mobile-parallel
 ```
 
 ### Generate Report:
 ```
-npm run report
+report-mobile
 ```
 
 ### Sample Report

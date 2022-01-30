@@ -5,7 +5,7 @@ const { prompt, Select, NumberPrompt, MultiSelect, List, Confirm } = require('en
 const TEST_MODULE = new Select({
     name: 'framework',
     message: 'Which test module you want to  run?',
-    choices: ['api', 'mocha', 'cucumber']
+    choices: ['api', 'mobile', 'mocha', 'cucumber']
 })
 
 const RUNNER_SERVICE = new Select({
@@ -16,6 +16,7 @@ const RUNNER_SERVICE = new Select({
 
 let runnerCommand = {
     apiRunner: () => { execSync('npm run test:api', { stdio: 'inherit' }) },
+    mobileRunner: () => { execSync('npm run test-mobile', { stdio: 'inherit' }) },
     localMochaRunner: () => execSync('npm run test', { stdio: 'inherit' }),
     dockerMochaRunner: () => {
         execSync('npm run test:docker', { stdio: 'inherit' })
@@ -30,6 +31,8 @@ const configRunner = async () => {
     let answers = await TEST_MODULE.run();
     switch (answers) {
         case "api": runnerCommand.apiRunner()
+            break;
+        case "mobile": runnerCommand.mobileRunner()
             break;
         case "mocha":
             let mocha_runmode = await RUNNER_SERVICE.run();

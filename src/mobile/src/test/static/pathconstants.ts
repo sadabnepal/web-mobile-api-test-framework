@@ -1,4 +1,4 @@
 import { join } from 'path';
 
-export const ANDROID_APP_PATH = join(process.cwd(), 'src', 'app', 'android', 'ApiDemos-debug.apk')
-export const MOCHA_OUTPUT_DIR = join(process.cwd(), 'reports');
+export const ANDROID_APP_PATH = join(process.cwd(), 'src', 'mobile', 'src', 'app', 'android', 'ApiDemos-debug.apk')
+export const MOCHA_OUTPUT_DIR = join(process.cwd(), 'reports', 'appium');

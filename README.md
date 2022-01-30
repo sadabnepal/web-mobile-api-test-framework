@@ -1,4 +1,4 @@
-<h2 align="center"> Web and API Test Automation Framework </h2>
+<h2 align="center"> Web, API and Mobile Test Automation Framework </h2>
 
 <h4 align="center">
 
@@ -9,7 +9,9 @@
 [![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20later-%23339933?logo=npm)](https://nodejs.org/en/download/)
 [![Java](https://img.shields.io/badge/-JDK-%23007396?logo=java&logoColor=black&)](https://www.oracle.com/java/technologies/downloads/)
 [![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white)](https://docs.docker.com/engine/install/)
-[![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code)](https://code.visualstudio.com/download)
+[![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code)](https://code.visualstudio.com/download) <br/>
+
+[Appium pre-requisite](/src/mobile/README.md)
 
 ### Getting Started:
 Clone Repository
@@ -29,7 +31,7 @@ npm install
 npm start
 ```
 Above command will start wizard with option to select frammework. Based on user selection either of the below test module will start in <b>local machine</b> or <b>docker container</b>. Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
-<b>Framework options : </b> | api | mocha | cucumber | <br>
+<b>Test Module Options : </b> | api | mobile | mocha | cucumber | <br>
 ![CLI_DEMO](https://user-images.githubusercontent.com/65847528/144734571-7e1d6433-ef4c-456d-87a0-5e7bad812829.gif)
 
 Configurations for local run:
@@ -52,12 +54,14 @@ Retry on failure: 1
 
 #### Run in local
 ```bash
-npm test          [ Mocha tests ]
-npm run test:e2e  [ Cucumber BDD tests ]
-npm run test:api  [ Api tests ]
+npm test             [ Mocha tests ]
+npm run test:e2e     [ Cucumber BDD tests ]
+npm run test:api     [ Api tests ]
+npm run test-mobile  [ Mobile tests ]
 ```
+Note: Make sure android virtual device is up and running before starting mobile test. 
 
-#### Run in Docker
+#### Run in Docker  [ only UI tests ]
 ```
 docker-compose up -d      [ Create and start containers in detached mode ]
 npm run test:docker       [ Mocha tests]
@@ -69,6 +73,7 @@ docker-compose down       [ Stop and remove containers ]
 ```
 npm run report:mocha
 npm run report:cucumber
+npm run report-mobile
 ```
 
 Report Paths:
@@ -76,6 +81,7 @@ Report Paths:
 mocha: mochawesome-report/mochawesome-report.html
 cucumber: reports/cucumber/cucumber-report.html
 api: reports/api/mochawesome.html
+mobile: reports/mobile/mobile.html
 ```
 
 #### Send Report
@@ -85,9 +91,9 @@ npm run mailCucumberReport
 ```
 
 ### Features:
+    - Web, Mobile and API Testing
     - Mocha and Cucumber BDD framework
     - Page Object Design pattern
-    - API Testing using SuperTest
     - Docker integration
     - Parallel execution
     - Cross browser testing
@@ -106,6 +112,7 @@ npm run mailCucumberReport
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)
 [![Enquirer](https://img.shields.io/badge/-Enquirer-f0db4f?logoColor=white)](https://github.com/enquirer/enquirer)
 [![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Appium](https://img.shields.io/badge/-Appium-662d91?logo=appium&logoColor=black)](https://github.com/appium/appium)
 
 ### Folder Structure:
 ```
@@ -113,7 +120,7 @@ npm run mailCucumberReport
 ├───.vscode
 ├───src
 |   ├───api (api test and configs)
-|   ├───mobile
+|   ├───mobile (mobiel test and configs)
 |   └───web
 |       ├───config (wdio config files)
 |       ├───executables
