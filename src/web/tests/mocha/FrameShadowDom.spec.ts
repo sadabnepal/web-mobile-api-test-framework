@@ -1,5 +1,5 @@
-import frameShadowPage from "src/pages/frameShadowDom.page"
-import testdata from "src/resources/testdata.json"
+import frameShadowPage from "src/web/pages/frameShadowDom.page"
+import testdata from "src/web/resources/testdata.json"
 
 describe('Shadow dom and frame demo', () => {
 

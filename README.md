@@ -113,17 +113,20 @@ npm run mailCucumberReport
 ├───.vscode
 ├───src
 |   ├───api (api test and configs)
-|   ├───config (wdio config files)
-|   ├───executables
-|   ├───generator
-|   ├───pages
-|   ├───resources
-|   ├───static
-|   ├───tests
-|   │  	    ├───cucumber
-|   │       └───mocha
-|   ├───types
-|   └───Utils
+|   ├───mobile
+|   └───web
+|       ├───config (wdio config files)
+|       ├───executables
+|       ├───generator
+|       ├───pages
+|       ├───resources
+|       ├───static
+|       ├───tests
+|       │     ├───cucumber
+|       │     └───mocha
+|       ├───types
+|       └───Utils
+|   
 ├───.env
 ├───.gitignore
 ├───docker-compose.yml

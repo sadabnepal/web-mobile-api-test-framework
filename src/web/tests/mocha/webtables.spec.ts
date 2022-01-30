@@ -1,6 +1,6 @@
-import webtablesPage from "src/pages/webtables.page"
-import { PHP_ADMIN_CREDS } from "src/resources/logindata";
-import { PHP_ADMIN_DATA } from "src/resources/webtables";
+import webtablesPage from "src/web/pages/webtables.page"
+import { PHP_ADMIN_CREDS } from "src/web/resources/logindata";
+import { PHP_ADMIN_DATA } from "src/web/resources/webtables";
 
 describe('validate web table elements', () => {
 

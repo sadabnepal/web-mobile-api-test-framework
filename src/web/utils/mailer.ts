@@ -6,11 +6,11 @@ import { config } from 'dotenv'
 config()
 
 const SAMPLE_REPORT_CID = "cucumber-report"
-const EMAIL_BODY = `<p>Dear Tester, <br><br>
+const EMAIL_BODY = `<p>Hi, <br><br>
 Test Automation run has been completed.<br> <br>
 <b>Detailed HTML Report:</b> Please find in attachement <br><br>
 <b>Test Summary Snapshot: </b><br>
-<img style="width:500px; width:800px;"src="cid:${SAMPLE_REPORT_CID}" /> <br>
+<img style="width:500px; width:800px;"src="cid:${SAMPLE_REPORT_CID}" /> <br><br>
 
 Regards, <br>
 <b>Test Automation Hub</b></p>`

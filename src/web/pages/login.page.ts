@@ -1,4 +1,4 @@
-import { waitAndclick, waitAndEnterData } from '../utils/commands';
+import { waitAndclick, waitAndEnterData } from 'src/web/utils/commands';
 import Page from './page';
 
 class LoginPage extends Page {

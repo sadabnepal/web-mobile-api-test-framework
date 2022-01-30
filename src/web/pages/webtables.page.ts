@@ -1,4 +1,4 @@
-import { waitAndclick } from "src/utils/commands";
+import { waitAndclick } from 'src/web/utils/commands';
 import Page from "./page";
 
 class WebTablePage extends Page {
