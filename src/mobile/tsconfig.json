@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "resolveJsonModule": true,
+        "target": "es2019",
+        "module": "commonjs",
+        "types": [
+            "node",
+            "webdriverio/async",
+            "@wdio/mocha-framework",
+            "expect-webdriverio"
+        ],
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
