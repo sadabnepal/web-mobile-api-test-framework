@@ -1,14 +1,3 @@
-<h2 align="center"> Mobile Test Automation Framework | WebdriverIO | Appium </h2>
-
-
-### Requirements:
-[![Appium-Inspector](https://img.shields.io/badge/-Appium%20Inspector-662d91?logo=appium&logoColor=black)](https://github.com/appium/appium-inspector/releases)
-[![AndroidStudio](https://img.shields.io/badge/-Android%20Studio-3DDC84?logo=android-studio&logoColor=white)](https://developer.android.com/studio)
-[![Java](https://img.shields.io/badge/-JDK-%23007396?logo=java&logoColor=black&)](https://www.oracle.com/java/technologies/downloads/)
-
-
-### Getting Started:
-
 #### Install Appium Server
 ```
 npm install -g appium@next          [ install appium CLI version 2.0.0-beta.24 ]
@@ -60,16 +49,4 @@ appium-doctor --ios            [ To check ios set up ]
 all options should be green checked as shown in below image to start.
 ![android_config.png](sample/android_config.png)
 
-### Run Test:
-```
-npm test-mobile
-npm run test-mobile-parallel
-```
-
-### Generate Report:
-```
-npm run report-mobile
-```
-
-### Sample Report
-![report.png](sample/report.png)
+[Go Back to main README](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E#-web-api-and-mobile-test-automation-framework-)
