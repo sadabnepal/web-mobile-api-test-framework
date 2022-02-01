@@ -49,4 +49,4 @@ appium-doctor --ios            [ To check ios set up ]
 all options should be green checked as shown in below image to start.
 ![android_config.png](sample/android_config.png)
 
-[Go Back to main README](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E#-web-api-and-mobile-test-automation-framework-)
+[Go Back to main README](../../README.md)
