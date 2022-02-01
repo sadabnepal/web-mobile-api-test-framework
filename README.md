@@ -26,7 +26,7 @@ npm install
 ```
 
 ### Appium setup
-[Clikc here to open Appium SetUp README](/src/mobile/README.md)
+[Click here to open Appium SetUp README](/src/mobile/README.md)
 
 ### Running Tests
 
