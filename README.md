@@ -36,7 +36,7 @@ npm start
 ```
 Above command will start wizard with option to select frammework. Based on user selection either of the below test module will start in <b>local machine</b> or <b>docker container</b>. Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
 <b>Test Module Options : </b> | api | mobile | mocha | cucumber | <br>
-![cli_demo](https://user-images.githubusercontent.com/65847528/152314007-2f0bf71a-acc2-4490-8536-e31f6769165f.gif)
+![cli_demo](https://user-images.githubusercontent.com/65847528/152398324-b0e44fd0-acdf-4f5e-b762-acb53a9f361c.gif)
 
 Configurations for local run:
 ```
