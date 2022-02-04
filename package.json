@@ -19,7 +19,6 @@
     "mailCucumberReport": "npm run report:cucumber && ts-node ./src/web/utils/mailer.ts",
     "test:api": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=reports/api -r tsconfig-paths/register -r ts-node/register src/api/test/*.ts",
     "test-mobile": "wdio run ./src/mobile/wdio.conf.ts",
-    "test-mobile-parallel": "wdio run ./src/mobile/wdio.conf-parallel.ts",
     "report-mobile": "marge ./reports/appium/wdio-ma-merged.json --reportTitle 'AppiumReport' --reportDir=reports/mobile && move .\\reports\\mobile.html .\\reports\\mobile",
     "list-driver": "appium driver list",
     "install-driver-android": "appium driver install uiautomator2",

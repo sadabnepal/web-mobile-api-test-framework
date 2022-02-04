@@ -1,5 +1,6 @@
-import { singleDeviceCapabalities } from './src/config/capabilities';
-import { MOCHA_OUTPUT_DIR } from './src/test/static/pathconstants';
+import { androidDeviceCapabalities, androidMultiDeviceCapabalities } from './config/capabilities';
+import { MOCHA_OUTPUT_DIR } from './test/static/pathconstants';
+let deviceCapabilities = process.env.PARALLEL == 'true' ? androidMultiDeviceCapabalities : androidDeviceCapabalities
 
 export const config = {
     // ====================
@@ -10,7 +11,7 @@ export const config = {
     // Specify Test Files
     // ==================
     specs: [
-        './src/mobile/src/test/specs/**/*.ts'
+        './src/mobile/test/specs/**/*.ts'
     ],
     exclude: [
         // 'path/to/excluded/files'
@@ -19,7 +20,7 @@ export const config = {
     // Capabilities
     // ============
     maxInstances: 10,
-    capabilities: singleDeviceCapabalities,
+    capabilities: deviceCapabilities,
     // ===================
     // Test Configurations
     // ===================
@@ -37,7 +38,7 @@ export const config = {
     reporters: ['spec',
         ['mochawesome', {
             outputDir: MOCHA_OUTPUT_DIR,
-            outputFileFormat: (opts:any) => {
+            outputFileFormat: (opts: any) => {
                 return `results-${opts.cid}.${opts.capabilities.platformName}.json`
             }
         }]],

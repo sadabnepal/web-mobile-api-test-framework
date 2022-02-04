@@ -1,6 +1,6 @@
 import { ANDROID_APP_PATH } from "../test/static/pathconstants";
 
-export const singleDeviceCapabalities = [
+export const androidDeviceCapabalities = [
     {
         platformName: "Android",
         "appium:platformVersion": "11",
@@ -14,8 +14,8 @@ export const singleDeviceCapabalities = [
     }
 ]
 
-export const multiDeviceCapabalities = [
-    ...singleDeviceCapabalities,
+export const androidMultiDeviceCapabalities = [
+    ...androidDeviceCapabalities,
     {
         platformName: "Android",
         "appium:platformVersion": "10",
