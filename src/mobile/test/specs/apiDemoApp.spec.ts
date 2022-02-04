@@ -3,7 +3,7 @@ import { APP_HEADER, COMMAND_TWO_POPUP_MSG, MENU_ITEMS, ALERT_TEXT, WALLPAPER_TE
 
 describe('API Demo Android APP tests', () => {
 
-    it.only('should validate app name', async () => {
+    it('should validate app name', async () => {
         await expect(PageElement.appNameHeader).toHaveText(APP_HEADER);
     })
 
