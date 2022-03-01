@@ -9,8 +9,3 @@ export const herokuappLoginData = {
     invalidUserName: random.userName(),
     invalidPassword: random.password(6)
 }
-
-export const PHP_ADMIN_CREDS = {
-    email: 'admin@phptravels.com',
-    password: 'demoadmin'
-}

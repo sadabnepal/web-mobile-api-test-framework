@@ -15,7 +15,7 @@ export const config: WebdriverIO.Config = {
     specs: [
         './src/web/tests/mocha/**/*.ts'
     ],
-    exclude: ['./src/web/tests/mocha/webtables.spec.ts'],
+    exclude: [],
 
     // ============
     // Capabilities
@@ -35,7 +35,7 @@ export const config: WebdriverIO.Config = {
     connectionRetryCount: 3,
     services: ['selenium-standalone'],
     framework: 'mocha',
-    specFileRetries: 1,
+    specFileRetries: 0,
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',

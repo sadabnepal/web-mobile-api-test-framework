@@ -3,67 +3,46 @@ import Page from "./page";
 
 class WebTablePage extends Page {
 
-    get emailInput() { return $("[name=email]") }
-    get passwordInput() { return $("[name=password]") }
-    get loginButton() { return $("button[type=submit]") }
-    get dashboardHeader() { return $("//h1") }
-    get cardTitleElements() { return $$(".card-title") }
-    get vendorTable() { return $("#datatablesSimple") }
-    get menuProfileBtn() { return $("#dropdownMenuProfile") }
-    get logoutBtn() { return $("//a[contains(@href,'logout')]") }
+    get dashboardHeader() { return $("<h3>") }
+    get exampleTable1() { return $("#table1") }
 
     async openApp() {
         await browser.maximizeWindow()
-        return super.open("https://phptravels.net/api/admin")
+        return super.open("https://the-internet.herokuapp.com/tables")
     }
 
-    async loginToApp(username: string, password: string) {
-        await this.openApp()
-        await this.emailInput.setValue(username)
-        await this.passwordInput.setValue(password)
-        await this.loginButton.click()
-    }
-
-    async logoutFromApp() {
-        await this.menuProfileBtn.click()
-        await waitAndclick(this.logoutBtn)
-    }
-
-    async getAllTitles() {
-        return await this.cardTitleElements.map(async cardTitle => await cardTitle.getText());
-    }
-
-    private setColumnData(cellData: {}, index: number, data: string | undefined) {
-        switch (index) {
-            case 0: cellData["name"] = data
-                break;
-            case 1: cellData["ext"] = data
-                break;
-            case 2: cellData["city"] = data
-                break;
-            case 3: cellData["startDate"] = data
-                break;
-            case 4: cellData["completion"] = data
-                break;
-            default: throw new Error("Only 5 colum is expected in  vendor table !!!")
-        }
+    private setColumnData(personObject: any, index: number, value: string) {
+        if(index === 0) personObject.LastName = value
+        if(index === 1) personObject.FirstName = value
+        if(index === 2) personObject.Email = value
+        if(index === 3) personObject.Due = value
+        if(index === 4) personObject.Website = value
+        if(index === 5) personObject.Action = value
     }
 
     async getTableDataAsListOfMap() {
-        await this.vendorTable.scrollIntoView()
-        let tableRows = this.vendorTable.$$("tbody>tr");
-        let tableData: any[] = [];
-        for await (let tableRow of await tableRows) {
-            const tableCells = tableRow.$$("td");
-            const tableCellLength = await tableCells.length
-            let cellData = {};
-            for (let i = 0; i < tableCellLength; i++) {
-                const element = await tableCells[i]?.getText();
-                this.setColumnData(cellData, i, element)
+        await this.exampleTable1.scrollIntoView()
+        let rowCount = await (this.exampleTable1.$$("tbody>tr")).length;
+        let columnCount = await (this.exampleTable1.$$("thead>tr>th")).length;
+
+        let personDetails:any[] = [];
+
+        for (let i = 0; i < rowCount; i++) {
+            let personObject = {
+                "LastName": "",
+                "FirstName": "",
+                "Email": "",
+                "Due": "",
+                "Website": "",
+                "Action": ""
+            };
+            for (let j = 0; j < columnCount; j++) {
+                let cellValue = await this.exampleTable1.$(`tbody>tr:nth-child(${i+1})>td:nth-child(${j+1})`).getText()
+               this.setColumnData(personObject, j, cellValue)
             }
-            tableData.push(cellData)
+            personDetails.push(personObject) //push table cell as oject to array
         }
-        return tableData;
+        return personDetails;
     }
 
 
