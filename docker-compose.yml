@@ -19,6 +19,8 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - VNC_NO_PASSWORD=1
+      - SE_NODE_MAX_SESSIONS=2
 
   edge:
     image: selenium/node-edge:latest
@@ -29,7 +31,9 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
+      - VNC_NO_PASSWORD=1
+      - SE_NODE_MAX_SESSIONS=2
+  
   # firefox:
   #   image: selenium/node-firefox:latest
   #   shm_size: 2gb
@@ -39,3 +43,35 @@ services:
   #     - SE_EVENT_BUS_HOST=selenium-hub
   #     - SE_EVENT_BUS_PUBLISH_PORT=4442
   #     - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+  #     - VNC_NO_PASSWORD=1
+  #     - SE_NODE_MAX_SESSIONS=2
+
+  chrome_video:
+    image: selenium/video:ffmpeg-4.3.1-20220217
+    volumes:
+      - ./tmp/videos:/videos
+    depends_on:
+      - chrome
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome
+      - FILE_NAME=chrome_video.mp4
+  
+  edge_video:
+    image: selenium/video:ffmpeg-4.3.1-20220217
+    volumes:
+      - ./tmp/videos:/videos
+    depends_on:
+      - edge
+    environment:
+      - DISPLAY_CONTAINER_NAME=edge
+      - FILE_NAME=edge_video.mp4
+
+  # firefox_video:
+  #   image: selenium/video:ffmpeg-4.3.1-20220217
+  #   volumes:
+  #     - ./tmp/videos:/videos
+  #   depends_on:
+  #     - firefox
+  #   environment:
+  #     - DISPLAY_CONTAINER_NAME=firefox
+  #     - FILE_NAME=firefox_video.mp4
