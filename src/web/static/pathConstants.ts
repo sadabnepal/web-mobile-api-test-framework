@@ -8,5 +8,4 @@ export const CUCUMBER_SCREENSHOT_REPORT_DIR = "reports/cucumber/screenshots/";
 export const MAILER_PATH = {
     SOURCE_CUCUMBER_HTML: path.join(process.cwd(), 'reports', 'cucumber', 'cucumber-report.html'),
     DESTINATION_CUCUMBER_COMPRESS: path.join(process.cwd(), 'reports', 'cucumber-report.zip'),
-    PNG_REPORT: path.join(process.cwd(), 'reports', 'cucumber', 'cucumber-report.png')
 }

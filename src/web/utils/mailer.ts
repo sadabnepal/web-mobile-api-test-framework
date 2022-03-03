@@ -1,25 +1,45 @@
 import nodemailer from "nodemailer";
-import nodeHtmlToImage from 'node-html-to-image'
-import { zipFolder, readFile } from "./fileutils";
+import { zipFolder } from "./fileutils";
 import { MAILER_PATH } from "../static/pathConstants";
 import { env_name, env_password, env_reciever_list, env_sender } from "./envreader";
 
-const SAMPLE_REPORT_CID = "cucumber-report"
-const EMAIL_BODY = `<p>Hi, <br><br>
-Test Automation run has been completed.<br> <br>
-<b>Detailed HTML Report:</b> Please find in attachement <br><br>
-<b>Test Summary Snapshot: </b><br>
-<img style="width:500px; width:800px;"src="cid:${SAMPLE_REPORT_CID}" /> <br><br>
-
-Regards, <br>
-<b>Test Automation Hub</b></p>`
+const EMAIL_BODY = `<html>
+<body>
+    <table class="container" align="center" style="padding-top:20px">
+        <tr align="center">
+            <td colspan="4"><h2>Test Automation Report</h2></td>
+        </tr>
+        <tr>
+            <td>
+                <table style="background:#67c2ef;width:120px">
+                    <tr><td style="font-size: 36px" class="value" align="center">15</td></tr>
+                    <tr><td align="center">Total</td></tr>
+                </table>
+            </td>
+            
+            <td>
+                <table style="background:#79c447;width:120px">
+                    <tr><td style="font-size: 36px" class="value" align="center">9</td></tr>
+                    <tr><td align="center">Passed</td></tr>
+                </table>
+            </td>
+            <td>
+                <table style="background:#ff5454;width:120px">
+                    <tr><td style="font-size: 36px" class="value" align="center">3</td></tr>
+                    <tr><td align="center">Failed</td></tr>
+                </table></td>
+            <td>
+                <table style="background:#fabb3d;width:120px">
+                    <tr><td style="font-size: 36px" class="value" align="center">3</td></tr>
+                    <tr><td align="center">Skipped</td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>`
 
 export const mailSender = async () => {
-
-    await nodeHtmlToImage({
-        output: MAILER_PATH.PNG_REPORT,
-        html: readFile(MAILER_PATH.SOURCE_CUCUMBER_HTML).toString()
-    }).then(() => console.log('Convereted HTML report to PNG !!'))
 
     let transporter = nodemailer.createTransport({
         service: "gmail",
@@ -38,11 +58,6 @@ export const mailSender = async () => {
             {
                 filename: 'cucumber-report.zip',
                 path: MAILER_PATH.DESTINATION_CUCUMBER_COMPRESS
-            },
-            {
-                filename: 'cucumber-report.png',
-                path: MAILER_PATH.PNG_REPORT,
-                cid: SAMPLE_REPORT_CID
             }
         ]
     };

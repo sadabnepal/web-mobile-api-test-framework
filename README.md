@@ -164,7 +164,3 @@ execute 'installchromedriver.bat' file to dowload the driver from placed folder
 ### Sample Report
 ![SampleReports](https://user-images.githubusercontent.com/65847528/144699948-507b314e-9639-450c-b127-fb9b0721a2d8.gif)
 
-
-
-### Sample Email
-<img src="https://user-images.githubusercontent.com/65847528/156631005-e81dcab7-afae-40ad-a687-0bd8dda9562e.png" alt="sample report" height="400"/>
