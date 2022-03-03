@@ -1,48 +1,45 @@
+import { env_headless } from '../utils/envreader'
+
+const browserOptions = {
+    args: [
+        '--no-sandbox',
+        '--disable-infobars',
+        '--headless',
+        '--disable-gpu',
+        '--window-size=1440,735'
+    ],
+}
+
+const browserOptionsVNC = {
+    args: [
+        '--no-sandbox',
+        '--disable-infobars',
+        '--disable-gpu',
+        '--window-size=1440,735'
+    ],
+}
+
 export const chromeCapabilities = [
     {
-        maxInstances: 2,
+        maxInstances: env_headless === "TRUE" ? 2 : 1,
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': {
-            args: [
-                '--no-sandbox',
-                '--disable-infobars',
-                '--headless',
-                '--disable-gpu',
-                '--window-size=1440,735'
-            ],
-        }
+        'goog:chromeOptions': env_headless === "TRUE" ? browserOptions : browserOptionsVNC
     }
 ]
 
 export const multipleBrowserCapabilities = [
     ...chromeCapabilities,
     {
-        maxInstances: 2,
+        maxInstances: env_headless === "TRUE" ? 2 : 1,
         browserName: 'MicrosoftEdge',
         acceptInsecureCerts: true,
-        'ms:edgeOptions': {
-            args: [
-                '--no-sandbox',
-                '--disable-infobars',
-                '--headless',
-                '--disable-gpu',
-                '--window-size=1440,735'
-            ],
-        }
+        'ms:edgeOptions': env_headless === "TRUE" ? browserOptions : browserOptionsVNC
     },
     // {
-    //     maxInstances: 2,
+    //     maxInstances: env_headless === "TRUE" ? 2 : 1,
     //     browserName: 'firefox',
     //     acceptInsecureCerts: true,
-    //     'moz:firefoxOptions': {
-    //         args: [
-    //             '--no-sandbox',
-    //             '--disable-infobars',
-    //             '--headless',
-    //             '--disable-gpu',
-    //             '--window-size=1440,735'
-    //         ],
-    //     }
+    //     'moz:firefoxOptions': env_headless === "TRUE"? browserOptions: browserOptionsVNC
     // }
 ]

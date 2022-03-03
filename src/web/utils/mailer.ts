@@ -2,8 +2,7 @@ import nodemailer from "nodemailer";
 import nodeHtmlToImage from 'node-html-to-image'
 import { zipFolder, readFile } from "./fileutils";
 import { MAILER_PATH } from "../static/pathConstants";
-import { config } from 'dotenv'
-config()
+import { env_name, env_password, env_reciever_list, env_sender } from "./envreader";
 
 const SAMPLE_REPORT_CID = "cucumber-report"
 const EMAIL_BODY = `<p>Hi, <br><br>
@@ -25,14 +24,14 @@ export const mailSender = async () => {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.SENDER_GMAIL,
-            pass: process.env.GMAIL_PASSWORD,
+            user: env_sender,
+            pass: env_password,
         },
     });
 
     let mailOptions = {
-        from: `"${process.env.SENDER_DISPLAY_NAME}" <${process.env.SENDER_GMAIL}>`,
-        to: process.env.Reciever_Mail_List,
+        from: `"${env_name}" <${env_sender}>`,
+        to: env_reciever_list,
         subject: "Automtion Execution Report",
         html: EMAIL_BODY,
         attachments: [
