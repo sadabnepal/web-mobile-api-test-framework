@@ -49,7 +49,7 @@ Retry on failure: 0
 
 Configurations for docker run:
 ```
-Runmode: headless
+Runmode: headless [ non-headless for VNC ]
 Service: [ docker ]
 Browser: Chrome, Edge & Firefox
 Max browser instance: 5
@@ -90,7 +90,7 @@ mobile: reports/mobile/mobile.html
 
 #### Send Report
 ```
-update .env file with Sender email, password and recipients email list
+create .env file under root project directory and add details with reference of .env.example file
 npm run mailCucumberReport
 ```
 
@@ -99,6 +99,7 @@ npm run mailCucumberReport
     - Mocha and Cucumber BDD framework
     - Page Object Design pattern
     - Docker integration
+    - VNC integration with video recording
     - Parallel execution
     - Cross browser testing
     - Retry failed test
