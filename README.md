@@ -89,8 +89,8 @@ mobile: reports/mobile/mobile.html
 ```
 
 #### Send Report
+> Create .env file under root project directory and add details with reference of .env.example file
 ```
-create .env file under root project directory and add details with reference of .env.example file
 npm run mailCucumberReport
 ```
 
