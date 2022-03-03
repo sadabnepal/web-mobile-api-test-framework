@@ -34,7 +34,7 @@ export const config: WebdriverIO.Config = {
     connectionRetryCount: 3,
     services: ['selenium-standalone'],
     framework: 'cucumber',
-    specFileRetries: 1,
+    specFileRetries: 0,
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',
