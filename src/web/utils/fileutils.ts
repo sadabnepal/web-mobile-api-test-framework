@@ -19,6 +19,6 @@ export const zipFolder = (sourceFolder: string, targetFolder: string) => {
     });
 }
 
-export const readFile = (filepath: string) => {
-    return fs.readFileSync(filepath)
+export const parseJsonFile = (filepath: string) => {
+    return JSON.parse(fs.readFileSync(filepath, "utf-8"))
 }
