@@ -92,6 +92,7 @@ mobile: reports/mobile/mobile.html
 > Create .env file under root project directory and add details with reference of .env.example file
 ```
 npm run mailCucumberReport
+npm run mailMochaResult
 ```
 
 ### Features:

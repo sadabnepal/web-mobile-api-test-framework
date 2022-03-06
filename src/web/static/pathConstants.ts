@@ -10,4 +10,5 @@ export const MAILER_PATH = {
     SOURCE_CUCUMBER_HTML: path.join(process.cwd(), 'reports', 'cucumber', 'cucumber-report.html'),
     DESTINATION_CUCUMBER_COMPRESS: path.join(process.cwd(), 'reports', 'cucumber-report.zip'),
     WDIO_JSON_CUCUMBER_FILE: path.join(process.cwd(), WDIO_JSON_CUCUMBER_DIR, 'merged_result.json'),
+    WDIO_JSON_MOCHA_FILE: path.join(process.cwd(), MOCHA_OUTPUT_DIR, 'wdio-ma-merged.json'),
 }

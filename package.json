@@ -10,6 +10,7 @@
     "test:docker": "wdio run ./src/web/config/wdio.conf.docker.ts",
     "posttest:docker": "docker-compose down",
     "report:mocha": "marge ./reports/mocha/wdio-ma-merged.json --reportTitle 'WebAppMochaReport' && move mochawesome-report.html ./mochawesome-report",
+    "mailMochaResult": "ts-node ./src/web/generator/mochaEmail.ts",
     "report:mocha:ci": "marge ./reports/mocha/wdio-ma-merged.json",
     "test:e2e": "wdio run ./src/web/config/wdio.conf.e2e.ts",
     "pretest:e2e:docker": "docker-compose up -d",
