@@ -17,7 +17,7 @@ describe('validate web table elements', () => {
     it("JIRA-00010:should filter user data with due > $50", async () => {
         const filterDataGreaterThan50 = (data: any) => +(data.Due.split("$")[1]) > 50;
         const filteredUserData = example1TableData.filter(filterDataGreaterThan50)
-        console.log(filteredUserData)
+        console.table(filteredUserData)
         expect(filteredUserData.every(filterDataGreaterThan50)).toBeTruthy()
     })
 
