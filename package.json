@@ -10,13 +10,14 @@
     "test:docker": "wdio run ./src/web/config/wdio.conf.docker.ts",
     "posttest:docker": "docker-compose down",
     "report:mocha": "marge ./reports/mocha/wdio-ma-merged.json --reportTitle 'WebAppMochaReport' && move mochawesome-report.html ./mochawesome-report",
+    "mailMochaResult": "ts-node ./src/web/generator/mochaEmail.ts",
     "report:mocha:ci": "marge ./reports/mocha/wdio-ma-merged.json",
     "test:e2e": "wdio run ./src/web/config/wdio.conf.e2e.ts",
     "pretest:e2e:docker": "docker-compose up -d",
     "test:e2e:docker": "wdio run ./src/web/config/wdio.conf.e2e.docker.ts",
     "posttest:e2e:docker": "docker-compose down",
     "report:cucumber": "ts-node src/web/generator/index.ts",
-    "mailCucumberReport": "npm run report:cucumber && ts-node ./src/web/utils/mailer.ts",
+    "mailCucumberReport": "npm run report:cucumber && ts-node ./src/web/generator/bddEmail.ts",
     "test:api": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=reports/api -r tsconfig-paths/register -r ts-node/register src/api/test/*.ts",
     "test-mobile": "wdio run ./src/mobile/wdio.conf.ts",
     "report-mobile": "marge ./reports/appium/wdio-ma-merged.json --reportTitle 'AppiumReport' --reportDir=reports/mobile && move .\\reports\\mobile.html .\\reports\\mobile",
@@ -36,11 +37,11 @@
   },
   "homepage": "https://github.com/sadabnepal/WebdriverIOTypeScriptE2E#readme",
   "devDependencies": {
-    "@wdio/appium-service": "^7.16.13",
     "@types/chai": "^4.2.22",
     "@types/faker": "^5.5.9",
     "@types/nodemailer": "^6.4.4",
     "@types/supertest": "^2.0.11",
+    "@wdio/appium-service": "^7.16.13",
     "@wdio/cli": "^7.16.10",
     "@wdio/cucumber-framework": "^7.16.6",
     "@wdio/junit-reporter": "^7.16.6",
@@ -64,11 +65,11 @@
     "wdio-chromedriver-service": "^7.2.2",
     "wdio-cucumberjs-json-reporter": "^4.1.4",
     "wdio-docker-service": "^3.2.0",
-    "wdio-mochawesome-reporter": "^4.0.0",
-    "zip-local": "^0.3.5"
+    "wdio-json-reporter": "^3.0.0",
+    "wdio-mochawesome-reporter": "^4.0.0"
   },
   "dependencies": {
     "enquirer": "^2.3.6",
-    "node-html-to-image": "^3.2.0"
+    "zip-local": "^0.3.5"
   }
 }

@@ -1,7 +1,7 @@
 import LoginPage from 'src/web/pages/login.page';
 import SecurePage from 'src/web/pages/secure.page';
 import { herokuappLoginData } from 'src/web/resources/logindata';
-import LoginConstants from 'src/web/static/loginConstants';
+import FrameworkConstants from 'src/web/static/FrameworkConstants';
 
 describe('Test herokuapp application login', () => {
 
@@ -9,16 +9,16 @@ describe('Test herokuapp application login', () => {
         await LoginPage.openApp();
     })
 
-    it('should login with valid credentials', async () => {
+    it("JIRA-00007:should login with valid credentials", async () => {
         await LoginPage.login(herokuappLoginData.validUserName, herokuappLoginData.validPassword());
         await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(LoginConstants.LOGIN_SUCCESS_MSG);
+        await expect(SecurePage.flashAlert).toHaveTextContaining(FrameworkConstants.LOGIN_SUCCESS_MSG);
     });
 
-    it('should not login with invalid credentials', async () => {
+    it("JIRA-00008:should not login with invalid credentials", async () => {
         await LoginPage.login(herokuappLoginData.invalidUserName, herokuappLoginData.invalidPassword);
         await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(LoginConstants.LOGIN_FAILED_MSG);
+        await expect(SecurePage.flashAlert).toHaveTextContaining(FrameworkConstants.LOGIN_FAILED_MSG);
     });
     
 });

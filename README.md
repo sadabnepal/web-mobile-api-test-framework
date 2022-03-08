@@ -49,7 +49,7 @@ Retry on failure: 0
 
 Configurations for docker run:
 ```
-Runmode: headless
+Runmode: headless [ non-headless for VNC ]
 Service: [ docker ]
 Browser: Chrome, Edge & Firefox
 Max browser instance: 5
@@ -89,9 +89,10 @@ mobile: reports/mobile/mobile.html
 ```
 
 #### Send Report
+> Create .env file under root project directory and add details with reference of .env.example file
 ```
-update .env file with Sender email, password and recipients email list
 npm run mailCucumberReport
+npm run mailMochaResult
 ```
 
 ### Features:
@@ -99,6 +100,7 @@ npm run mailCucumberReport
     - Mocha and Cucumber BDD framework
     - Page Object Design pattern
     - Docker integration
+    - VNC integration with video recording
     - Parallel execution
     - Cross browser testing
     - Retry failed test
@@ -163,8 +165,3 @@ execute 'installchromedriver.bat' file to dowload the driver from placed folder
 ### Sample Report
 ![SampleReports](https://user-images.githubusercontent.com/65847528/144699948-507b314e-9639-450c-b127-fb9b0721a2d8.gif)
 
-
-
-### Sample Email
-<img src="https://user-images.githubusercontent.com/65847528/152982084-ed08dbb2-b8e0-4b4d-87e9-e218f5c5978e.png" alt="sample report" width="400"/>
-<!-- ![sample_email](https://user-images.githubusercontent.com/65847528/152982084-ed08dbb2-b8e0-4b4d-87e9-e218f5c5978e.png) -->

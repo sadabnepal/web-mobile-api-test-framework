@@ -7,14 +7,14 @@ describe('Shadow dom and frame demo', () => {
         await frameShadowPage.openApp()
     })
 
-    it('should switch to frame and handle shadow dom element', async () => {
+    it("JIRA-00005:should switch to frame and handle shadow dom element", async () => {
         await browser.switchToFrame(await frameShadowPage.snacksFrame)
         const shadowTeaElement = frameShadowPage.snacksShadowDom.shadow$("#tea")
         await shadowTeaElement.setValue(testdata.shadowDomData.tea)
         await expect(shadowTeaElement).toHaveValue(testdata.shadowDomData.tea)
     })
 
-    it('should switch to frame inside shadow dom', async () => {
+    it("JIRA-00006:should switch to frame inside shadow dom", async () => {
         const frameElement = await frameShadowPage.username.shadow$("#pact1")
         await browser.switchToFrame(frameElement);
         await frameShadowPage.country.setValue(testdata.shadowDomData.country);
