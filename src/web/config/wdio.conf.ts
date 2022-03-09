@@ -182,7 +182,7 @@ export const config: WebdriverIO.Config = {
      */
     onComplete: function (exitCode, config, capabilities, results) {
         const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
-        mergeResults(MOCHA_OUTPUT_DIR, "results-*");
+        mergeResults(MOCHA_OUTPUT_DIR, "results-*", "wdio-ma-merged.json");
     },
     /**
     * Gets executed when a refresh happens.
