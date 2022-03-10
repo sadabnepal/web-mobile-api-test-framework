@@ -1,5 +1,5 @@
 import { Pages } from 'src/web/imports/pages';
-import { Data } from 'src/web/imports/data';
+import { Data } from 'src/web/imports/resources';
 
 describe('Shadow dom and frame demo', () => {
 
