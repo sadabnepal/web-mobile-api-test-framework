@@ -132,6 +132,8 @@ npm run mailMochaResult
 |       ├───config (wdio config files)
 |       ├───executables
 |       ├───generator
+|       ├───imports
+|       ├───interface
 |       ├───pages
 |       ├───resources
 |       ├───static

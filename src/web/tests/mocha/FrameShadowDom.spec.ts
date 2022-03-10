@@ -1,24 +1,24 @@
-import frameShadowPage from "src/web/pages/frameShadowDom.page"
-import testdata from "src/web/resources/testdata.json"
+import { Pages } from 'src/web/imports/pages';
+import { Data } from 'src/web/imports/data';
 
 describe('Shadow dom and frame demo', () => {
 
     beforeEach(async () => {
-        await frameShadowPage.openApp()
+        await Pages.frame.openApp()
     })
 
     it("JIRA-00005:should switch to frame and handle shadow dom element", async () => {
-        await browser.switchToFrame(await frameShadowPage.snacksFrame)
-        const shadowTeaElement = frameShadowPage.snacksShadowDom.shadow$("#tea")
-        await shadowTeaElement.setValue(testdata.shadowDomData.tea)
-        await expect(shadowTeaElement).toHaveValue(testdata.shadowDomData.tea)
+        await browser.switchToFrame(await Pages.frame.snacksFrame)
+        const shadowTeaElement = Pages.frame.snacksShadowDom.shadow$("#tea")
+        await shadowTeaElement.setValue(Data.json.shadowDomData.tea)
+        await expect(shadowTeaElement).toHaveValue(Data.json.shadowDomData.tea)
     })
 
     it("JIRA-00006:should switch to frame inside shadow dom", async () => {
-        const frameElement = await frameShadowPage.username.shadow$("#pact1")
+        const frameElement = await Pages.frame.username.shadow$("#pact1")
         await browser.switchToFrame(frameElement);
-        await frameShadowPage.country.setValue(testdata.shadowDomData.country);
-        await expect(frameShadowPage.country).toHaveValue(testdata.shadowDomData.country)
+        await Pages.frame.country.setValue(Data.json.shadowDomData.country);
+        await expect(Pages.frame.country).toHaveValue(Data.json.shadowDomData.country)
     })
 
 })
