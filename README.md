@@ -125,6 +125,7 @@ npm run mailMochaResult
 [![Node-Mailer](https://img.shields.io/badge/-Node%20Mailer-89D05C?logo=gmail&logoColor=blue)](https://github.com/nodemailer/nodemailer)
 
 ### Folder Structure:
+<!--
 ```
 ├───.github
 ├───.vscode
@@ -156,6 +157,9 @@ npm run mailMochaResult
 ├───runner.ts
 └───tsconfig.json
 ```
+-->
+
+![e2e_framework_folders](https://user-images.githubusercontent.com/65847528/157815758-29634152-30d3-4334-b71c-625891927837.png)
 
 ### Manage browser driver:
 Usually inside corporate network exe files download from external sites are blocked.
