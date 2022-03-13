@@ -1,4 +1,4 @@
-import { FormOptions } from "../interface/formOptions"
+import { FormFieldTypes } from "../types/FormFieldTypes"
 import { clickElement, clickOnClassMatchingElement, enterData, scrollToElement, selectDropdownByText } from "../utils/commands"
 import Page from "./page"
 
@@ -19,7 +19,7 @@ class FormElements extends Page {
         await browser.maximizeWindow();
     }
 
-    async submitContactForm(formdata: FormOptions) {
+    async submitContactForm(formdata: FormFieldTypes) {
         await scrollToElement(this.nameTextBox)
         await enterData(this.nameTextBox, formdata.name)
         await enterData(this.emailTextBox, formdata.email)

@@ -1,4 +1,4 @@
-export interface FormOptions {
+export type FormFieldTypes = {
     name: string,
     email: string,
     contactNo: number,

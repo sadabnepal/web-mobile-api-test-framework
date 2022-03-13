@@ -110,7 +110,7 @@ npm run mailMochaResult
     - Send test report to list of Gmail
     - Reusable API calls helper
     - Centralized file/class imports
-    - Use of interface for method params optimization
+    - Use of types for method params optimization
 
 ### Tech stacks:
 [![WebdriverIO](https://img.shields.io/badge/-WebdriverI/O-EA5906?logo=WebdriverIO&logoColor=white)](https://webdriver.io/)
