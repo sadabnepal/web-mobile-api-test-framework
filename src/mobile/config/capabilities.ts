@@ -10,7 +10,9 @@ export const androidDeviceCapabalities = [
         "appium:app": ANDROID_APP_PATH,
         'appium:noReset': true,
         'appium:newCommandTimeout': 30,
-        "appium:autoGrantPermissions": true
+        "appium:autoGrantPermissions": true,
+        "appium:avd": "Pixel_3",
+        "appium:avdLaunchTimeout": 180000
     }
 ]
 
@@ -25,6 +27,8 @@ export const androidMultiDeviceCapabalities = [
         "appium:app": ANDROID_APP_PATH,
         'appium:noReset': true,
         'appium:newCommandTimeout': 30,
-        "appium:autoGrantPermissions": true
+        "appium:autoGrantPermissions": true,
+        "appium:avd": "Pixel_3",
+        "appium:avdLaunchTimeout": 180000
     }
 ]
