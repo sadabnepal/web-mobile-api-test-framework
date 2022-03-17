@@ -2,6 +2,29 @@
     "compilerOptions": {
         "outDir": "./built",
         "baseUrl": ".",
+        "paths": {
+            "@UIPages/*": [
+                "src/web/pages/*"
+            ],
+            "@UITestData/*": [
+                "src/web/resources/*"
+            ],
+            "@UIStatic/*": [
+                "src/web/static/*"
+            ],
+            "@UIUtils/*": [
+                "src/web/utils/*"
+            ],
+            "@UIResources/*": [
+                "src/web/resources/*"
+            ],
+            "@UITypes/*": [
+                "src/web/types/*"
+            ],
+            "@UIImports/*": [
+                "src/web/imports/*"
+            ]
+        },
         "allowJs": false,
         "resolveJsonModule": true,
         /* Basic Options */

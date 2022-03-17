@@ -1,6 +1,6 @@
-import { FormFieldTypes } from "../types/FormFieldTypes"
-import { clickElement, clickOnClassMatchingElement, enterData, scrollToElement, selectDropdownByText } from "../utils/commands"
-import Page from "./page"
+import { FormFieldTypes } from "@UITypes/FormFieldTypes"
+import { clickElement, clickOnClassMatchingElement, enterData, scrollToElement, selectDropdownByText } from "@UIUtils/commands"
+import Page from "@UIPages/page";
 
 class FormElements extends Page {
 

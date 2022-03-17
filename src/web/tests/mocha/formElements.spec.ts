@@ -1,5 +1,5 @@
-import { Pages } from 'src/web/imports/pages';
-import { Data, Constants } from 'src/web/imports/resources';
+import { Pages } from '@UIImports/pages';
+import { Data, Constants } from '@UIImports/resources';
 
 describe('test form submission and use of interface', () => {
 

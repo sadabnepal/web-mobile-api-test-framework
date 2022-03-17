@@ -1,12 +1,12 @@
-import json from 'src/web/resources/testdata.json'
-import { herokuappLoginData } from 'src/web/resources/logindata';
+import json from '@UIResources/testdata.json'
+import { herokuappLoginData } from '@UIResources/logindata';
 
 export const Data = {
     json,
     herokuappLoginData
 }
 
-import framework from 'src/web/static/FrameworkConstants';
+import framework from '@UIStatic/FrameworkConstants';
 
 export const Constants = {
     framework

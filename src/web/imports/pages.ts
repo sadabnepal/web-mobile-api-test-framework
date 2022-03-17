@@ -1,8 +1,8 @@
-import form from '../pages/form.page'
-import frame from '../pages/frameShadowDom.page'
-import login from '../pages/login.page'
-import secure from '../pages/secure.page'
-import webtables from '../pages/webtables.page'
+import form from "@UIPages/form.page"
+import frame from '@UIPages/frameShadowDom.page'
+import login from '@UIPages/login.page'
+import secure from '@UIPages/secure.page'
+import webtables from '@UIPages/webtables.page'
 
 export const Pages = {
     form,

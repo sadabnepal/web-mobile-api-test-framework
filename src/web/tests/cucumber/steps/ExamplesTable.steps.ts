@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 
-import LoginPage from 'src/web/pages/login.page';
-import SecurePage from 'src/web/pages/secure.page';
+import LoginPage from '@UIPages/login.page';
+import SecurePage from '@UIPages/secure.page';
 
 Given(/^I am on the login page$/, async () => {
     await LoginPage.openApp()

@@ -1,4 +1,4 @@
-import { Pages } from 'src/web/imports/pages';
+import { Pages } from '@UIImports/pages';
 
 describe('validate web table elements', () => {
 

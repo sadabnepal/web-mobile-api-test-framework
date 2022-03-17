@@ -1,4 +1,4 @@
-import { WebdriverIOElement, WebdriverIOElements } from "../types/webelements"
+import { WebdriverIOElement, WebdriverIOElements } from "@UITypes/webelements"
 
 export const clickElement = async (element: WebdriverIOElement) => {
     await element.click()

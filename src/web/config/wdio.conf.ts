@@ -1,6 +1,6 @@
 import { chromeCapabilities } from "./capabilities";
-import { MOCHA_OUTPUT_DIR } from "../static/pathConstants";
-import { deleteDirectory } from "../utils/fileutils";
+import { MOCHA_OUTPUT_DIR } from "@UIStatic/pathConstants";
+import { deleteDirectory } from "@UIUtils/fileutils";
 
 export const config: WebdriverIO.Config = {
     //
