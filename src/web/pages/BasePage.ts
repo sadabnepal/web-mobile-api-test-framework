@@ -1,4 +1,4 @@
-export default class Page {
+export default class BasePage {
 
     protected open(path: string) {
         return browser.url(path)

@@ -1,5 +1,5 @@
 import { waitAndclick, waitAndEnterData } from '@UIUtils/commands';
-import Page from "@UIPages/page";
+import Page from "@UIPages/BasePage";
 
 class LoginPage extends Page {
 
