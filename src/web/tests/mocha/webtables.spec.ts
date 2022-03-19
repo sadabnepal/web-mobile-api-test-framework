@@ -1,16 +1,16 @@
-import { Pages } from '@UIImports/pages';
+import webtablesPage from "@UIPages/webtables.page";
 
 describe('validate web table elements', () => {
 
     let example1TableData: any;
 
     beforeEach(async () => {
-        await Pages.webtables.openApp()
+        await webtablesPage.openApp()
     })
 
     it("JIRA-00009:should retrieve example1 table data", async () => {
-        await expect(Pages.webtables.dashboardHeader).toHaveText("Data Tables")
-        example1TableData = await Pages.webtables.getTableDataAsListOfMap()
+        await expect(webtablesPage.dashboardHeader).toHaveText("Data Tables")
+        example1TableData = await webtablesPage.getTableDataAsListOfMap()
         expect(example1TableData.length).toBeGreaterThan(0)
     })
 

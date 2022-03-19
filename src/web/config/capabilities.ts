@@ -1,4 +1,4 @@
-import { env_headless } from '@UIUtils/envreader'
+import { env_headless } from '../utils/envreader'
 
 const browserOptions = {
     args: [

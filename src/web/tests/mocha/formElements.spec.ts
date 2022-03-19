@@ -1,20 +1,21 @@
-import { Pages } from '@UIImports/pages';
-import { Data, Constants } from '@UIImports/resources';
+import formPage from "@UIPages/form.page";
+import jsondata from "@UIResources/testdata.json"
+import FrameworkConstants from "@UIStatic/FrameworkConstants";
 
 describe('test form submission and use of interface', () => {
 
     beforeEach(async () => {
-        await Pages.form.openApp()
+        await formPage.openApp()
     })
 
     it('should submit form with mandatory fields only', async () => {
-        await Pages.form.submitContactForm(Data.json.formDataWithMandateFieldsOnly)
-        await expect(Pages.form.submittedMsg).toHaveText(Constants.framework.FORM_SUBMITTED_MSG)
+        await formPage.submitContactForm(jsondata.formDataWithMandateFieldsOnly)
+        await expect(formPage.submittedMsg).toHaveText(FrameworkConstants.FORM_SUBMITTED_MSG)
     });
 
     it('should submit form with all mandate and non-mandate fields', async () => {
-        await Pages.form.submitContactForm(Data.json.formDataWithAllFields)
-        await expect(Pages.form.submittedMsg).toHaveText(Constants.framework.FORM_SUBMITTED_MSG)
+        await formPage.submitContactForm(jsondata.formDataWithAllFields)
+        await expect(formPage.submittedMsg).toHaveText(FrameworkConstants.FORM_SUBMITTED_MSG)
     });
 
 });

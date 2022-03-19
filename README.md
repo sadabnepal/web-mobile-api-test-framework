@@ -109,8 +109,8 @@ npm run mailMochaResult
     - Github actions
     - Send test report to list of Gmail
     - Reusable API calls helper
-    - Centralized file/class imports
     - Use of types for method params optimization
+    - Improved import statement using tsconfig path
 
 ### Tech stacks:
 [![WebdriverIO](https://img.shields.io/badge/-WebdriverI/O-EA5906?logo=WebdriverIO&logoColor=white)](https://webdriver.io/)

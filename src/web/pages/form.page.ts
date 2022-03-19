@@ -1,5 +1,4 @@
 import { FormFieldTypes } from "@UITypes/FormFieldTypes"
-import { clickElement, clickOnClassMatchingElement, enterData, scrollToElement, selectDropdownByText } from "@UIUtils/commands"
 import Page from "@UIPages/BasePage";
 
 class FormElements extends Page {
@@ -20,15 +19,15 @@ class FormElements extends Page {
     }
 
     async submitContactForm(formdata: FormFieldTypes) {
-        await scrollToElement(this.nameTextBox)
-        await enterData(this.nameTextBox, formdata.name)
-        await enterData(this.emailTextBox, formdata.email)
-        await enterData(this.phoneTextBox, formdata.contactNo)
-        await clickOnClassMatchingElement(this.phoneRadioBtns, formdata.contactType)
-        if (formdata.message) { await enterData(this.messageTextBox, formdata.message) }
-        await selectDropdownByText(this.questionDropdown, formdata.question)
-        await clickElement(this.simulateMsgCheckBox)
-        await clickElement(this.submitBtn)
+        await this.scrollToElement(this.nameTextBox)
+        await this.enterData(this.nameTextBox, formdata.name)
+        await this.enterData(this.emailTextBox, formdata.email)
+        await this.enterData(this.phoneTextBox, formdata.contactNo)
+        await this.clickOnClassMatchingElement(this.phoneRadioBtns, formdata.contactType)
+        if (formdata.message) { await this.enterData(this.messageTextBox, formdata.message) }
+        await this.selectDropdownByText(this.questionDropdown, formdata.question)
+        await this.clickElement(this.simulateMsgCheckBox)
+        await this.clickElement(this.submitBtn)
     }
 
 }
