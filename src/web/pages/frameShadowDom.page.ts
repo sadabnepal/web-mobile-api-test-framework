@@ -21,7 +21,7 @@ class FrameShadowDom extends BasePage {
 
     async enterCountry(value: string) {
         await browser.switchToFrame(await this.username.shadow$("#pact1"));
-        await this.country.setValue(value);
+        await this.enterData(this.country, value);
     }
 
 }

@@ -12,7 +12,7 @@ describe('Shadow dom and frame demo', () => {
         await expect(frameShadowDomPage.teaShadowElement).toHaveValue(jsondata.shadowDomData.tea)
     })
 
-    it.only("JIRA-00006:should switch to frame inside shadow dom", async () => {
+    it("JIRA-00006:should switch to frame inside shadow dom", async () => {
         await frameShadowDomPage.enterCountry(jsondata.shadowDomData.country);
         await expect(frameShadowDomPage.country).toHaveValue(jsondata.shadowDomData.country)
     })

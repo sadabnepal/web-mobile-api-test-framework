@@ -11,33 +11,26 @@ class WebTablePage extends Page {
     }
 
     private setColumnData(personObject: any, index: number, value: string) {
-        if(index === 0) personObject.LastName = value
-        if(index === 1) personObject.FirstName = value
-        if(index === 2) personObject.Email = value
-        if(index === 3) personObject.Due = value
-        if(index === 4) personObject.Website = value
-        if(index === 5) personObject.Action = value
+        if (index === 0) personObject["LastName"] = value
+        if (index === 1) personObject["FirstName"] = value
+        if (index === 2) personObject["Email"] = value
+        if (index === 3) personObject["Due"] = value
+        if (index === 4) personObject["Website"] = value
+        if (index === 5) personObject["Action"] = value
     }
 
     async getTableDataAsListOfMap() {
         await this.exampleTable1.scrollIntoView()
-        let rowCount = await (this.exampleTable1.$$("tbody>tr")).length;
-        let columnCount = await (this.exampleTable1.$$("thead>tr>th")).length;
+        let rowCount = (await this.exampleTable1.$$("tbody>tr")).length;
+        let columnCount = (await this.exampleTable1.$$("thead>tr>th")).length;
 
-        let personDetails:any[] = [];
+        let personDetails: any[] = [];
 
         for (let i = 0; i < rowCount; i++) {
-            let personObject = {
-                "LastName": "",
-                "FirstName": "",
-                "Email": "",
-                "Due": "",
-                "Website": "",
-                "Action": ""
-            };
+            let personObject = {};
             for (let j = 0; j < columnCount; j++) {
-                let cellValue = await this.exampleTable1.$(`tbody>tr:nth-child(${i+1})>td:nth-child(${j+1})`).getText()
-               this.setColumnData(personObject, j, cellValue)
+                let cellValue = await this.exampleTable1.$(`tbody>tr:nth-child(${i + 1})>td:nth-child(${j + 1})`).getText()
+                this.setColumnData(personObject, j, cellValue)
             }
             personDetails.push(personObject) //push table cell as oject to array
         }

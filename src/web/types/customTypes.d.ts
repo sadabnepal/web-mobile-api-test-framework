@@ -6,3 +6,12 @@ export type FormFieldTypes = {
     question: string,
     message?: string
 }
+
+export type table1DataOptions = {
+    LastName: string,
+    FirstName: string,
+    Email: string,
+    Due: string,
+    Website: string,
+    Action: string
+}
