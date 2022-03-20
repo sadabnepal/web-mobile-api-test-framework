@@ -3,8 +3,7 @@ import BasePage from "@UIPages/BasePage";
 class FrameShadowDom extends BasePage {
 
     async openApp() {
-        await browser.maximizeWindow()
-        return super.open('https://selectorshub.com/xpath-practice-page/');
+        await super.open('https://selectorshub.com/xpath-practice-page/');
     }
 
     get snacksFrame() { return $("#pact") }

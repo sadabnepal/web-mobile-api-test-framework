@@ -15,7 +15,6 @@ class FormElements extends Page {
 
     async openApp() {
         await super.open("https://aquabottesting.com/")
-        await browser.maximizeWindow();
     }
 
     async submitContactForm(formdata: FormFieldTypes) {

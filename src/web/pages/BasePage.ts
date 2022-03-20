@@ -4,8 +4,9 @@ const logStep = (logMessage: string) => console.log(`STEP || ${logMessage}`);
 
 export default class BasePage {
 
-    protected open(path: string) {
-        return browser.url(path)
+    protected async open(path: string) {
+        await browser.maximizeWindow();
+        await browser.url(path)
     }
 
     protected async clickElement(element: WebdriverIOElement) {

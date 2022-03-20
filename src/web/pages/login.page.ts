@@ -13,8 +13,7 @@ class LoginPage extends Page {
     }
 
     async openApp() {
-        await browser.maximizeWindow()
-        return super.open('https://the-internet.herokuapp.com/login');
+        await super.open('https://the-internet.herokuapp.com/login');
     }
 }
 

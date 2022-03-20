@@ -6,8 +6,7 @@ class WebTablePage extends Page {
     get exampleTable1() { return $("#table1") }
 
     async openApp() {
-        await browser.maximizeWindow()
-        return super.open("https://the-internet.herokuapp.com/tables")
+        await super.open("https://the-internet.herokuapp.com/tables")
     }
 
     private setColumnData(personObject: any, index: number, value: string) {
