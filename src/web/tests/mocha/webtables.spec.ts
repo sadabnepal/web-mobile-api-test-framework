@@ -30,7 +30,7 @@ describe('validate web table elements', () => {
     })
 
     it("JIRA-00012:should add $30 due amout if it is <= $50", async () => {
-        const updatedata = example1TableData.splice().map((data: table1DataOptions) => {
+        const updatedata = example1TableData.map((data: table1DataOptions) => {
             if (Number(data.Due.split("$")[1]) <= 50) {
                 data.Due = "$" + (parseFloat(data.Due.split("$")[1]) + 30).toFixed(2)
             }
