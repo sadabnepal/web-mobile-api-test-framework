@@ -1,4 +1,4 @@
-import { env_headless } from '../utils/envreader'
+import { env_headless, env_instance } from '../utils/envreader'
 
 const browserOptions = {
     args: [
@@ -10,7 +10,7 @@ const browserOptions = {
     ],
 }
 
-const browserOptionsVNC = {
+const browserOptionsHeadless = {
     args: [
         '--no-sandbox',
         '--disable-infobars',
@@ -21,20 +21,20 @@ const browserOptionsVNC = {
 
 export const chromeCapabilities = [
     {
-        maxInstances: env_headless === "TRUE" ? 2 : 1,
+        maxInstances: env_instance,
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': env_headless === "TRUE" ? browserOptions : browserOptionsVNC
+        'goog:chromeOptions': env_headless === "TRUE" ? browserOptions : browserOptionsHeadless
     }
 ]
 
 export const multipleBrowserCapabilities = [
     ...chromeCapabilities,
     {
-        maxInstances: env_headless === "TRUE" ? 2 : 1,
+        maxInstances: env_instance,
         browserName: 'MicrosoftEdge',
         acceptInsecureCerts: true,
-        'ms:edgeOptions': env_headless === "TRUE" ? browserOptions : browserOptionsVNC
+        'ms:edgeOptions': env_headless === "TRUE" ? browserOptions : browserOptionsHeadless
     },
     // {
     //     maxInstances: env_headless === "TRUE" ? 2 : 1,
