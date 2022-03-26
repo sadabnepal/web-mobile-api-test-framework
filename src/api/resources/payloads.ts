@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from "@faker-js/faker"
 
 export const createUserPayload = {
     "name": faker.name.firstName() + " " + faker.name.lastName(),

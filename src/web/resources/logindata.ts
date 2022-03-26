@@ -1,11 +1,11 @@
 import { decodeFromBase64String } from "@UIUtils/base64Utils";
-import { internet as random } from 'faker'
+import { faker } from '@faker-js/faker'
 
 const herokuappBase64EncodedPassword = "U3VwZXJTZWNyZXRQYXNzd29yZCE=";
 
 export const herokuappLoginData = {
     validUserName: 'tomsmith',
     validPassword: () => decodeFromBase64String(herokuappBase64EncodedPassword),
-    invalidUserName: random.userName(),
-    invalidPassword: random.password(6)
+    invalidUserName: faker.internet.userName(),
+    invalidPassword: faker.internet.password(6)
 }
