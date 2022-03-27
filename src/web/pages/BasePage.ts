@@ -15,10 +15,9 @@ export default class BasePage {
     }
 
     protected async waitAndclick(element: WebdriverIOElement, waitTime?: number) {
-        let time = waitTime ? waitTime : 10000
-        await element.waitForClickable({ timeout: time })
+        await element.waitForClickable({ timeout: waitTime ? waitTime : 10000 })
         await element.click()
-        logStep(`waited for ${time} and clicked on Element: ${await element.selector}`);
+        logStep(`clicked on Element: ${await element.selector}`);
     }
 
     protected async enterData(element: WebdriverIOElement, value: string | number) {
@@ -28,11 +27,10 @@ export default class BasePage {
     }
 
     protected async waitAndEnterData(element: WebdriverIOElement, value: string | number, waitTime?: number) {
-        let time = waitTime ? waitTime : 10000
-        await element.waitForEnabled({ timeout: time });
+        await element.waitForEnabled({ timeout: waitTime ? waitTime : 10000 });
         await element.clearValue();
         await element.setValue(value);
-        logStep(`waited for ${time} and entered value : ${value} on Element: ${await element.selector}`);
+        logStep(`Entered value: ${value} on Element: ${await element.selector} `);
     }
 
     protected async scrollToElement(element: WebdriverIOElement) {
@@ -45,11 +43,11 @@ export default class BasePage {
         logStep(`Selected Element: ${await element.selector} by visible text: ${text}`);
     }
 
-    protected async clickOnClassMatchingElement(elements: WebdriverIOElements, text: string) {
-        await elements.forEach(async (element) => {
-            if ((await element.getAttribute('class')).includes(text)) {
-                await element.click()
-            }
+    protected async clickOnMatchingText(elements: WebdriverIOElements, text: string) {
+        const matchingElement = await elements.filter(async (element) => (await element.getText()).includes(text));
+        matchingElement.map(element => {
+            element.click();
+            logStep(`Clicked on matching text: ${text}`);
         })
     }
 }

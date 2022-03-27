@@ -6,7 +6,7 @@ class FormElements extends Page {
     get nameTextBox() { return $('#cname') }
     get emailTextBox() { return $('#cemail') }
     get phoneTextBox() { return $('#cphone') }
-    get phoneRadioBtns() { return $$('.radio-container>input') }
+    get phoneRadioBtns() { return $$('.radio-container') }
     get messageTextBox() { return $('#cmessage') }
     get questionDropdown() { return $('#cselect') }
     get simulateMsgCheckBox() { return $('#csuccess') }
@@ -22,7 +22,7 @@ class FormElements extends Page {
         await this.enterData(this.nameTextBox, formdata.name)
         await this.enterData(this.emailTextBox, formdata.email)
         await this.enterData(this.phoneTextBox, formdata.contactNo)
-        await this.clickOnClassMatchingElement(this.phoneRadioBtns, formdata.contactType)
+        await this.clickOnMatchingText(this.phoneRadioBtns, formdata.contactType)
         if (formdata.message) { await this.enterData(this.messageTextBox, formdata.message) }
         await this.selectDropdownByText(this.questionDropdown, formdata.question)
         await this.clickElement(this.simulateMsgCheckBox)
