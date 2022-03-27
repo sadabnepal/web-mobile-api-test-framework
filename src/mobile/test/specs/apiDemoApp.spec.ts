@@ -1,15 +1,15 @@
 import PageElement from '../pages/elements.page';
-import { ALERT_TEXT, APP_HEADER, COMMAND_TWO_POPUP_MSG, MENU_ITEMS, WALLPAPER_TEXT } from '../static/constants';
+import * as constant from '../static/constants';
 
 describe('API Demo Android APP tests', () => {
 
     it('should validate app name', async () => {
-        await expect(PageElement.appNameHeader).toHaveText(APP_HEADER);
+        await expect(PageElement.appNameHeader).toHaveText(constant.APP_HEADER);
     })
 
     it('should validate all menu items', async () => {
         const actualMenuItems = await PageElement.allMenuItemsElements.map(async menuItem => await menuItem.getText());
-        expect(actualMenuItems).toEqual(MENU_ITEMS)
+        expect(actualMenuItems).toEqual(constant.MENU_ITEMS)
         expect(await PageElement.allMenuItemsElements.length).toBeGreaterThan(0);
     })
 
@@ -20,7 +20,7 @@ describe('API Demo Android APP tests', () => {
 
     it('should validate command two menu with app activity', async () => {
         await PageElement.navigateToCommandTwoPopup()
-        await expect(PageElement.commandTwoMsgElement).toHaveText(COMMAND_TWO_POPUP_MSG);
+        await expect(PageElement.commandTwoMsgElement).toHaveText(constant.COMMAND_TWO_POPUP_MSG);
     })
 
     it('should validate screen top sendkeys', async () => {
@@ -32,7 +32,7 @@ describe('API Demo Android APP tests', () => {
     it('should validate alert text and accept alert', async () => {
         await PageElement.openAlertPage()
         await PageElement.clickOnOkCancelDialouge()
-        expect(await driver.getAlertText()).toEqual(ALERT_TEXT)
+        expect(await driver.getAlertText()).toEqual(constant.ALERT_TEXT)
         await driver.acceptAlert()
         await expect(PageElement.alertTitleElement).not.toExist()
     })
@@ -40,7 +40,7 @@ describe('API Demo Android APP tests', () => {
     it('should validate alert text and dismiss alert', async () => {
         await PageElement.openAlertPage()
         await PageElement.clickOnOkCancelDialouge()
-        expect(await driver.getAlertText()).toEqual(ALERT_TEXT)
+        expect(await driver.getAlertText()).toEqual(constant.ALERT_TEXT)
         await driver.dismissAlert()
         await expect(PageElement.alertTitleElement).not.toExist()
     })
@@ -50,7 +50,7 @@ describe('API Demo Android APP tests', () => {
         await PageElement.clickOnAppMenu()
         await PageElement.clickOnActivityMenu()
         await PageElement.scrollAndclickOnWallpaperMenu()
-        await expect(PageElement.wallpaperTextElement).toHaveTextContaining(WALLPAPER_TEXT)
+        await expect(PageElement.wallpaperTextElement).toHaveTextContaining(constant.WALLPAPER_TEXT)
     })
 
     it('should validate horizontal scrolling', async () => {
