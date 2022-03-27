@@ -20,7 +20,7 @@ describe('Test herokuapp application login', () => {
         await expect(securePage.flashAlert).toBeExisting();
         await expect(securePage.flashAlert).toHaveTextContaining(FrameworkConstants.LOGIN_FAILED_MSG);
     });
-    
+
 });
 
 

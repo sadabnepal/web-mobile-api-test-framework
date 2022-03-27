@@ -1,5 +1,5 @@
 import PageElement from '../pages/elements.page';
-import { APP_HEADER, COMMAND_TWO_POPUP_MSG, MENU_ITEMS, ALERT_TEXT, WALLPAPER_TEXT } from '../static/constants';
+import { ALERT_TEXT, APP_HEADER, COMMAND_TWO_POPUP_MSG, MENU_ITEMS, WALLPAPER_TEXT } from '../static/constants';
 
 describe('API Demo Android APP tests', () => {
 

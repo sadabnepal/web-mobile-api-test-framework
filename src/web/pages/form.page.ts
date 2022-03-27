@@ -1,5 +1,5 @@
-import { FormFieldTypes } from "@UITypes/customTypes"
 import Page from "@UIPages/BasePage";
+import { FormFieldTypes } from "@UITypes/customTypes";
 
 class FormElements extends Page {
 

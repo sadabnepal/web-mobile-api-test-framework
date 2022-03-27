@@ -1,5 +1,5 @@
+import { faker } from '@faker-js/faker';
 import { decodeFromBase64String } from "@UIUtils/base64Utils";
-import { faker } from '@faker-js/faker'
 
 const herokuappBase64EncodedPassword = "U3VwZXJTZWNyZXRQYXNzd29yZCE=";
 

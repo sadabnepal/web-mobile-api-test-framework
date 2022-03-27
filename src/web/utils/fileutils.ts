@@ -1,5 +1,5 @@
 import fs from 'fs';
-var zipper = require('zip-local');
+let zipper = require('zip-local');
 
 export const deleteDirectory = (path: string) => {
     if (fs.existsSync(path)) {

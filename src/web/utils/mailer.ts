@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { env_sender_gmail, env_password } from "./envreader";
+import { env_password, env_sender_gmail } from "./envreader";
 
 const GmailCredObject = { user: env_sender_gmail, pass: env_password }
 

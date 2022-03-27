@@ -58,7 +58,7 @@ class PageElements extends BasePage {
         await this.activitySubMenu.click()
     }
 
-    async selectDay(day:string) {
+    async selectDay(day: string) {
         await $(`//android.view.View[@text='${day}']`).click()
     }
 
@@ -67,7 +67,7 @@ class PageElements extends BasePage {
         await this.dialogOption.click()
     }
 
-    async scrollToNextMonthAndSelectDay(day:string) {
+    async scrollToNextMonthAndSelectDay(day: string) {
         await this.scrollHorizontally()
         await this.selectDay(day)
         await this.dateOKButton.click()

@@ -1,5 +1,5 @@
 import { multipleBrowserCapabilities } from "./capabilities";
-import { config as mochaconfig } from "./wdio.conf"
+import { config as mochaconfig } from "./wdio.conf";
 
 export const config: WebdriverIO.Config = {
     ...mochaconfig,

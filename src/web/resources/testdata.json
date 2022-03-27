@@ -1,16 +1,16 @@
 {
-    "shadowDomData" : {
-        "tea" : "Lemon Tea",
+    "shadowDomData": {
+        "tea": "Lemon Tea",
         "country": "Nepal"
     },
-    "formDataWithMandateFieldsOnly" : {
+    "formDataWithMandateFieldsOnly": {
         "name": "testuser",
         "email": "testuser@test.com",
         "contactNo": 1234567890,
         "contactType": "mobile",
         "question": "Frameworks"
     },
-    "formDataWithAllFields" : {
+    "formDataWithAllFields": {
         "name": "testuser",
         "email": "testuser@test.com",
         "contactNo": 1234567890,
@@ -18,5 +18,4 @@
         "question": "Frameworks",
         "message": "This is test input"
     }
-
 }

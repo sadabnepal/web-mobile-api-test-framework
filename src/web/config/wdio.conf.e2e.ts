@@ -1,7 +1,7 @@
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { chromeCapabilities } from "./capabilities";
 import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR, WDIO_JSON_CUCUMBER_DIR } from '../static/pathConstants';
 import { deleteDirectory } from '../utils/fileutils';
+import { chromeCapabilities } from "./capabilities";
 
 export const config: WebdriverIO.Config = {
     // ====================

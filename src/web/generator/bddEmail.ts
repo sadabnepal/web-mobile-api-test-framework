@@ -1,5 +1,5 @@
 import { MAILER_PATH } from "../static/pathConstants";
-import { env_sender_name, env_reciever_list, env_sender_gmail } from "../utils/envreader";
+import { env_reciever_list, env_sender_gmail, env_sender_name } from "../utils/envreader";
 import { parseJsonFile, zipFolder } from "../utils/fileutils";
 import { mailSender } from "../utils/mailer";
 import { emailBodyTemplate } from "./emailBody";

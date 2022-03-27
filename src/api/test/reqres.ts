@@ -1,7 +1,7 @@
-import { assert } from 'chai'
+import { assert } from 'chai';
 import { createUserPayload } from 'src/api/resources/payloads';
+import { endpoints } from "src/api/services/endpoints";
 import { makeDELETECall, makeGETCall, makePOSTCall } from 'src/api/utils/apicalls';
-import { endpoints } from "src/api/services/endpoints"
 import { stringFormatter } from 'src/api/utils/formatter';
 
 describe('REQRES users api validation', () => {

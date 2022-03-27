@@ -1,5 +1,4 @@
-import { Given, When, Then } from '@cucumber/cucumber';
-
+import { Given, Then, When } from '@cucumber/cucumber';
 import LoginPage from '@UIPages/login.page';
 import SecurePage from '@UIPages/secure.page';
 

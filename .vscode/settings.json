@@ -2,5 +2,11 @@
     "cucumberautocomplete.steps": [
         "./src/web/tests/cucumber/steps/*.ts"
     ],
-    "cucumberautocomplete.strictGherkinCompletion": true
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true,
+        "source.organizeImports": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true
 }

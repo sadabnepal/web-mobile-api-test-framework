@@ -1,4 +1,4 @@
-export const emailBodyTemplate = (total:number, passed:number, failed:number, skipped:number)=> {
+export const emailBodyTemplate = (total: number, passed: number, failed: number, skipped: number) => {
     return `<html>
     <body>
         <table class="container" align="center" style="padding-top:20px">

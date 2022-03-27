@@ -1,4 +1,4 @@
-import { ChainablePromiseElement, ChainablePromiseArray, ElementArray } from 'webdriverio';
+import { ChainablePromiseArray, ChainablePromiseElement, ElementArray } from 'webdriverio';
 
 export type WebdriverIOElement = ChainablePromiseElement<Promise<WebdriverIO.Element>>;
 export type WebdriverIOElements = ChainablePromiseArray<ElementArray>;

@@ -1,5 +1,5 @@
 import formPage from "@UIPages/form.page";
-import jsondata from "@UIResources/testdata.json"
+import jsondata from "@UIResources/testdata.json";
 import FrameworkConstants from "@UIStatic/FrameworkConstants";
 
 describe('test form submission and use of interface', () => {

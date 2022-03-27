@@ -1,6 +1,6 @@
-import supertest from "supertest"
 import { REQRES_BASE_URI } from 'src/api/config/baseuri';
 import { endpoints } from "src/api/services/endpoints";
+import supertest from "supertest";
 
 const request = supertest(REQRES_BASE_URI)
 

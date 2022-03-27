@@ -1,4 +1,4 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { Given, Then, When } from '@cucumber/cucumber';
 import loginPage from '@UIPages/login.page';
 import securePage from '@UIPages/secure.page';
 import FrameworkConstants from '@UIStatic/FrameworkConstants';
