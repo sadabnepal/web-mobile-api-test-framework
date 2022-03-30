@@ -1,6 +1,8 @@
 import { androidDeviceCapabalities, androidMultiDeviceCapabalities } from './config/capabilities';
 import { MOCHA_OUTPUT_DIR } from './test/static/pathconstants';
-let deviceCapabilities = process.env.PARALLEL == 'true' ? androidMultiDeviceCapabalities : androidDeviceCapabalities
+let deviceCapabilities = process.env.MOBILE_PARALLEL?.toLocaleUpperCase() == 'true'.toLocaleUpperCase()
+    ? androidMultiDeviceCapabalities
+    : androidDeviceCapabalities
 
 export const config = {
     // ====================
@@ -43,6 +45,7 @@ export const config = {
             }
         }]],
     mochaOpts: {
+        compilers: ['tsconfig-paths/register'],
         ui: 'bdd',
         timeout: 60000
     },

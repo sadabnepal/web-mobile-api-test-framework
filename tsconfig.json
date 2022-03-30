@@ -20,7 +20,13 @@
             ],
             "@UITypes/*": [
                 "src/web/types/*"
-            ]
+            ],
+            "@MObilePages/*": [
+                "src/mobile/test/pages/*"
+            ],
+            "@MobileStatic/*": [
+                "src/mobile/test/static/*"
+            ],
         },
         "allowJs": false,
         "resolveJsonModule": true,
