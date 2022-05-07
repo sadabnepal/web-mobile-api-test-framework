@@ -1,5 +1,5 @@
-import { REQRES_BASE_URI } from 'src/api/config/baseuri';
-import { endpoints } from "src/api/services/endpoints";
+import { REQRES_BASE_URI } from 'api/config/baseuri';
+import { endpoints } from "api/services/endpoints";
 import supertest from "supertest";
 
 const request = supertest(REQRES_BASE_URI)

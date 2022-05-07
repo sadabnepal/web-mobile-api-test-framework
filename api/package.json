@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=../reports/api -r tsconfig-paths/register -r ts-node/register test/*.ts"
+    "test": "mocha --timeout 20000 --reporter mochawesome --reporter-options reportDir=./reports/ -r tsconfig-paths/register -r ts-node/register test/*.ts"
   },
   "keywords": [],
   "author": "",

@@ -1,8 +1,8 @@
+import { createUserPayload } from 'api/resources/payloads';
+import { endpoints } from "api/services/endpoints";
+import { makeDELETECall, makeGETCall, makePOSTCall } from 'api/utils/apicalls';
+import { stringFormatter } from 'api/utils/formatter';
 import { assert } from 'chai';
-import { createUserPayload } from 'src/api/resources/payloads';
-import { endpoints } from "src/api/services/endpoints";
-import { makeDELETECall, makeGETCall, makePOSTCall } from 'src/api/utils/apicalls';
-import { stringFormatter } from 'src/api/utils/formatter';
 
 describe('REQRES users api validation', () => {
 
