@@ -1,5 +1,5 @@
-import PageElement from '@MObilePages/elements.page';
-import * as constant from '@MobileStatic/constants';
+import PageElement from 'pages/elements.page';
+import * as constant from 'static/constants';
 
 describe('API Demo Android APP tests', () => {
 

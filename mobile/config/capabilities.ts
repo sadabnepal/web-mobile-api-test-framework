@@ -1,4 +1,4 @@
-import { ANDROID_APP_PATH } from "../test/static/pathconstants";
+import { ANDROID_APP_PATH } from "../static/pathconstants";
 
 export const androidDeviceCapabalities = [
     {

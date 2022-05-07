@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {},
+        "allowJs": false,
+        "resolveJsonModule": true,
+        "target": "es2019",
+        "module": "commonjs",
+        "strict": true,
+        "noImplicitAny": false,
+        "types": [
+            "webdriverio/async",
+            "mocha",
+            "node",
+            "expect-webdriverio"
+        ],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
+}

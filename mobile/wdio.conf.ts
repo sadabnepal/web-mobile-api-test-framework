@@ -1,10 +1,20 @@
 import { androidDeviceCapabalities, androidMultiDeviceCapabalities } from './config/capabilities';
-import { MOCHA_OUTPUT_DIR } from './test/static/pathconstants';
+import { MOCHA_OUTPUT_DIR } from './static/pathconstants';
 let deviceCapabilities = process.env.MOBILE_PARALLEL?.toLocaleUpperCase() == 'true'.toLocaleUpperCase()
     ? androidMultiDeviceCapabalities
-    : androidDeviceCapabalities
+    : androidDeviceCapabalities;
 
 export const config = {
+    // =====================
+    // ts-node Configurations
+    // =====================
+    autoCompileOpts: {
+        autoCompile: true,
+        tsNodeOpts: {
+            transpileOnly: true,
+            project: './tsconfig.json'
+        }
+    },
     // ====================
     // Runner Configuration
     // ====================
@@ -13,7 +23,7 @@ export const config = {
     // Specify Test Files
     // ==================
     specs: [
-        './src/mobile/test/specs/**/*.ts'
+        './specs/**/*.ts'
     ],
     exclude: [
         // 'path/to/excluded/files'
