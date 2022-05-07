@@ -8,7 +8,7 @@ describe('API Demo Android APP tests', () => {
     })
 
     it('should validate all menu items', async () => {
-        const actualMenuItems = await PageElement.allMenuItemsElements.map(async menuItem => await menuItem.getText());
+        const actualMenuItems = await PageElement.allMenuItemsElements.map(async menuItem => menuItem.getText());
         expect(actualMenuItems).toEqual(constant.MENU_ITEMS)
         expect(await PageElement.allMenuItemsElements.length).toBeGreaterThan(0);
     })
