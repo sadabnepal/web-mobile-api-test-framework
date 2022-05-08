@@ -1,8 +1,5 @@
-import { androidDeviceCapabalities, androidMultiDeviceCapabalities } from './config/capabilities';
+import { androidDeviceCapabalities } from './config/capabilities';
 import { MOCHA_OUTPUT_DIR } from './static/pathconstants';
-let deviceCapabilities = process.env.MOBILE_PARALLEL?.toLocaleUpperCase() == 'true'.toLocaleUpperCase()
-    ? androidMultiDeviceCapabalities
-    : androidDeviceCapabalities;
 
 export const config = {
     // =====================
@@ -32,7 +29,7 @@ export const config = {
     // Capabilities
     // ============
     maxInstances: 10,
-    capabilities: deviceCapabilities,
+    capabilities: androidDeviceCapabalities,
     // ===================
     // Test Configurations
     // ===================

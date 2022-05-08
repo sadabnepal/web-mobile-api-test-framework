@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run wdio.conf.ts",
+    "test:parallel": "wdio run wdio.conf.parallel.ts",
     "report": "marge ./reports/wdio-ma-merged.json --reportTitle 'AppiumReport' --reportDir=./reports/ && move ./reports.html ./reports"
   },
   "keywords": [],
@@ -19,7 +20,6 @@
     "appium": "^2.0.0-beta.24",
     "appium-doctor": "^1.16.0",
     "appium-uiautomator2-driver": "^2.1.1",
-    "dotenv": "^10.0.0",
     "mochawesome-report-generator": "^3.1.5",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",

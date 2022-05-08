@@ -1,4 +1,4 @@
-import { multipleBrowserCapabilities } from './capabilities';
+import { DockerBrowserCapabilities } from './capabilities';
 import { config as bddconfig } from './wdio.conf.e2e';
 
 export const config: WebdriverIO.Config = {
@@ -7,6 +7,6 @@ export const config: WebdriverIO.Config = {
     port: 4444,
     path: '/',
     maxInstances: 5,
-    capabilities: multipleBrowserCapabilities,
+    capabilities: DockerBrowserCapabilities,
     services: ['docker']
 }

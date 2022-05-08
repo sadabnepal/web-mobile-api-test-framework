@@ -1,25 +1,24 @@
 {
     "compilerOptions": {
-        "outDir": "./built",
         "baseUrl": ".",
         "paths": {
             "@UIPages/*": [
-                "src/web/pages/*"
+                "pages/*"
             ],
             "@UITestData/*": [
-                "src/web/resources/*"
+                "resources/*"
             ],
             "@UIStatic/*": [
-                "src/web/static/*"
+                "static/*"
             ],
             "@UIUtils/*": [
-                "src/web/utils/*"
+                "utils/*"
             ],
             "@UIResources/*": [
-                "src/web/resources/*"
+                "resources/*"
             ],
             "@UITypes/*": [
-                "src/web/types/*"
+                "types/*"
             ]
         },
         "allowJs": false,
