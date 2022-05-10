@@ -16,6 +16,9 @@ export const config: WebdriverIO.Config = {
     ],
     exclude: [],
 
+    suites: {
+        smoke: ['./tests/smoke.spec.ts']
+    },
     // ============
     // Capabilities
     // ============

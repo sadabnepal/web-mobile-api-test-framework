@@ -2,21 +2,37 @@ name: Test Automation CI
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ ft_module_enhancement ]
 
 jobs:
+
+  smoke:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout project
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.17.6
+          cache: 'npm'
+      - run: cd web && npm install
+      - run: npm run smoke
+
   MochaTests:
+    needs: [smoke]  
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout project
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: 14.17.6
         cache: 'npm'
-    - run: npm install
+    - run: cd web && npm install
     - run: npm run test
     - run: npm run report:mocha:ci
 
@@ -28,6 +44,7 @@ jobs:
         path: mochawesome-report
 
   CucumberBDDTests:
+    needs: [smoke]
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +55,7 @@ jobs:
       with:
         node-version: 14.17.6
         cache: 'npm'
-    - run: npm install
+    - run: cd web && npm install
     - run: npm run test:e2e
     - run: npm run report:cucumber
 

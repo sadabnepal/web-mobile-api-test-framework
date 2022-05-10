@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node runner.ts",
     "test": "wdio run ./config/wdio.conf.ts",
+    "smoke": "wdio run ./config/wdio.conf.ts --suite smoke",
     "pretest:docker": "docker-compose up -d",
     "test:docker": "wdio run ./config/wdio.conf.docker.ts",
     "posttest:docker": "docker-compose down",
