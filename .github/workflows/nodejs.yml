@@ -1,7 +1,7 @@
 name: Test Automation CI 
 
 on:
-  pull_request:
+  push:
     branches: [ ft_module_enhancement ]
 
 jobs:
