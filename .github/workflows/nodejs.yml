@@ -4,6 +4,10 @@ on:
   push:
     branches: [ ft_module_enhancement ]
 
+defaults:
+  run:
+    working-directory: ./web
+
 jobs:
 
   smoke:
@@ -11,8 +15,6 @@ jobs:
       steps:
       - name: Checkout project
         uses: actions/checkout@v3
-      - name: Setup work directory
-        working-directory: ./web
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
