@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Navigate to web folder
-      - run: cd web
+        run: cd web
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
