@@ -1,0 +1,32 @@
+name: API CI 
+
+on:
+  push:
+    branches: [ ft_module_enhancement ]   
+
+jobs:
+
+  ApiTest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./api
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17.6
+        cache: 'npm'
+        cache-dependency-path: './api/package-lock.json'
+    - run: npm install
+    - run: npm run test
+    - run: ls -ltr
+
+    - name: Generate API Mochawesome Report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: MochawesomeReport
+        path: ./reports
