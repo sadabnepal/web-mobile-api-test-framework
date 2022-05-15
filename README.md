@@ -67,25 +67,6 @@ Send Report:
 npm run mailCucumberReport
 npm run mailMochaResult
 ```
-
-Configurations for local run:
-```bash
-Headless: false [ control from .env file ]
-Service: selenium-standalone
-Browser: chrome
-Max browser instance: 1
-Retry on failure: 0
-```
-
-Configurations for docker run:
-```bash
-Headless: true [ false for VNC ]
-Service: [ docker ]
-Browser: Chrome, Edge & Firefox
-Max browser instance: 5
-Retry on failure: 1
-```
-
 -----
 
 ### API Test
