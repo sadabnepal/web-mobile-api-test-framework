@@ -2,19 +2,13 @@ const browserOptions = {
     args: [
         '--no-sandbox',
         '--disable-infobars',
-        '--headless',
         '--disable-gpu',
         '--window-size=1440,735'
     ],
 }
 
 const browserOptionsHeadless = {
-    args: [
-        '--no-sandbox',
-        '--disable-infobars',
-        '--disable-gpu',
-        '--window-size=1440,735'
-    ],
+    args: [...browserOptions.args, "--headless"]
 }
 
 export const chromeCapabilities = [
