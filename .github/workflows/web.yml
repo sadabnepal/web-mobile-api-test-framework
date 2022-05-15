@@ -2,7 +2,7 @@ name: Web CI
 
 on:
   push:
-    branches: [ ft_module_enhancement ]   
+    branches: [ master ]   
 
 jobs:
 
