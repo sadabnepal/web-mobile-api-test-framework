@@ -8,17 +8,18 @@ jobs:
 
   smoke:
       runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./web
       steps:
-      - uses: actions/checkout@v1
-      - name: Navigate to web folder
-        working-directory: ./web
-        run: ls -l
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14.17.6
           cache: 'npm'
+          cache-dependency-path: './web/package-lock.json'
       - name: Install dependencies and Run web test
+      - run: npm install
       - run: npm install
       - run: npm run smoke
 
@@ -28,7 +29,6 @@ jobs:
     defaults:
       run:
         working-directory: ./web
-
     steps:
     - name: Checkout project
       uses: actions/checkout@v3
@@ -37,6 +37,7 @@ jobs:
       with:
         node-version: 14.17.6
         cache: 'npm'
+        cache-dependency-path: './web/package-lock.json'
     - run: npm install
     - run: npm run test
     - run: npm run report:mocha:ci
@@ -54,7 +55,6 @@ jobs:
     defaults:
       run:
         working-directory: ./web
-
     steps:
     - name: Checkout project
       uses: actions/checkout@v2
@@ -63,6 +63,7 @@ jobs:
       with:
         node-version: 14.17.6
         cache: 'npm'
+        cache-dependency-path: './web/package-lock.json'
     - run: npm install
     - run: npm run test:e2e
     - run: npm run report:cucumber
