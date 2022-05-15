@@ -9,16 +9,16 @@ jobs:
   smoke:
       runs-on: ubuntu-latest
       steps:
+      - name: Navigate to web folder
+      - run: cd web
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14.17.6
           cache: 'npm'
       - name: Install dependencies and Run web test
-        run: |
-          cd web
-          npm install
-          npm run smoke
+      - run: npm install
+      - run: npm run smoke
 
   MochaTests:
     needs: [smoke]  
