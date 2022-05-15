@@ -5,7 +5,7 @@ let options: Options = {
     theme: 'bootstrap',
     brandTitle: "WebdriverIO Cucumber Report",
     jsonDir: CUCUMBER_JSON_REPORT_DIR,
-    output: `${CUCUMBER_REPORT_DIR}cucumber-report.html`,
+    output: `${CUCUMBER_REPORT_DIR}/cucumber-report.html`,
     screenshotsDirectory: CUCUMBER_SCREENSHOT_REPORT_DIR,
     storeScreenshots: true,
     reportSuiteAsScenarios: true,
