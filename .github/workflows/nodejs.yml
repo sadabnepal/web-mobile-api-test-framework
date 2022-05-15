@@ -7,33 +7,33 @@ on:
 jobs:
 
   smoke:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: ./web
-      steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14.17.6
-          cache: 'npm'
-          cache-dependency-path: './web/package-lock.json'
-      - name: Install dependencies and Run web test
-      - run: npm install
-      - run: npm install
-      - run: npm run smoke
-
-  MochaTests:
-    needs: [smoke]  
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./web
     steps:
     - name: Checkout project
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17.6
+        cache: 'npm'
+        cache-dependency-path: './web/package-lock.json'
+    - run: npm install
+    - run: npm run smoke
+
+  MochaTests:
+    needs: [smoke]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
         node-version: 14.17.6
         cache: 'npm'
