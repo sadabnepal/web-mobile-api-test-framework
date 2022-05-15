@@ -26,12 +26,13 @@ appium driver install xcuitest      [ install ios driver]
 2] Click on More Actions 
    --> AVD Manager 
    --> Create Virtual Device 
-   --> Select the device and OS version (from below device details) 
+   --> Select the device and OS version [ Refer Device Configurations ] 
    --> Finish
 3] Once Virtual device is created, click on Launch this AVD in the emulator.
 4] Command to view the list of devices attached `adb devices`
 ```
 
+Device Configurations:
 ```
 Device 1: Pixel 3 - version 11
 Device 2: Nexus 6 - version 10 [ if you want to run tests in parallel ] 
