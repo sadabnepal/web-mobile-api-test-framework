@@ -2,7 +2,7 @@ name: Web CI
 
 on:
   push:
-    branches: [ master ]   
+    branches: [ ft_module_enhancement ]   
 
 jobs:
 
@@ -41,14 +41,13 @@ jobs:
     - run: npm install
     - run: npm run test
     - run: npm run report:mocha:ci
-    - run: ls -ltr
 
     - name: Generate Mochawesome Report
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: MochawesomeReport
-        path: ./mochawesome-report
+        name: MochaHTMLReport
+        path: web/mochawesome-report
 
   CucumberBDDTests:
     needs: [smoke]
@@ -68,11 +67,10 @@ jobs:
     - run: npm install
     - run: npm run test:e2e
     - run: npm run report:cucumber
-    - run: ls -ltr
 
     - name: Generate Cucumber HTML Report
       if: always()
       uses: actions/upload-artifact@v2
       with:
         name: CucumberHTMLReport
-        path: ./reports/cucumber/cucumber-report.html
+        path: web/reports/cucumber/cucumber-report.html
