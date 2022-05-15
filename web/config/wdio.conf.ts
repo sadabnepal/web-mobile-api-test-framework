@@ -14,7 +14,7 @@ export const config: WebdriverIO.Config = {
     specs: [
         './tests/mocha/**/*.spec.ts'
     ],
-    exclude: [],
+    exclude: ['./tests/mocha/**/FrameShadowDom.spec.ts'],
 
     suites: {
         smoke: ['./tests/smoke.spec.ts']
