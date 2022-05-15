@@ -11,7 +11,8 @@ jobs:
       steps:
       - uses: actions/checkout@v1
       - name: Navigate to web folder
-        run: cd web
+        working-directory: ./web
+        run: ls -l
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
