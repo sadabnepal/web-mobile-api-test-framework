@@ -1,3 +1,5 @@
+import { RUN_MODE } from "../utils/envreader";
+
 const browserOptions = {
     args: [
         '--no-sandbox',
@@ -16,7 +18,7 @@ export const chromeCapabilities = [
         maxInstances: 1,
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': browserOptions
+        'goog:chromeOptions': RUN_MODE === "LOCAL" ? browserOptions : browserOptionsHeadless
     }
 ]
 
