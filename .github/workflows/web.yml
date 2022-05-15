@@ -1,0 +1,84 @@
+name: Web CI 
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17.6
+        cache: 'npm'
+        cache-dependency-path: './web/package-lock.json'
+    - run: npm install
+    - run: npm run smoke
+
+  MochaTests:
+    needs: [smoke]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17.6
+        cache: 'npm'
+        cache-dependency-path: './web/package-lock.json'
+    - run: npm install
+    - run: npm run test
+
+    - name: Generate Mochawesome Report
+      if: always()
+      run: npm run report:mocha:ci
+
+    - name: Export Mochawesome Report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: MochaHTMLReport
+        path: web/mochawesome-report
+
+  CucumberBDDTests:
+    needs: [smoke]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17.6
+        cache: 'npm'
+        cache-dependency-path: './web/package-lock.json'
+    - run: npm install
+    - run: npm run test:e2e
+
+    - name: Generate Cucumber HTML Report
+      if: always()
+      run: npm run report:cucumber
+
+    - name: Export Cucumber HTML Report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: CucumberHTMLReport
+        path: web/reports/cucumber/cucumber-report.html

@@ -1,6 +1,10 @@
-node_modules/
-reports/
-mochawesome-report/
+api/node_modules/
+api/reports/
+mobile/node_modules/
+mobile/reports/
+web/node_modules/
+web/reports/
+web/mochawesome-report/
+web/tmp/
+web/.env
 notes.TODO
-tmp/
-.env
