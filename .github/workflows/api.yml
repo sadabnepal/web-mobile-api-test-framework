@@ -22,11 +22,12 @@ jobs:
         cache-dependency-path: './api/package-lock.json'
     - run: npm install
     - run: npm run test
+    - run: cd reports
     - run: ls -ltr
 
     - name: Generate API Mochawesome Report
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: MochawesomeReport
-        path: ./reports
+        name: APIMochaReport
+        path: reports
