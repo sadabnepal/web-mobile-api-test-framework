@@ -8,3 +8,4 @@ web/mochawesome-report/
 web/tmp/
 web/.env
 notes.TODO
+node_modules/

@@ -54,7 +54,6 @@
     "wdio-mochawesome-reporter": "^4.0.0"
   },
   "dependencies": {
-    "enquirer": "^2.3.6",
     "zip-local": "^0.3.5"
   }
 }

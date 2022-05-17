@@ -1,0 +1,28 @@
+{
+  "name": "webdriverio_typescript_e2e",
+  "version": "1.0.0",
+  "description": "Web, API and Mobile Test Automation Framework",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadabnepal/WebdriverIOTypeScriptE2E.git"
+  },
+  "keywords": [
+    "webdriverio",
+    "typescript",
+    "supertest",
+    "appium"
+  ],
+  "author": "MD SADAB SAQIB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/issues"
+  },
+  "homepage": "https://github.com/sadabnepal/WebdriverIOTypeScriptE2E#readme",
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  }
+}

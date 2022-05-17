@@ -1,5 +1,4 @@
-import { execSync } from 'child_process'
-
+const { execSync } = require('child_process')
 const { Select } = require('enquirer');
 
 const TEST_MODULE = new Select({
@@ -21,15 +20,15 @@ const UI_TEST_TYPE = new Select({
 })
 
 let runnerCommand = {
-    apiRunner: () => { execSync('npm run test:api', { stdio: 'inherit' }) },
-    mobileRunner: () => { execSync('npm run test-mobile', { stdio: 'inherit' }) },
-    localMochaRunner: () => execSync('npm run test', { stdio: 'inherit' }),
+    apiRunner: () => { execSync('cd api&&npm run test', { stdio: 'inherit' }) },
+    mobileRunner: () => { execSync('cd mobile&&npm run test', { stdio: 'inherit' }) },
+    localMochaRunner: () => execSync('cd web&&npm run test', { stdio: 'inherit' }),
     dockerMochaRunner: () => {
-        execSync('npm run test:docker', { stdio: 'inherit' })
+        execSync('cd web&&npm run test:docker', { stdio: 'inherit' })
     },
-    localBDDRunner: () => execSync('npm run test:e2e', { stdio: 'inherit' }),
+    localBDDRunner: () => execSync('cd web&&npm run test:e2e', { stdio: 'inherit' }),
     dockerBDDRunner: () => {
-        execSync('npm run test:e2e:docker', { stdio: 'inherit' })
+        execSync('cd web&&npm run test:e2e:docker', { stdio: 'inherit' })
     }
 }
 

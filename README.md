@@ -114,15 +114,16 @@ Report Paths:
 mobile: mobile/reports/mobile.html
 ```
 
-<!--
-#### User interactive CLI
+-----
+
+### Interactive CLI to run test:
+> Make sure all installation and setup has been completed from above sections beofore using this feature
 ```bash
 npm start
 ```
-Above command will start wizard with option to select frammework. Based on user selection either of the below test module will start in <b>local machine</b> or <b>docker container</b>. Code to control wizard and user selection is available in 'runner.ts' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
-<b>Test Module Options : </b> | api | mobile | mocha | cucumber | <br>
+Above command will start wizard with option to select frammework. Based on user selection either of the below test module will start in <b>local machine</b> or <b>docker container</b>. Code to control wizard and user selection is available in 'start.js' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
+<b>Test Module Options : </b> | UI | API | Mobile | <br>
 ![cli_demo](https://user-images.githubusercontent.com/65847528/152398324-b0e44fd0-acdf-4f5e-b762-acb53a9f361c.gif)
--->
 
 -----
 
