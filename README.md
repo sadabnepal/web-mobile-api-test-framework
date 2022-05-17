@@ -23,6 +23,18 @@
 ```
 -----
 
+### Interactive CLI to run test:
+> Make sure mobile setup has been completed if selecting mobile as CLI option. See [Mobile Test](#Mobile-Test) for setup instructions. Before running actual test, presence of node_modules folder will be validated and if not not found installation will take place before proceeding any furthur.
+```bash
+npm start
+```
+It start wizard with test module options, based on user selection either of the below module will start <b>locally</b> or inside <b>docker container</b>. Code to control wizard and user selection is available in 'start.js' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
+<b>Test Module Options : </b> | UI | API | Mobile | <br>
+![cli_demo](https://user-images.githubusercontent.com/65847528/152398324-b0e44fd0-acdf-4f5e-b762-acb53a9f361c.gif)
+
+
+-----
+
 ### Web Test
 Install dependencies:
 > Navigate to "web" folder and then run below command
@@ -113,17 +125,6 @@ Report Paths:
 ```bash
 mobile: mobile/reports/mobile.html
 ```
-
------
-
-### Interactive CLI to run test:
-> Make sure all installation and setup has been completed from above sections beofore using this feature
-```bash
-npm start
-```
-Above command will start wizard with option to select frammework. Based on user selection either of the below test module will start in <b>local machine</b> or <b>docker container</b>. Code to control wizard and user selection is available in 'start.js' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
-<b>Test Module Options : </b> | UI | API | Mobile | <br>
-![cli_demo](https://user-images.githubusercontent.com/65847528/152398324-b0e44fd0-acdf-4f5e-b762-acb53a9f361c.gif)
 
 -----
 

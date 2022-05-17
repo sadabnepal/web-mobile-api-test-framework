@@ -1,5 +1,7 @@
 const { execSync } = require('child_process')
 const { Select } = require('enquirer');
+const { join } = require("path");
+const fs = require('fs');
 
 const TEST_MODULE = new Select({
     name: 'framework',
@@ -32,14 +34,52 @@ let runnerCommand = {
     }
 }
 
+const API_NODE_MODULES_PATH = join(process.cwd(), 'api', 'node_modules');
+const MOBILE_NODE_MODULES_PATH = join(process.cwd(), 'mobile', 'node_modules');
+const WEB_NODE_MODULES_PATH = join(process.cwd(), 'web', 'node_modules');
+
+const isNodeModuleDoesNotExists = (path) => {
+    if (!fs.existsSync(path)) {
+        console.log(`"node_modules" folder is missing!!! Starting installation...`);
+        return true;
+    }
+    else return false;
+}
+
+let installerCommand = {
+    api: () => { execSync('cd api&&npm install', { stdio: 'inherit' }) },
+    mobile: () => { execSync('cd mobile&&npm install', { stdio: 'inherit' }) },
+    web: () => execSync('cd web&&npm install', { stdio: 'inherit' }),
+}
+
+let nodeModuleInstaller = {
+    api: () => {
+        if (isNodeModuleDoesNotExists(API_NODE_MODULES_PATH))
+            installerCommand.api();
+    },
+    mobile: () => {
+        if (isNodeModuleDoesNotExists(MOBILE_NODE_MODULES_PATH))
+            installerCommand.mobile();
+    },
+    web: () => {
+        if (isNodeModuleDoesNotExists(WEB_NODE_MODULES_PATH))
+            installerCommand.web();
+    }
+}
+
 const configRunner = async () => {
     let answers = await TEST_MODULE.run();
     switch (answers) {
-        case "API": runnerCommand.apiRunner()
+        case "API":
+            nodeModuleInstaller.api();
+            runnerCommand.apiRunner();
             break;
-        case "Mobile": runnerCommand.mobileRunner()
+        case "Mobile":
+            nodeModuleInstaller.mobile();
+            runnerCommand.mobileRunner();
             break;
         case "UI":
+            nodeModuleInstaller.web();
             let ui_test_type = await UI_TEST_TYPE.run();
             if (ui_test_type == 'Mocha') {
                 let mocha_runmode = await RUNNER_SERVICE.run();
