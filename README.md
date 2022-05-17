@@ -130,16 +130,13 @@ Above command will start wizard with option to select frammework. Based on user 
     - Web, Mobile and API Testing
     - Mocha and Cucumber BDD framework
     - Page Object Design pattern
-    - Docker integration
-    - VNC integration with video recording
+    - Docker with VNC integration
     - Parallel execution
     - Cross browser testing
     - Retry failed test
     - Screenshot in report for failed tests
-    - Download chromedriver from local path
     - Github actions
     - Send test report to list of Gmail
-    - Reusable API calls helper
     - Use of types for method params optimization
     - Improved import statement using tsconfig path
 
