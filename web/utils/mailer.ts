@@ -1,9 +1,10 @@
 import nodemailer from "nodemailer";
+import { NodeMailOptions } from "../types/external";
 import { env_password, env_sender_gmail } from "./envreader";
 
 const GmailCredObject = { user: env_sender_gmail, pass: env_password }
 
-export const mailSender = async (mailOptions: {}) => {
+export const mailSender = async (mailOptions: NodeMailOptions) => {
     nodemailer
         .createTransport({ service: "gmail", auth: GmailCredObject })
         .sendMail(mailOptions, (error, info) => error
