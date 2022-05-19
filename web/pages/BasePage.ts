@@ -43,11 +43,12 @@ export default class BasePage {
         logStep(`Selected Element: ${await element.selector} by visible text: ${text}`);
     }
 
-    protected async clickOnMatchingText(elements: WebdriverIOElements, text: string) {
-        const matchingElement = await elements.filter(async (element) => (await element.getText()).includes(text));
-        matchingElement.map(element => {
-            element.click();
-            logStep(`Clicked on matching text: ${text}`);
+    protected async clickOnMatchingText(elements: WebdriverIOElements, expectedText: string) {
+        await elements.forEach(async element => {
+            if (await element.getText() === expectedText) {
+                await element.click();
+                logStep(`Clicked on matching text: ${expectedText}`);
+            }
         })
     }
 }

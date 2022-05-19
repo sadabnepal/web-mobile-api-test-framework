@@ -7,14 +7,14 @@
         "name": "testuser",
         "email": "testuser@test.com",
         "contactNo": 1234567890,
-        "contactType": "Mobile",
+        "contactType": "Mobile Phone",
         "question": "Frameworks"
     },
     "formDataWithAllFields": {
         "name": "testuser",
         "email": "testuser@test.com",
         "contactNo": 1234567890,
-        "contactType": "Home",
+        "contactType": "Home Phone",
         "question": "Frameworks",
         "message": "This is test input"
     }
