@@ -27,19 +27,19 @@ export const multipleBrowserCapabilities = [
         maxInstances: 1,
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': browserOptionsHeadless
+        'goog:chromeOptions': RUN_MODE === "LOCAL" ? browserOptions : browserOptionsHeadless
     },
     {
         maxInstances: 1,
         browserName: 'MicrosoftEdge',
         acceptInsecureCerts: true,
-        'ms:edgeOptions': browserOptionsHeadless
+        'ms:edgeOptions': RUN_MODE === "LOCAL" ? browserOptions : browserOptionsHeadless
     },
     // {
     //     maxInstances: 1,
     //     browserName: 'firefox',
     //     acceptInsecureCerts: true,
-    //     'moz:firefoxOptions': browserOptionsHeadless
+    //     'moz:firefoxOptions':  RUN_MODE === "LOCAL" ? browserOptions : browserOptionsHeadless
     // }
 ]
 
