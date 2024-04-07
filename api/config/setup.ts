@@ -1,0 +1,1 @@
+export const REQ_RES_BASE_URI = "https://reqres.in"
