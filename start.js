@@ -49,7 +49,7 @@ const isNodeModuleDoesNotExists = (path) => {
 let installerCommand = {
     api: () => { execSync('cd api&&npm install', { stdio: 'inherit' }) },
     mobile: () => { execSync('cd mobile&&npm install', { stdio: 'inherit' }) },
-    web: () => execSync('cd web&&npm install', { stdio: 'inherit' }),
+    web: () => execSync('cd web&&npm install --legacy-peer-deps', { stdio: 'inherit' }),
 }
 
 let nodeModuleInstaller = {

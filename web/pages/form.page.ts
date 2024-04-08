@@ -1,12 +1,12 @@
-import Page from "@UIPages/BasePage";
-import { FormFieldTypes } from "@UITypes/customTypes";
+import { FormFieldTypes } from "../types/customTypes"
+import BasePage from "./basePage"
 
-class FormElements extends Page {
+class FormElements extends BasePage {
 
     get nameTextBox() { return $('#cname') }
     get emailTextBox() { return $('#cemail') }
     get phoneTextBox() { return $('#cphone') }
-    get phoneRadioBtns() { return $$('.radio-container') }
+    get phoneRadioButtons() { return $$('.radio-container') }
     get messageTextBox() { return $('#cmessage') }
     get questionDropdown() { return $('#cselect') }
     get simulateMsgCheckBox() { return $('#csuccess') }
@@ -17,14 +17,14 @@ class FormElements extends Page {
         await super.open("https://aquabottesting.com/")
     }
 
-    async submitContactForm(formdata: FormFieldTypes) {
+    async submitContactForm(formData: FormFieldTypes) {
         await this.scrollToElement(this.nameTextBox)
-        await this.enterData(this.nameTextBox, formdata.name)
-        await this.enterData(this.emailTextBox, formdata.email)
-        await this.enterData(this.phoneTextBox, formdata.contactNo)
-        await this.clickOnMatchingText(this.phoneRadioBtns, formdata.contactType)
-        if (formdata.message) { await this.enterData(this.messageTextBox, formdata.message) }
-        await this.selectDropdownByText(this.questionDropdown, formdata.question)
+        await this.enterData(this.nameTextBox, formData.name)
+        await this.enterData(this.emailTextBox, formData.email)
+        await this.enterData(this.phoneTextBox, formData.contactNo)
+        await this.clickOnMatchingText(this.phoneRadioButtons, formData.contactType)
+        if (formData.message) { await this.enterData(this.messageTextBox, formData.message) }
+        await this.selectDropdownByText(this.questionDropdown, formData.question)
         await this.clickElement(this.simulateMsgCheckBox)
         await this.clickElement(this.submitBtn)
     }

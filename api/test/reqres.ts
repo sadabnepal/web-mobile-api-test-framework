@@ -1,10 +1,10 @@
 import { assert } from 'chai';
 import { createUserPayload } from "resources/payloads";
 import { endpoints } from "services/endpoints";
-import { makeDELETECall, makeGETCall, makePOSTCall } from 'utils/apicalls';
 import { logResponseToMochaReport, stringFormatter } from 'utils/formatter';
+import { makeDELETECall, makeGETCall, makePOSTCall } from 'utils/httpCalls';
 
-describe('REQRES users api validation', () => {
+describe('REQ RES users api validation', () => {
 
     it('should verify POST user call', async function () {
         const response = await makePOSTCall(endpoints.USERS_SERVICE, createUserPayload)

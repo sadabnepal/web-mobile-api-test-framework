@@ -1,8 +1,8 @@
 import { DockerBrowserCapabilities } from './capabilities';
-import { config as bddconfig } from './wdio.conf.e2e';
+import { config as bddConfig } from './wdio.conf.e2e';
 
 export const config: WebdriverIO.Config = {
-    ...bddconfig,
+    ...bddConfig,
     hostname: 'localhost',
     port: 4444,
     path: '/',

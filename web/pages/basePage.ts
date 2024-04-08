@@ -1,4 +1,4 @@
-import { WebdriverIOElement, WebdriverIOElements } from "@UITypes/webelements";
+import { WebdriverIOElement, WebdriverIOElements } from "../types/webelements";
 
 const logStep = (logMessage: string) => console.log(`STEP || ${logMessage}`);
 
@@ -14,7 +14,7 @@ export default class BasePage {
         logStep(`Clicked on Element: ${await element.selector}`);
     }
 
-    protected async waitAndclick(element: WebdriverIOElement, waitTime?: number) {
+    protected async waitAndClick(element: WebdriverIOElement, waitTime?: number) {
         await element.waitForClickable({ timeout: waitTime ? waitTime : 10000 })
         await element.click()
         logStep(`clicked on Element: ${await element.selector}`);

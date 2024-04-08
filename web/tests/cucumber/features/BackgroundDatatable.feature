@@ -1,7 +1,7 @@
 Feature: Login feature for background and datable demo
 
   Background: open herokuapp
-    Given I open the herokuapp login page
+    Given I open the heroku app login page
 
   Scenario: As a valid user, I can log into the secure area
     When I login with given username and password

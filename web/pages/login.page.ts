@@ -1,6 +1,6 @@
-import Page from "@UIPages/BasePage";
+import BasePage from "./basePage";
 
-class LoginPage extends Page {
+class LoginPage extends BasePage {
 
     get inputUsername() { return $('#username') }
     get inputPassword() { return $('#password') }
@@ -9,7 +9,7 @@ class LoginPage extends Page {
     async login(username: string, password: string) {
         await this.waitAndEnterData(this.inputUsername, username);
         await this.waitAndEnterData(this.inputPassword, password);
-        await this.waitAndclick(this.btnSubmit);
+        await this.waitAndClick(this.btnSubmit);
     }
 
     async openApp() {

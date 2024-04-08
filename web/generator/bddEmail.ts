@@ -1,6 +1,6 @@
 import { MAILER_PATH } from "../static/pathConstants";
-import { env_reciever_list, env_sender_gmail, env_sender_name } from "../utils/envreader";
-import { parseJsonFile, zipFolder } from "../utils/fileutils";
+import { env_receiver_list, env_sender_gmail, env_sender_name } from "../utils/envReader";
+import { parseJsonFile, zipFolder } from "../utils/fileSystem";
 import { mailSender } from "../utils/mailer";
 import { emailBodyTemplate } from "./emailBody";
 
@@ -17,8 +17,8 @@ zipFolder(MAILER_PATH.SOURCE_CUCUMBER_HTML, MAILER_PATH.DESTINATION_CUCUMBER_COM
 
 let bddEMailOptions = {
     from: `"${env_sender_name}" <${env_sender_gmail}>`,
-    to: env_reciever_list,
-    subject: "Automtion Execution Report",
+    to: env_receiver_list,
+    subject: "Automation Execution Report",
     html: emailBodyTemplate(bdd_test_total, bdd_test_passed, bdd_test_failed, bdd_test_skipped),
     attachments: [
         {
