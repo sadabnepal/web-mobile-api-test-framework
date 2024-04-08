@@ -1,25 +1,34 @@
 <h2 align="center"> Web, API and Mobile Test Automation Framework </h2>
 
+<p align="center">
+    <a href="https://webdriver.io/">
+        <img alt="WebdriverIO" src="./images/wdio-logo.svg" width="146">
+    </a>
+</p>
+
+
 <h4 align="center">
 
-[![WEB CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml)
-
+[![Web CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml)
 [![API CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/api.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/api.yml)
 
 </h4>
 
-#### Requirements
-[![NodeJs](https://img.shields.io/badge/-NodeJS%20v12%20OR%20later-%23339933?logo=npm)](https://nodejs.org/en/download/)
-[![Java](https://img.shields.io/badge/-JDK-%23007396?logo=java&logoColor=black&)](https://www.oracle.com/java/technologies/downloads/)
+<!-- for badges and icons refer to https://simpleicons.org/ -->
+
+#### Pre-requisite
+[![NodeJs](https://img.shields.io/badge/-NodeJS-grey?logo=node.js)](https://nodejs.org/en/download/)
 [![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white)](https://docs.docker.com/engine/install/)
 [![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code)](https://code.visualstudio.com/download)
 [![Appium-Inspector](https://img.shields.io/badge/-Appium%20Inspector-662d91?logo=appium&logoColor=black)](https://github.com/appium/appium-inspector/releases)
 [![AndroidStudio](https://img.shields.io/badge/-Android%20Studio-3DDC84?logo=android-studio&logoColor=white)](https://developer.android.com/studio)
+[![JDK](https://img.shields.io/badge/-JDK-white?logo=openjdk&logoColor=black&)](https://www.azul.com/downloads/#zulu)
+
 
 #### Clone Repository
 ```bash
-1. git clone https://github.com/sadabnepal/WebdriverIOTypeScriptE2E.git
-2. Navigate to `WebdriverIOTypeScriptE2E`
+git clone https://github.com/sadabnepal/web-mobile-api-test-framework.git
+cd web-mobile-api-test-framework
 ```
 -----
 
@@ -30,7 +39,7 @@ npm start
 ```
 It start wizard with test module options, based on user selection either of the below module will start <b>locally</b> or inside <b>docker container</b>. Code to control wizard and user selection is available in 'start.js' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
 <b>Test Module Options : </b> | UI | API | Mobile | <br>
-![cli_demo](https://user-images.githubusercontent.com/65847528/152398324-b0e44fd0-acdf-4f5e-b762-acb53a9f361c.gif)
+![cli_demo](./images/setup.gif)
 
 
 -----
@@ -152,7 +161,8 @@ mobile: mobile/reports/mobile.html
 [![Enquirer](https://img.shields.io/badge/-Enquirer-f0db4f?logoColor=white)](https://github.com/enquirer/enquirer)
 [![Docker](https://img.shields.io/badge/-Docker-0db7ed?logo=docker&logoColor=white)](https://www.docker.com/)
 [![Appium](https://img.shields.io/badge/-Appium-662d91?logo=appium&logoColor=black)](https://github.com/appium/appium)
-[![Node-Mailer](https://img.shields.io/badge/-Node%20Mailer-89D05C?logo=gmail&logoColor=blue)](https://github.com/nodemailer/nodemailer)
+[![dotenv](https://img.shields.io/badge/-dotenv-grey?logo=.env&logoColor=#ECD53F)](https://github.com/appium/appium)
+[![Node-Mailer](https://img.shields.io/badge/-Node%20Mailer-grey?logo=gmail&logoColor=blue)](https://github.com/nodemailer/nodemailer)
 
 #### Folder Structure:
 ![e2e_framework_folders](https://user-images.githubusercontent.com/65847528/168474570-5eca8112-25b7-45ca-b411-355d0ce39079.png)
