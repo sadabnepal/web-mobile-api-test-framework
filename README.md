@@ -2,8 +2,9 @@
 
 <h4 align="center">
 
-[![WEB CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml)
+![wdio_logo](./images/wdio-logo.svg)
 
+[![WEB CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml)
 [![API CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/api.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/api.yml)
 
 </h4>
@@ -30,7 +31,7 @@ npm start
 ```
 It start wizard with test module options, based on user selection either of the below module will start <b>locally</b> or inside <b>docker container</b>. Code to control wizard and user selection is available in 'start.js' which is built using [enquirer](https://www.npmjs.com/package/enquirer) node package.<br>
 <b>Test Module Options : </b> | UI | API | Mobile | <br>
-![cli_demo](https://user-images.githubusercontent.com/65847528/152398324-b0e44fd0-acdf-4f5e-b762-acb53a9f361c.gif)
+![cli_demo](./images/setup.gif)
 
 
 -----
