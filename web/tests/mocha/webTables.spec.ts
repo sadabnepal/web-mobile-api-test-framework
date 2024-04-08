@@ -1,4 +1,4 @@
-import webTablesPage from "../../pages/1webTables.page";
+import webTablesPage from "../../pages/webTables.page";
 import { table1DataOptions } from "../../types/customTypes";
 
 describe('validate web table elements', () => {
