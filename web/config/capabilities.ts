@@ -1,4 +1,4 @@
-import { RUN_MODE } from "../utils/envReader";
+import { RUN_MODE } from "../utils/1envReader";
 
 const browserOptions = {
     args: [

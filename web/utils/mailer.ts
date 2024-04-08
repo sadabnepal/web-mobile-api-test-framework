@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { NodeMailOptions } from "../types/external";
-import { env_password, env_sender_gmail } from "./envReader";
+import { env_password, env_sender_gmail } from "./1envReader";
 
 const GmailCredObject = { user: env_sender_gmail, pass: env_password }
 

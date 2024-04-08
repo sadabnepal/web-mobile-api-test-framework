@@ -1,7 +1,7 @@
 import loginPage from "../../pages/login.page";
 import securePage from "../../pages/secure.page";
 import { herokuAppLoginData } from "../../resources/logindata";
-import FrameworkConstants from "../../static/frameworkConstants";
+import FrameworkConstants from "../../static/1frameworkConstants";
 
 
 describe('Test heroku app application login', () => {

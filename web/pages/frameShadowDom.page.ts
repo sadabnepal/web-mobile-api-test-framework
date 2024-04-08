@@ -1,4 +1,4 @@
-import BasePage from "./basePage";
+import BasePage from "./1basePage";
 
 class FrameShadowDom extends BasePage {
 
