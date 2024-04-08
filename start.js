@@ -10,13 +10,13 @@ const TEST_MODULE = new Select({
 })
 
 const RUNNER_SERVICE = new Select({
-    name: 'runmode',
+    name: 'runMode',
     message: 'Where do you want to run your tests?',
     choices: ['Local', 'Docker']
 })
 
 const UI_TEST_TYPE = new Select({
-    name: 'runmode',
+    name: 'runMode',
     message: 'Which framework do you want to run?',
     choices: ['Mocha', 'Cucumber']
 })
@@ -82,14 +82,14 @@ const configRunner = async () => {
             nodeModuleInstaller.web();
             let ui_test_type = await UI_TEST_TYPE.run();
             if (ui_test_type == 'Mocha') {
-                let mocha_runmode = await RUNNER_SERVICE.run();
-                if (mocha_runmode == 'Local') { runnerCommand.localMochaRunner() }
-                else if (mocha_runmode == 'Docker') { runnerCommand.dockerMochaRunner() }
+                const mochaRunMode = await RUNNER_SERVICE.run();
+                if (mochaRunMode == 'Local') { runnerCommand.localMochaRunner() }
+                else if (mochaRunMode == 'Docker') { runnerCommand.dockerMochaRunner() }
             }
             else if (ui_test_type == 'Cucumber') {
-                let bdd_runmode = await RUNNER_SERVICE.run();
-                if (bdd_runmode == 'Local') { runnerCommand.localBDDRunner() }
-                else if (bdd_runmode == 'Docker') { runnerCommand.dockerBDDRunner() }
+                const bddRunMode = await RUNNER_SERVICE.run();
+                if (bddRunMode == 'Local') { runnerCommand.localBDDRunner() }
+                else if (bddRunMode == 'Docker') { runnerCommand.dockerBDDRunner() }
             }
             break;
         default: throw new Error("Please select option from ::  api | mocha | cucumber")
