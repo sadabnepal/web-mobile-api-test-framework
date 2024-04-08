@@ -1,9 +1,11 @@
+import type { Options } from '@wdio/types';
+import { join } from 'path';
 import cucumberJson from 'wdio-cucumberjs-json-reporter';
 import { CUCUMBER_JSON_REPORT_DIR, CUCUMBER_REPORT_DIR, MAIL_JSON_CUCUMBER_DIR } from '../static/pathConstants';
-import { deleteDirectory } from '../utils/fileutils';
+import { deleteDirectory } from '../utils/fileSystem';
 import { chromeCapabilities } from "./capabilities";
 
-export const config: WebdriverIO.Config = {
+export const config: Options.Testrunner = {
     // ====================
     // Runner Configuration
     // ====================
@@ -12,7 +14,7 @@ export const config: WebdriverIO.Config = {
     // Specify Test Files
     // ==================
     specs: [
-        './tests/cucumber/features/**/*.feature'
+        join(process.cwd(), 'tests', 'cucumber', 'features', '*.feature')
     ],
     exclude: [],
 
@@ -32,7 +34,7 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone'],
+    // services: [],
     framework: 'cucumber',
     specFileRetries: 0,
     specFileRetriesDelay: 0,
@@ -54,7 +56,7 @@ export const config: WebdriverIO.Config = {
         retry: 0,
         require: ['./tests/cucumber/steps/*.ts'],
         backtrace: false,
-        requireModule: ['tsconfig-paths/register'],
+        requireModule: [],
         dryRun: false,
         failFast: false,
         format: ['pretty'],

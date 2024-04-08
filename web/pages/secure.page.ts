@@ -1,6 +1,6 @@
-import Page from "@UIPages/BasePage";
+import BasePage from "./basePage";
 
-class SecurePage extends Page {
+class SecurePage extends BasePage {
 
     get flashAlert() { return $('#flash') }
 }

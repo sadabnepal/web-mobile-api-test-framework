@@ -1,6 +1,6 @@
-import Page from "@UIPages/BasePage";
+import BasePage from "./basePage"
 
-class WebTablePage extends Page {
+class WebTablePage extends BasePage {
 
     get dashboardHeader() { return $("<h3>") }
     get exampleTable1() { return $("#table1") }

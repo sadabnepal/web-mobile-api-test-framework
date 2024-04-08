@@ -1,37 +1,16 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@UIPages/*": [
-                "pages/*"
-            ],
-            "@UITestData/*": [
-                "resources/*"
-            ],
-            "@UIStatic/*": [
-                "static/*"
-            ],
-            "@UIUtils/*": [
-                "utils/*"
-            ],
-            "@UIResources/*": [
-                "resources/*"
-            ],
-            "@UITypes/*": [
-                "types/*"
-            ]
-        },
         "allowJs": false,
         "resolveJsonModule": true,
-        "target": "es2019",
-        "module": "commonjs",
+        "target": "ESNext",
+        "moduleResolution": "node",
         "strict": true,
         "noImplicitAny": false,
         "types": [
-            "webdriverio/async",
-            "mocha",
-            "@wdio/cucumber-framework",
             "node",
+            "@wdio/globals/types",
+            "@wdio/mocha-framework",
+            "@wdio/cucumber-framework",
             "expect-webdriverio"
         ],
         "allowSyntheticDefaultImports": true,

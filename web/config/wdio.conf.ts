@@ -1,8 +1,10 @@
+import type { Options } from '@wdio/types';
+import { join } from 'path';
 import { MOCHA_OUTPUT_DIR } from "../static/pathConstants";
-import { deleteDirectory } from "../utils/fileutils";
+import { deleteDirectory } from "../utils/fileSystem";
 import { chromeCapabilities } from "./capabilities";
 
-export const config: WebdriverIO.Config = {
+export const config: Options.Testrunner = {
     // ====================
     // Runner Configuration
     // ====================
@@ -12,12 +14,14 @@ export const config: WebdriverIO.Config = {
     // Specify Test Files
     // ==================
     specs: [
-        './tests/mocha/**/*.spec.ts'
+        join(process.cwd(), 'tests', 'mocha', '*.ts')
     ],
-    exclude: ['./tests/mocha/**/FrameShadowDom.spec.ts'],
+    exclude: [
+        join(process.cwd(), 'tests', 'mocha', 'frameShadowDom.spec.ts')
+    ],
 
     suites: {
-        smoke: ['./tests/smoke.spec.ts']
+        smoke: [join(process.cwd(), 'tests', 'smoke.spec.ts')]
     },
     // ============
     // Capabilities
@@ -35,7 +39,7 @@ export const config: WebdriverIO.Config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone'],
+    // services: [],
     framework: 'mocha',
     specFileRetries: 0,
     specFileRetriesDelay: 0,
@@ -49,7 +53,6 @@ export const config: WebdriverIO.Config = {
         }]
     ],
     mochaOpts: {
-        compilers: ['tsconfig-paths/register'],
         ui: 'bdd',
         timeout: 60000,
         mochawesomeOpts: {

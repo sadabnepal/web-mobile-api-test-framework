@@ -1,4 +1,4 @@
-import BasePage from "@UIPages/BasePage";
+import BasePage from "./basePage";
 
 class FrameShadowDom extends BasePage {
 
@@ -8,7 +8,6 @@ class FrameShadowDom extends BasePage {
 
     get snacksFrame() { return $("#pact") }
     get snacksShadowDom() { return $("#snacktime") }
-    get coffeShadowDom() { return $("#jest") }
     get username() { return $("#userName") }
     get country() { return $("#jex") }
     get teaShadowElement() { return this.snacksShadowDom.shadow$("#tea") }

@@ -1,17 +1,17 @@
-import webtablesPage from "@UIPages/webtables.page";
-import { table1DataOptions } from "@UITypes/customTypes";
+import webTablesPage from "../../pages/webTables.page";
+import { table1DataOptions } from "../../types/customTypes";
 
 describe('validate web table elements', () => {
 
     let example1TableData: any;
 
     beforeEach(async () => {
-        await webtablesPage.openApp()
+        await webTablesPage.openApp()
     })
 
     it("should retrieve example1 table data", async () => {
-        await expect(webtablesPage.dashboardHeader).toHaveText("Data Tables")
-        example1TableData = await webtablesPage.getTableDataAsListOfMap()
+        await expect(webTablesPage.dashboardHeader).toHaveText("Data Tables")
+        example1TableData = await webTablesPage.getTableDataAsListOfMap()
         console.table(example1TableData);
         expect(example1TableData.length).toBeGreaterThan(0)
     })
@@ -29,16 +29,16 @@ describe('validate web table elements', () => {
         expect(totalDue).toEqual(251)
     })
 
-    it("should add $30 due amout if it is <= $50", async () => {
-        const updatedata = example1TableData.map((data: table1DataOptions) => {
+    it("should add $30 due amount if it is <= $50", async () => {
+        const updateData = example1TableData.map((data: table1DataOptions) => {
             if (Number(data.Due.split("$")[1]) <= 50) {
                 data.Due = "$" + (parseFloat(data.Due.split("$")[1]) + 30).toFixed(2)
             }
             return data;
         })
-        console.table(updatedata)
+        console.table(updateData)
         const isAllDueGreaterThan30 = (data: table1DataOptions) => +(data.Due.split("$")[1]) > 30;
-        expect(updatedata.every(isAllDueGreaterThan30)).toBeTruthy()
+        expect(updateData.every(isAllDueGreaterThan30)).toBeTruthy()
     })
 
 })

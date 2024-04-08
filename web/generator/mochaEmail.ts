@@ -1,6 +1,6 @@
 import { MAILER_PATH } from "../static/pathConstants";
-import { env_reciever_list, env_sender_gmail, env_sender_name } from "../utils/envreader";
-import { parseJsonFile } from "../utils/fileutils";
+import { env_receiver_list, env_sender_gmail, env_sender_name } from "../utils/envReader";
+import { parseJsonFile } from "../utils/fileSystem";
 import { mailSender } from "../utils/mailer";
 import { emailBodyTemplate } from "./emailBody";
 
@@ -9,8 +9,8 @@ let state = bddJsonData.stats
 
 let mochaEMailOptions = {
     from: `"${env_sender_name}" <${env_sender_gmail}>`,
-    to: env_reciever_list,
-    subject: "Automtion Execution Report",
+    to: env_receiver_list,
+    subject: "Automation Execution Report",
     html: emailBodyTemplate(state.tests, state.passes, state.failures, state.pending),
 };
 

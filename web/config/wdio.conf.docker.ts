@@ -1,8 +1,8 @@
 import { DockerBrowserCapabilities } from "./capabilities";
-import { config as mochaconfig } from "./wdio.conf";
+import { config as mochaConfig } from "./wdio.conf";
 
 export const config: WebdriverIO.Config = {
-    ...mochaconfig,
+    ...mochaConfig,
     hostname: 'localhost',
     port: 4444,
     path: '/',
