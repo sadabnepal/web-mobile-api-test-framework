@@ -20,7 +20,7 @@ jobs:
         node-version: 18
         cache: 'npm'
         cache-dependency-path: './web/package-lock.json'
-    - run: npm install
+    - run: npm install --legacy-peer-deps
     - run: npm run smoke
 
   MochaTests:
@@ -38,7 +38,7 @@ jobs:
         node-version: 18
         cache: 'npm'
         cache-dependency-path: './web/package-lock.json'
-    - run: npm install
+    - run: npm install --legacy-peer-deps
     - run: npm run test
 
     - name: Generate Mochawesome Report
@@ -67,7 +67,7 @@ jobs:
         node-version: 18
         cache: 'npm'
         cache-dependency-path: './web/package-lock.json'
-    - run: npm install
+    - run: npm install --legacy-peer-deps
     - run: npm run test:e2e
 
     - name: Generate Cucumber HTML Report
