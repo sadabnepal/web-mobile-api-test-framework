@@ -13,11 +13,11 @@ jobs:
         working-directory: ./web
     steps:
     - name: Checkout project
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 14.17.6
+        node-version: 18
         cache: 'npm'
         cache-dependency-path: './web/package-lock.json'
     - run: npm install
@@ -31,11 +31,11 @@ jobs:
         working-directory: ./web
     steps:
     - name: Checkout project
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 14.17.6
+        node-version: 18
         cache: 'npm'
         cache-dependency-path: './web/package-lock.json'
     - run: npm install
@@ -47,7 +47,7 @@ jobs:
 
     - name: Export Mochawesome Report
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: MochaHTMLReport
         path: web/mochawesome-report
@@ -60,11 +60,11 @@ jobs:
         working-directory: ./web
     steps:
     - name: Checkout project
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 14.17.6
+        node-version: 18
         cache: 'npm'
         cache-dependency-path: './web/package-lock.json'
     - run: npm install
@@ -76,7 +76,7 @@ jobs:
 
     - name: Export Cucumber HTML Report
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: CucumberHTMLReport
         path: web/reports/cucumber/cucumber-report.html

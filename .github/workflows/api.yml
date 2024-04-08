@@ -13,11 +13,11 @@ jobs:
         working-directory: ./api
     steps:
     - name: Checkout project
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: 14.17.6
+        node-version: 18
         cache: 'npm'
         cache-dependency-path: './api/package-lock.json'
     - run: npm install
@@ -25,7 +25,7 @@ jobs:
 
     - name: Generate API Mochawesome Report
       if: always()
-      uses: actions/upload-artifact@v3.0.0
+      uses: actions/upload-artifact@v3
       with:
         name: APIMochaReport
         path: api/reports
