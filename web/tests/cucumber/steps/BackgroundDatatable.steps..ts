@@ -1,7 +1,7 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 import loginPage from '../../../pages/login.page';
 import securePage from '../../../pages/secure.page';
-import FrameworkConstants from '../../../static/1frameworkConstants';
+import FrameworkConstants from '../../../static/frameworkConstants';
 
 Given(/^I open the heroku app login page$/, async () => {
     await loginPage.openApp();

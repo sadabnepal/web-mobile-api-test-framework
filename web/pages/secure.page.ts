@@ -1,4 +1,4 @@
-import BasePage from "./1basePage";
+import BasePage from "./basePage";
 
 class SecurePage extends BasePage {
 

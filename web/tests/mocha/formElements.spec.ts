@@ -1,6 +1,6 @@
 import formPage from "../../pages/form.page";
 import loginData from "../../resources/testdata.json";
-import FrameworkConstants from "../../static/1frameworkConstants";
+import FrameworkConstants from "../../static/frameworkConstants";
 
 describe('test form submission and use of interface', () => {
 

@@ -1,5 +1,5 @@
 import { FormFieldTypes } from "../types/customTypes"
-import BasePage from "./1basePage"
+import BasePage from "./basePage"
 
 class FormElements extends BasePage {
 
