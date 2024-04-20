@@ -140,7 +140,7 @@ export const config: Options.Testrunner = {
     /**
      * Runs after a Cucumber step
      */
-    afterStep: async function (step, scenrio, result, context) {
+    afterStep: async function (step, scenario, result, context) {
         if (!result.passed) {
             cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
         }
@@ -191,8 +191,8 @@ export const config: Options.Testrunner = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function (exitCode, config, capabilities, results) {
-        const mergeResults = require('wdio-json-reporter/mergeResults')
-        mergeResults(MAIL_JSON_CUCUMBER_DIR, 'results-*', '/merged_result.json')
+        const mergeResults = require('@wdio/json-reporter/mergeResults');
+        mergeResults(MAIL_JSON_CUCUMBER_DIR, 'results-*', '/merged_result.json');
     },
     /**
     * Gets executed when a refresh happens.

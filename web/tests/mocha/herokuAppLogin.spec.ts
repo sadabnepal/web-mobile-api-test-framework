@@ -13,13 +13,13 @@ describe('Test heroku app application login', () => {
     it("should login with valid credentials", async () => {
         await loginPage.login(herokuAppLoginData.validUserName, herokuAppLoginData.validPassword());
         await expect(securePage.flashAlert).toBeExisting();
-        await expect(securePage.flashAlert).toHaveTextContaining(FrameworkConstants.LOGIN_SUCCESS_MSG);
+        await expect(securePage.flashAlert).toHaveText(expect.stringContaining(FrameworkConstants.LOGIN_SUCCESS_MSG))
     });
 
     it("should not login with invalid credentials", async () => {
         await loginPage.login(herokuAppLoginData.invalidUserName, herokuAppLoginData.invalidPassword);
         await expect(securePage.flashAlert).toBeExisting();
-        await expect(securePage.flashAlert).toHaveTextContaining(FrameworkConstants.LOGIN_FAILED_MSG);
+        await expect(securePage.flashAlert).toHaveText(expect.stringContaining(FrameworkConstants.LOGIN_FAILED_MSG));
     });
 
 });

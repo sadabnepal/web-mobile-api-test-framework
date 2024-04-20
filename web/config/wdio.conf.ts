@@ -45,7 +45,7 @@ export const config: Options.Testrunner = {
     specFileRetriesDelay: 0,
     specFileRetriesDeferred: false,
     reporters: ['spec',
-        ['mochawesome', {
+        ['json', {
             outputDir: MOCHA_OUTPUT_DIR,
             outputFileFormat: (opts: any) => {
                 return `results-${opts.cid}.${opts.capabilities.browserName}.json`
@@ -186,7 +186,7 @@ export const config: Options.Testrunner = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function (exitCode, config, capabilities, results) {
-        const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
+        const mergeResults = require('@wdio/json-reporter/mergeResults');
         mergeResults(MOCHA_OUTPUT_DIR, "results-*", "wdio-ma-merged.json");
     },
     /**
