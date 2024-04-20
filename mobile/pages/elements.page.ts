@@ -5,7 +5,7 @@ class PageElements extends BasePage {
     get allMenuItemsElements() { return $$(".android.widget.TextView") }
     get appMenuElement() { return $('~App') }
     get viewsMenuElement() { return $('~Views') }
-    get listDialougElement() { return $("//*[@content-desc='List dialog']") }
+    get listDialogueElement() { return $("//*[@content-desc='List dialog']") }
     get commandTwoElement() { return $("//*[@text='Command two']") }
     get commandTwoMsgElement() { return $('//*[@resource-id="android:id/message"]') }
     get okCancelElement() { return $('~OK Cancel dialog with a message') }
@@ -46,11 +46,11 @@ class PageElements extends BasePage {
 
     async navigateToCommandTwoPopup() {
         await this.openAlertPage()
-        await this.listDialougElement.click();
+        await this.listDialogueElement.click();
         await this.commandTwoElement.click();
     }
 
-    async clickOnOkCancelDialouge() {
+    async clickOnOkCancelDialogue() {
         await this.okCancelElement.click();
     }
 
@@ -62,7 +62,7 @@ class PageElements extends BasePage {
         await $(`//android.view.View[@text='${day}']`).click()
     }
 
-    async openDateDialougeMenu() {
+    async openDateDialogueMenu() {
         await this.dateWidgetMenu.click()
         await this.dialogOption.click()
     }
@@ -77,7 +77,7 @@ class PageElements extends BasePage {
         await this.scrollHorizontally()
     }
 
-    async scrollAndclickOnWallpaperMenu() {
+    async scrollAndClickOnWallpaperMenu() {
         await this.scrollAndClickByText('Wallpaper')
     }
 

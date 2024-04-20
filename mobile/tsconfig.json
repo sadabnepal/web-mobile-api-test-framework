@@ -1,7 +1,5 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {},
         "allowJs": false,
         "resolveJsonModule": true,
         "target": "es2019",
@@ -9,10 +7,11 @@
         "strict": true,
         "noImplicitAny": false,
         "types": [
-            "webdriverio/async",
-            "mocha",
             "node",
-            "expect-webdriverio"
+            "@wdio/globals/types",
+            "@wdio/mocha-framework",
+            "expect-webdriverio",
+            "@wdio/appium-service"
         ],
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,

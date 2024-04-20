@@ -1,7 +1,8 @@
-import { androidMultiDeviceCapabalities } from './config/capabilities';
-import { config as baseConfig } from "./wdio.conf";
+import type { Options } from '@wdio/types';
+import { androidMultiDeviceCapabilities } from './config/capabilities';
+import { config as baseConfig } from './wdio.conf';
 
-export const config = {
+export const config: Options.Testrunner = {
     ...baseConfig,
-    capabilities: androidMultiDeviceCapabalities,
+    capabilities: androidMultiDeviceCapabilities,
 }

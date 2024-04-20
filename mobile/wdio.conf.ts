@@ -1,7 +1,8 @@
-import { androidDeviceCapabalities } from './config/capabilities';
-import { MOCHA_OUTPUT_DIR } from './static/pathconstants';
+import type { Options } from '@wdio/types';
+import { androidDeviceCapabilities } from './config/capabilities';
+import { JSON_OUTPUT_DIR } from './static/pathConstants';
 
-export const config = {
+export const config: Options.Testrunner = {
     // =====================
     // ts-node Configurations
     // =====================
@@ -29,7 +30,7 @@ export const config = {
     // Capabilities
     // ============
     maxInstances: 10,
-    capabilities: androidDeviceCapabalities,
+    capabilities: androidDeviceCapabilities,
     // ===================
     // Test Configurations
     // ===================
@@ -45,14 +46,14 @@ export const config = {
     // specFileRetries: 1,
     // specFileRetriesDelay: 0,
     reporters: ['spec',
-        ['mochawesome', {
-            outputDir: MOCHA_OUTPUT_DIR,
+        ['json', {
+            outputDir: JSON_OUTPUT_DIR,
             outputFileFormat: (opts: any) => {
                 return `results-${opts.cid}.${opts.capabilities.platformName}.json`
             }
         }]],
     mochaOpts: {
-        compilers: ['tsconfig-paths/register'],
+        compilers: [],
         ui: 'bdd',
         timeout: 60000
     },
@@ -191,8 +192,8 @@ export const config = {
      */
     // eslint-disable-next-line no-unused-vars
     onComplete: function (exitCode, config, capabilities, results) {
-        const mergeResults = require('wdio-mochawesome-reporter/mergeResults')
-        mergeResults(MOCHA_OUTPUT_DIR, "results-*");
+        const mergeResults = require('@wdio/json-reporter/mergeResults');
+        mergeResults(JSON_OUTPUT_DIR, "results-*");
     },
     /**
     * Gets executed when a refresh happens.

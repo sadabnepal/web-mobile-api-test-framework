@@ -1,6 +1,6 @@
 #### Install Appium Server
 ```
-npm install -g appium@next          [ install appium CLI version 2.0.0-beta.24 ]
+npm install -g appium               [ install appium CLI version ]
 npm install -g appium-doctor        [ install appium doctor ]
 appium --version                    [ To check appium version ]
 ```
