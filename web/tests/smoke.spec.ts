@@ -3,14 +3,13 @@ import securePage from "../pages/secure.page";
 import { herokuAppLoginData } from "../resources/logindata";
 import FrameworkConstants from "../static/frameworkConstants";
 
+describe('@smoke suite', () => {
 
-describe('Login feature', () => {
-
-    it("should validate smoke test", async () => {
+    it("should validate login page", async () => {
         await loginPage.openApp();
         await loginPage.login(herokuAppLoginData.validUserName, herokuAppLoginData.validPassword());
         await expect(securePage.flashAlert).toBeExisting();
-        await expect(securePage.flashAlert).toHaveTextContaining(FrameworkConstants.LOGIN_SUCCESS_MSG);
+        await expect(securePage.flashAlert).toHaveText(expect.stringContaining(FrameworkConstants.LOGIN_SUCCESS_MSG))
     });
 
 });
