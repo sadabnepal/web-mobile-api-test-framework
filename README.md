@@ -9,8 +9,8 @@
 
 <h4 align="center">
 
-[![Web CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/web.yml)
-[![API CI](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/api.yml/badge.svg)](https://github.com/sadabnepal/WebdriverIOTypeScriptE2E/actions/workflows/api.yml)
+[![Web CI](https://github.com/sadabnepal/wdio-web-mobile-api-automation/actions/workflows/web.yml/badge.svg)](https://github.com/sadabnepal/wdio-web-mobile-api-automation/actions/workflows/web.yml)
+[![API CI](https://github.com/sadabnepal/wdio-web-mobile-api-automation/actions/workflows/api.yml/badge.svg)](https://github.com/sadabnepal/wdio-web-mobile-api-automation/actions/workflows/api.yml)
 
 </h4>
 
@@ -27,7 +27,7 @@
 
 #### Clone Repository
 ```bash
-git clone https://github.com/sadabnepal/web-mobile-api-test-framework.git
+git clone https://github.com/sadabnepal/wdio-web-mobile-api-automation.git &&
 cd web-mobile-api-test-framework
 ```
 -----
